@@ -1,0 +1,29 @@
+#rbar_form{
+  text-align: center;
+}
+
+#rbar_form_input{
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(85, 172, 238, .5);
+  height: 40px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, .5);
+  margin: 10px 0px;
+  outline: none;
+}
+
+#rbar_form_input:hover{
+  border-color: rgba(85, 172, 238, .7);
+}
+
+#rbar_form_input:focus{
+  border-color: rgba(85, 172, 238, 1);
+}
+
+#rbar_form_output{
+  position: relative;
+  bottom: 10px;
+  font-size: 12px;
+}
