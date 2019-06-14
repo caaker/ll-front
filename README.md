@@ -1,2 +1,3 @@
 # fav-front
-front side of a favicon application
+The front end of a favicon application
+
