@@ -1,6 +1,7 @@
 import { applyMiddleware } from 'redux';
 
 const logger = store => next => action => {
+  // console.log('logger(action)');
   console.log(action);
   next(action);
 };

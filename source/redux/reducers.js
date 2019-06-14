@@ -10,10 +10,11 @@ const User = (state, action) => {
 };
 
 const URL = (state, action) => {
+  // console.log(state)
   let newState = { ...state };
   switch(action.type) {
     case "updateURL":
-      newState.URL = action.URL;
+      newState.current = action.current;
   }
   return newState;
 };

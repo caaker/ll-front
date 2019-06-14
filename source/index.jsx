@@ -20,8 +20,9 @@ class App extends React.Component {
     return (
       <div id='app_hold'>
         <Paragraph/>
-        <Input/>
         <Image/>
+
+        <Input/>
       </div>
     )
   }

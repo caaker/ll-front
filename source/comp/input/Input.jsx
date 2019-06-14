@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Input.css';
 import URL from './InputURLClass.js';
@@ -49,4 +50,5 @@ class Input extends React.Component {
   }
 }
 
-export default Input;
+export default connect()(Input);
+// export default Input;

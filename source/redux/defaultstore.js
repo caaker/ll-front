@@ -3,7 +3,9 @@ const defaultStore = {
     current: null
   },
   URL: {
-    domain: 'google.com'
+    current: {
+      domain: 'twitter.com'
+    }
   }
 };
 
