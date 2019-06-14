@@ -10,11 +10,9 @@ class Image extends React.Component {
   }
 
   render() {
-    // id={bm.id + 'a'}
-    console.log(this.props.URL.domain)
+    console.log(this.props.URL.domain);
     return (
-      <img id ='rimage' src={this.props.URL.domain + 'https://www.google.com/s2/favicons?domain='} >
-      </img>
+      <img id ='rimage' src={'https://www.google.com/s2/favicons?domain=' + this.props.URL.domain}></img>
     )
   }
 }
