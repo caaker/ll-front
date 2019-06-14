@@ -21,9 +21,3 @@
 #rbar_form_input:focus{
   border-color: rgba(85, 172, 238, 1);
 }
-
-#rbar_form_output{
-  position: relative;
-  bottom: 10px;
-  font-size: 12px;
-}

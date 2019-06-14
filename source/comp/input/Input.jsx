@@ -40,9 +40,6 @@ class Input extends React.Component {
             ref = "filterTextInput"
             onChange = {this.handleChange}
           />
-          <div id = 'rbar_form_output'>
-            {this.state.tld ? this.state.name : ' '}
-          </div>
         </form>
     )
   }
