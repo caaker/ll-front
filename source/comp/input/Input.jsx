@@ -3,6 +3,7 @@ import React from 'react';
 import './Input.css';
 import URL from './InputURLClass.js';
 
+// URL is in URLClass, this.url, current state, and redux ... too many places
 class Input extends React.Component {
 
   constructor(props) {
@@ -14,9 +15,12 @@ class Input extends React.Component {
   handleChange = (event) => {
     event.persist();
     this.url.updateURL(event.target.value);
+    this.props.dispatch({type: 'updateURL', current: this.url.obj });
+
     this.setState((prevState, props) => {
       return this.url.obj;
     });
+
   }
 
   handleSubmission = (event) => {

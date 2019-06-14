@@ -1,13 +1,13 @@
-import reducers from './reducers';
 import { createStore } from 'redux';
 
-const defaultStore = {
-  User:{
-    current: null
-  },
-  URL: {
-    domain: 'google.com'
-  }
-};
+// 1st required parameter
+import reducers from './reducers';
 
-export default createStore(reducers, defaultStore);
+// 2nd optional parameter for createStore
+import defaultstore from './defaultstore'
+
+// 3rd optional parameter for createStore
+import middleware from './middleware';
+
+
+export default createStore(reducers, defaultstore, middleware);
