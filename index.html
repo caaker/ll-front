@@ -5,6 +5,15 @@
   </head>
   <body>
     <div id="app"></div>
+<!--     
     <script type="text/javascript" src="dist/bundle.js?cache=bust4"></script>
+ -->
+    <script>
+      const ref = document.getElementsByTagName( 'div' )[ 0 ];
+      const bundle = document.createElement( 'script' );
+      bundle.src = 'dist/bundle.js' + '?cache=' + Date.now();
+      ref.parentNode.insertBefore( bundle, ref );
+    </script>
+
   </body>
 </html>
