@@ -7,6 +7,10 @@ import store from './redux/store';
 import Input       from './comp/input/Input.jsx';
 import Paragraph   from './comp/paragraph/Paragraph.jsx';
 import Image       from './comp/image/Image.jsx';
+
+import Output       from './comp/output/Output.jsx';
+// import P1       from './comp/paragraph/P1.jsx';
+
 import './index.css';
 
 
@@ -21,7 +25,7 @@ class App extends React.Component {
       <div id='app_hold'>
         <Paragraph/>
         <Image/>
-
+        <Output/>
         <Input/>
       </div>
     )

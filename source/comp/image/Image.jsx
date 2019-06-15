@@ -8,8 +8,6 @@ class Image extends React.Component {
   }
   render() {
     let domain = this.props.URL.current.domain; 
-    let valid = this.props.URL.current.valid;
-    console.log(valid);
     return (
       <img id ='rimage' src={'https://www.google.com/s2/favicons?domain=' + domain} />
     )
@@ -25,5 +23,4 @@ const mapStateToProps = state => {
     User: state.User
   }
 }
-
 export default connect(mapStateToProps)(Image);

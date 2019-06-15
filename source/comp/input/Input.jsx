@@ -17,7 +17,6 @@ class Input extends React.Component {
     event.persist();
     this.url.updateURL(event.target.value);
     this.props.dispatch({type: 'updateURL', current: this.url.obj });
-
     this.setState((prevState, props) => {
       return this.url.obj;
     });
