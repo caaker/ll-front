@@ -14,8 +14,11 @@
         const minutes = now.getMinutes();
         let hours = now.getHours();
         let suffix = '_AM';
-        if( hours > 12 ){
+        if( hours > 12 ) {
           hours = hours - 12;
+          suffix = '_PM';
+        }
+        if ( hours === 12 ){
           suffix = '_PM';
         }
         const time = hours + ":" + minutes + ":" + seconds + suffix;
