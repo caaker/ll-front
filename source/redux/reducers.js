@@ -1,5 +1,32 @@
 import {combineReducers} from 'redux';
 
+const Apex = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "toggleApex":
+      newState.current = !state.current;
+      break;
+    case "closeApex":
+      newState.current = false;
+  }
+  return newState;
+};
+
+const Menu = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "closeMenu":
+      newState.status = false;
+      break;
+    case "toggleMenu":
+      newState.status = !state.status;
+      break;
+    case "updateMenu":
+      newState.current = action.current;
+  }
+  return newState;
+};
+
 const User = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -8,6 +35,10 @@ const User = (state, action) => {
   }
   return newState;
 };
+
+
+/*
+*/
 
 const URL = (state, action) => {
   // console.log(state)
@@ -20,6 +51,8 @@ const URL = (state, action) => {
 };
 
 const reducers = combineReducers({
+  Apex,
+  Menu,
   User,
   URL
 });

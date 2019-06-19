@@ -2,11 +2,17 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="google-site-verification" content="h5X2BKBLL0btkqCittiD1f1m85nhrU6ntzMZvtlgbK0" />
+    <meta name="keywords" content="health, articles, favorites, sharing, saving">
+    <meta name='description' content='Your trusted ally in health and strength. 
+      Join us in a pursuit to live longer and stronger.'>
+    <link rel="apple-touch-icon" sizes="57x57"   href="png/apple.png" />
+    <link rel="apple-touch-icon" sizes="72x72"   href="png/apple.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="png/apple.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="png/apple.png" />
   </head>
   <body>
     <div id="app"></div>
-
-
     <script>
       function getDate() {
         const now = new Date();
@@ -24,7 +30,6 @@
         const time = hours + ":" + minutes + ":" + seconds + suffix;
         return time;
       }
-
       function loadScript(path, bust) {
         console.log("Loading | " + path + " | " + bust)
         const ref = document.getElementsByTagName( 'div' )[ 0 ];
@@ -32,11 +37,8 @@
         bundle.src = path + '?cache_buster=' + bust;
         ref.parentNode.insertBefore( bundle, ref );
       }
-
       const time = getDate();
       loadScript('dist/bundle.js', time);
-
     </script>
-
   </body>
 </html>

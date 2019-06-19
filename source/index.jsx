@@ -1,17 +1,12 @@
 import React       from 'react';
 import ReactDOM    from 'react-dom';
 import { Provider, connect } from 'react-redux';
-import store from './redux/store';
+import store       from './redux/store';
+import F1Apex      from './comp/Apex/F1Apex.jsx';
+import FaviconApp  from './FaviconApp.jsx';
 
 
-import Input       from './comp/input/Input.jsx';
-import Paragraph   from './comp/paragraph/Paragraph.jsx';
-import Image       from './comp/image/Image.jsx';
-
-import Output       from './comp/output/Output.jsx';
-// import P1       from './comp/paragraph/P1.jsx';
-
-import './index.css';
+import './arc.css';
 
 
 class App extends React.Component {
@@ -23,10 +18,8 @@ class App extends React.Component {
   render () {
     return (
       <div id='app_hold'>
-        <Paragraph/>
-        <Image/>
-        <Output/>
-        <Input/>
+        <F1Apex/>
+        <FaviconApp/>
       </div>
     )
   }

@@ -1,0 +1,52 @@
+.apex0-1_on{
+  width: 100%;
+}
+
+.apex0-1_off{
+  width: 100%;
+  display: none;
+}
+
+#apex0-1_color1{
+  border-color: #4885ed;
+  transition: border-color 1s;
+}
+
+#apex0-1_color2{
+  border-color: #000000;
+  transition: border-color 1s;
+}
+
+#apex0-2{
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.circular_arrows{
+  margin: 0 auto;
+  display: block;
+}
+
+.circular_arrows_off{
+  margin: 0 auto;
+  display: none;
+}
+
+/* CommonIcon
+*/
+
+.common_icon{
+  position: absolute;
+  width: 24px;
+  left: 10px;
+  top: 7px;
+}
+#common_icon_still{
+  transform: rotate(0deg);
+  transition: transform 1s;
+}
+#common_icon_rotate{
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
