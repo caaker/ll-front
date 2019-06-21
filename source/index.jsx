@@ -21,14 +21,18 @@ class App extends React.Component {
     return (
       <div id='app_hold'>
         <F1Apex/>
-        {false && <FastApp/>}
-        {true && <FaviconApp/>}
+        {this.props.App.current && <FastApp/>}
+        {!this.props.App.current && <FaviconApp/>}
       </div>
     )
   }
 }
-
-const AppRedux = connect()(App);
+const mapStateToProps = state => {
+  return {
+    App: state.App
+  }
+}
+const AppRedux = connect(mapStateToProps)(App);
 ReactDOM.render(
   <Provider store={store}>
     <AppRedux></AppRedux>

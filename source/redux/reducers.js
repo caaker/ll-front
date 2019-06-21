@@ -41,7 +41,6 @@ const User = (state, action) => {
 */
 
 const URL = (state, action) => {
-  // console.log(state)
   let newState = { ...state };
   switch(action.type) {
     case "updateURL":
@@ -50,11 +49,23 @@ const URL = (state, action) => {
   return newState;
 };
 
+const App = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "updateApp":
+      newState.current = !state.current;
+      break;  
+  }
+  console.log(newState);
+  return newState;
+};
+
 const reducers = combineReducers({
   Apex,
   Menu,
   User,
-  URL
+  URL,
+  App
 });
 
 export default reducers;

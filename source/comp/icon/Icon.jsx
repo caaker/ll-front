@@ -9,6 +9,7 @@ class Icon extends React.Component {
   }
 
   clickHandler = () => {
+    this.props.dispatch({type: 'updateApp'});
   }
 
   render() {

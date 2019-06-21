@@ -16,7 +16,10 @@ const defaultStore = {
     current: {
       domain: 'twitter.com'
     }
-  }
+  },
+  App: {
+    current: false
+  },
 };
 
 export default defaultStore;
