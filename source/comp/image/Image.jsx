@@ -14,9 +14,6 @@ class Image extends React.Component {
   }
 }
 
-// ref={img => this.img = img} 
-// onError={() => this.img.src = 'img/default.img'} />
-
 const mapStateToProps = state => {
   return {
     URL: state.URL,

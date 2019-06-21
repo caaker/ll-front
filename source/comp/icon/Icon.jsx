@@ -9,16 +9,13 @@ class Icon extends React.Component {
   }
 
   clickHandler = () => {
-    /*
-    this.props.SideBar.current
-    */
   }
 
   render() {
     return (
       <img className = 'common_icon' 
            id = {true ? 'common_icon_rotate' : 'common_icon_still'} 
-           onClick = {this.clickHandler} src='source/svg/favicon.svg'/>
+           onClick = {this.clickHandler} src='dist/svg/favicon.svg'/>
     )
   }
 }

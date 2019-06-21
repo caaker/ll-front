@@ -1,0 +1,29 @@
+
+  #fast-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;    
+  }
+  
+  #time {
+    font-size: 8rem;
+  }
+  
+  /* greeting & name
+  */
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  /* focus
+  */
+
+  h2 {
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
+  }
+  
