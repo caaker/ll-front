@@ -48,6 +48,7 @@ class FastApp extends React.Component {
     let more = '';
     let imageString = '';
     let greetString = '';
+    let colorString = '';
 
     if (hour < 12) {
       imageString = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
@@ -58,19 +59,21 @@ class FastApp extends React.Component {
     } else {
       imageString = "url('https://i.ibb.co/924T2Wv/night.jpg')";
       greetString = 'Good Evening. ' + more;
+      colorString = 'white';
     }
 
     this.setState({
       greeting: greetString,
-      image: imageString
+      image: imageString,
+      color: colorString
     })
   }
 
   render() {
     const sectionStyle = {
-      backgroundImage: this.state.image
+      backgroundImage: this.state.image,
+      color: this.state.color
     };
-
     return (
       <div id="fast-app" style={ sectionStyle } >
         <time id="time">{this.state.time}</time>
@@ -84,7 +87,3 @@ class FastApp extends React.Component {
 }
 
 export default connect()(FastApp);
-
-        // <span id="name">{this.state.name}</span>
-        // <h2>{this.state.focus}</h2>
-        // <h2 id="focus"></h2>

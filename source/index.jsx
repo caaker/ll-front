@@ -19,7 +19,6 @@ class App extends React.Component {
 
   render () {
     let app = this.props.Men.current;
-    console.log(app);
     return (
       <div id='app_hold'>
         <F1Apex/>
