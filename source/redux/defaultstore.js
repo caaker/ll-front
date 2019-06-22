@@ -4,7 +4,7 @@ const defaultStore = {
   },
   
   Menu: {
-    current: '',
+    current: 'Clock',
     status: false
   },
 
@@ -13,19 +13,12 @@ const defaultStore = {
   },
 
 
-  Men: {
-    current: 'Clock',
-    status: false
-  },
 
   URL: {
     current: {
       domain: 'twitter.com'
     }
-  },
-  App: {
-    current: false
-  },
+  }
 };
 
 export default defaultStore;

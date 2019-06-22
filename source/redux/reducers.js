@@ -1,5 +1,45 @@
 import {combineReducers} from 'redux';
 
+
+
+
+const Footer = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "toggleFooter":
+      newState.current = !state.current;
+  }
+  return newState;
+};
+const Search = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "updateSearch":
+      newState.current = action.current;
+  }
+  return newState;
+};
+const MenuFave = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "updateMenuFave":
+      newState.current = action.current;
+  }
+  return newState;
+};
+const Bookmarks = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateBookmarks":
+      // newState.bookmarks = Tree.createHierarchy(action.bookmarks);
+      newState.bookmarks = "broken";
+  }
+  return newState;
+};
+
+
+
+
 const Apex = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -11,7 +51,14 @@ const Apex = (state, action) => {
   }
   return newState;
 };
-
+const User = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "setUser":
+      newState.current = action.current;
+  }
+  return newState;
+};
 const Menu = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -27,34 +74,10 @@ const Menu = (state, action) => {
   return newState;
 };
 
-const User = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "setUser":
-      newState.current = action.current;
-  }
-  return newState;
-};
 
 
-/*
-*/
-// toggleMenu, updateMenu, closeMenu
-const Men = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "closeMenu":
-      newState.status = false;
-      break;
-    case "toggleMenu":
-      newState.status = !state.status;
-      break;
-    case "updateMenu":
-      newState.current = action.current;
-  }
-  return newState;
-};
 
+//
 const URL = (state, action) => {
   let newState = { ...state };
   switch(action.type) {
@@ -64,23 +87,19 @@ const URL = (state, action) => {
   return newState;
 };
 
-const App = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "updateApp":
-      newState.current = !state.current;
-      break;  
-  }
-  return newState;
-};
 
 const reducers = combineReducers({
-  Apex,
-  Menu,
-  Men,
-  User,
-  URL,
-  App
+  Footer,
+  Search,
+  MenuFave,
+  Bookmarks,
+
+
+  Apex, // ok
+  User, // ok
+  Menu, // ok
+
+  URL
 });
 
 export default reducers;

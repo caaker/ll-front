@@ -4,22 +4,13 @@ const DIST_DIR = path.join(__dirname, '/dist');
 const webpack = require('webpack');
 
 const exportFunc = ( env ) => {
-
   return {
-
-    // entry point
     entry: `${SRC_DIR}/index.jsx`,
-
-    // output file
     output: {
       filename: 'bundle.js',
       path: DIST_DIR
     },
-
-    // loaders and plugins
     module: {
-
-      // note that after matching the regular expression css-loader will run before style-loader
       rules: [
         {
           test: /\.css$/,

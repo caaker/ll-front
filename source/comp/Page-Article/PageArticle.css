@@ -1,0 +1,11 @@
+
+#article_page_hold{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}

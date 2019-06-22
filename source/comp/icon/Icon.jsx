@@ -16,7 +16,7 @@ class Icon extends React.Component {
     return (
       <img className = 'common_icon' 
            id = {true ? 'common_icon_rotate' : 'common_icon_still'} 
-           onClick = {this.clickHandler} src='dist/svg/favicon.svg'/>
+           onClick = {this.clickHandler} src='images/svg/favicon.svg'/>
     )
   }
 }

@@ -1,4 +1,3 @@
-
   #fast-app{
     display: flex;
     flex-direction: column;
@@ -6,24 +5,10 @@
     justify-content: center;
     text-align: center;
     height: 100vh;    
-  }
-  
+  }  
   #time {
     font-size: 6rem;
   }
-  
-  /* greeting & name
-  */
-
-  h1 {
-    margin-bottom: 3rem;
+  #greeting{
+    font-size: 2rem;
   }
-
-  /* focus
-  */
-
-  h2 {
-    margin-bottom: 0.5rem;
-    opacity: 0.6;
-  }
-  
