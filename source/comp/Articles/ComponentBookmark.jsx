@@ -55,10 +55,10 @@ class ComponentBookmark extends React.Component {
         <div className="scene" onClick = {this.clickHandler} >
           <div className={`card ${this.state.front && "is-flipped"}`}>
             <div className="card__face card__face--front"> 
-              <img className = 'bookmark_image_new' src='images/svg/on_bookmark_filled.svg'/>
+              <img className = 'bookmark_image_new' src='dist/images/svg/on_bookmark_filled.svg'/>
             </div>
             <div className="card__face card__face--back">
-              <img className = 'bookmark_image_new' src='images/svg/on_bookmark.svg'/>
+              <img className = 'bookmark_image_new' src='dist/images/svg/on_bookmark.svg'/>
             </div>
           </div>
         </div>

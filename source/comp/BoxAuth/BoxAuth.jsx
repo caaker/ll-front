@@ -29,7 +29,7 @@ class BoxAuth extends React.Component {
             
             <div id='auth_front' className='auth_face'>
               <a id='auth_google_link' href="/auth/google">
-                <img id='auth_google_img' src='images/svg/on_google.svg'/>
+                <img id='auth_google_img' src='dist/images/svg/on_google.svg'/>
               </a>
             </div>
 
