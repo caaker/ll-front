@@ -11,8 +11,7 @@ class Paragraph extends React.Component {
     return (
       <p id ="rpara">
 
-Get and embed Favicons from any web site.  Use the API to enhance your web site.
-
+Get favicons from any web site.
       </p>
     )
   }

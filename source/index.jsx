@@ -18,18 +18,22 @@ class App extends React.Component {
   }
 
   render () {
+    let app = this.props.Men.current;
+    console.log(app);
     return (
       <div id='app_hold'>
         <F1Apex/>
-        {this.props.App.current && <FastApp/>}
-        {!this.props.App.current && <FaviconApp/>}
+        {(app === 'Clock') && <FastApp/>}
+        {(app === 'Favicons') && <FaviconApp/>}
       </div>
     )
   }
 }
+
 const mapStateToProps = state => {
   return {
-    App: state.App
+    App: state.App,
+    Men: state.Men
   }
 }
 const AppRedux = connect(mapStateToProps)(App);

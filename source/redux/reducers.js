@@ -39,6 +39,21 @@ const User = (state, action) => {
 
 /*
 */
+// toggleMenu, updateMenu, closeMenu
+const Men = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "closeMenu":
+      newState.status = false;
+      break;
+    case "toggleMenu":
+      newState.status = !state.status;
+      break;
+    case "updateMenu":
+      newState.current = action.current;
+  }
+  return newState;
+};
 
 const URL = (state, action) => {
   let newState = { ...state };
@@ -56,13 +71,13 @@ const App = (state, action) => {
       newState.current = !state.current;
       break;  
   }
-  console.log(newState);
   return newState;
 };
 
 const reducers = combineReducers({
   Apex,
   Menu,
+  Men,
   User,
   URL,
   App

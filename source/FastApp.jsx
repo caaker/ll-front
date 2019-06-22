@@ -16,6 +16,10 @@ class FastApp extends React.Component {
     this.setImageAndGreet();
     this.showTime();  
   }
+  
+  componentWillUnmount() {
+    clearTimeout(this.id);
+  }
 
   showTime() {
     const showAmPm = true;
@@ -25,11 +29,12 @@ class FastApp extends React.Component {
     let sec = today.getSeconds();
     const amPm = hour >= 12 ? 'PM' : 'AM';
     hour = hour % 12 || 12;
-    let timeString = `${hour}:${this.addZero(min)}:${this.addZero(sec)} ${showAmPm ? amPm : ''}`;
+    let timeString = `${hour}:${this.addZero(min)} ${showAmPm ? amPm : ''}`;
     this.setState({
       time: timeString
     });
-    setTimeout(this.showTime.bind(this), 1000);
+    this.id = setTimeout(this.showTime.bind(this), 1000);
+    // :${this.addZero(sec)}
   }
 
   addZero(n) {
@@ -80,6 +85,6 @@ class FastApp extends React.Component {
 
 export default connect()(FastApp);
 
-          // <span id="name">{this.state.name}</span>
+        // <span id="name">{this.state.name}</span>
         // <h2>{this.state.focus}</h2>
         // <h2 id="focus"></h2>
