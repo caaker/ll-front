@@ -1,115 +1,24 @@
-
 #auth_top{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   height: 100vh;    
 }
 #auth{
-  position: relative;
   width:  250px;
   height:  185px;
-  perspective: 800px;
-  -webkit-perspective: 800px;
-  margin: 0 auto;
-}
-#auth_auth{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
-#auth_auth.flipped {
-  transform: rotateY( 180deg );
-  -webkit-transform: rotateY( 180deg );
-}
-
-
-.auth_face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: block;
-  margin: 0;
   background: rgba(255,255,255,0.5);
   box-shadow:   0px 1px 3px rgba(25, 25, 25, 0.4);
-  
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  display: flex;
 }
-#auth_front{
-  transform: rotateY( 0deg );
-}
-#auth_back{
-  transform: rotateY( 180deg );
-}
-
-
-/* in front
-*/
 #auth_google_link{
-  position: relative;
-  top: 50px;
-  width: 64px;
-  height: 64px;
-  display: block;
-  margin: 0px auto;
+  margin: auto;
 }
 #auth_google_img{
   width: 64px;
   border: 1px solid white;
-  border-radius: 2px;
 }
 #auth_google_img:hover{
   border: 1px solid black;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* in front and back
-*/
-/*.auth_button{
-  position: absolute;
-  right: -5px;
-  top: -5px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 1px solid #bbbbbb;
-}
-.auth_button:hover{
-  border: 1px solid #888888;
-}
-*/
-
-/* issues
-** https://bugzilla.mozilla.org/show_bug.cgi?id=1508490
-*/
 
