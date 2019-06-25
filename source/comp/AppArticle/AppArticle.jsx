@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
 import ComponentArticle from '../Articles/ComponentArticle.jsx';
-import './PageArticle.css';
+import './AppArticle.css';
 import articles from './Data.js'
 
-class PageContent extends React.Component {
+class AppArticle extends React.Component {
 
   constructor(props) {
     super(props);
@@ -19,11 +18,9 @@ class PageContent extends React.Component {
     });
 
     return (
-      <div className={this.props.Menu.current === 'Articles' ? 'body_show' : 'body_hide'} >
         <div id = "article_page_hold">
           {render}
         </div>
-      </div>
     )
   }
 } 
@@ -34,4 +31,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(PageContent);
+export default connect(mapStateToProps)(AppArticle);
+
+      // <div className={this.props.Menu.current === 'Articles' ? 'body_show' : 'body_hide'} >
+      // </div>

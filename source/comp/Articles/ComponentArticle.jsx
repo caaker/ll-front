@@ -28,19 +28,17 @@ class ComponentArticle extends React.Component {
     return ( 
       <article className="medd_article">
         
-        <div className="medd_top">
-          <ComponentBookmark name={name} count={+this.props.data.saved} />
-        </div>
+
 
         <a id={name} 
            className="medd_image_link" href={this.props.data.link} target="_blank">
           <img className="medd_image" src={this.props.data.image}></img>
         </a>
 
-        <h2 className="medd_heading">
+        <p className="medd_heading">
           <a className="medd_heading_link" href={this.props.data.link} id={this.props.data.title} 
              target="_blank">{this.props.data.title}</a>
-        </h2>
+        </p>
 
         <p className="medd_summary">
           {this.props.data.summary}
@@ -66,3 +64,10 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(ComponentArticle);
+
+
+        // <div className="medd_top">
+        //   <ComponentBookmark name={name} count={+this.props.data.saved} />
+        // </div>
+
+          

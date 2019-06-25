@@ -2,18 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import F1Apex    from './Apex/F1Apex.jsx';
-// import F1Footer  from './Footer/F1Footer.jsx';
-
 import F1Page    from './F1Page.jsx';
-//import F1_Start   from './F1_Start'
 
-// Frame 1
-class F1 extends React.Component {
- 
+class F1 extends React.Component { 
   constructor(props) {
     super(props);
-    // can not be relative since you must hit server now
-    // this.fetchData();
   }
 
   fetchData = () => {

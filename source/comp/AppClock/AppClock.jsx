@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './FastApp.css';
+import './AppClock.css';
 
-class FastApp extends React.Component {
+class AppClock extends React.Component {
 
   constructor(props) {
     super(props);
@@ -99,4 +99,4 @@ class FastApp extends React.Component {
   }
 }
 
-export default connect()(FastApp);
+export default connect()(AppClock);

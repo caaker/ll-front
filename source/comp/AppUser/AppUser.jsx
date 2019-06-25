@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BoxAuth from './BoxAuth/BoxAuth.jsx';
+import BoxAuth from '../BoxAuth/BoxAuth.jsx';
 
-class UserApp extends React.Component {
+class AppUser extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,4 +15,4 @@ class UserApp extends React.Component {
   }
 }
 
-export default connect()(UserApp);
+export default connect()(AppUser);
