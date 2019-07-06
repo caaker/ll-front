@@ -12,8 +12,6 @@ const defaultStore = {
     current: null
   },
 
-
-
   URL: {
     current: {
       domain: 'twitter.com'

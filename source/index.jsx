@@ -1,3 +1,8 @@
+// This file is primarily used to
+//   - connect the Redux Store to <div id='app'>
+//   - load the dynamic header
+//   - load page wide CSS
+
 // Libs
 import React        from 'react';
 import ReactDOM     from 'react-dom';

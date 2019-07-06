@@ -13,20 +13,9 @@
     top: 45px;
     right: 0px;
   }
-  .holder{
-    border: 1px solid rgba(255, 255, 0, 0);
-    display: inline-block;
-  }
-  .holder:hover{
-    border: 1px solid rgba(0, 0, 0, .5);
-  }
+
   .svg{
     margin: 10px 10px 2px 10px;
     width: 24px;
     height: 24px;
-  }
-  .p11{
-    margin: 0px;
-    text-align: center;   
-    font-size: .7rem; 
   }
