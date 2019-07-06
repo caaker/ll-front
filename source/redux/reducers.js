@@ -87,6 +87,16 @@ const URL = (state, action) => {
   return newState;
 };
 
+//
+const App = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "updateApp":
+      newState.current = !state.current;
+  }
+  return newState;
+};
+
 
 const reducers = combineReducers({
   Footer,
@@ -99,7 +109,8 @@ const reducers = combineReducers({
   User, // ok
   Menu, // ok
 
-  URL
+  URL,
+  App
 });
 
 export default reducers;

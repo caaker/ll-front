@@ -17,7 +17,7 @@ class MenuBox extends React.Component {
 
   render() {
     let test = this.props.Menu.status ? 'on' : 'off';
-    let exp = true;
+    let exp = this.props.App.current;
     return (
       <span id='container' className={test}>
 
@@ -50,7 +50,8 @@ class MenuBox extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Menu: state.Menu
+    Menu: state.Menu,
+    App: state.App
   }
 }
 
