@@ -12,33 +12,17 @@
     <link rel="apple-touch-icon" sizes="144x144" href="png/apple.png" />
   </head>
   <body>
+
+
     <div id="app"></div>
+
+
     <script>
-      function getDate() {
-        const now = new Date();
-        const seconds = now.getSeconds();
-        const minutes = now.getMinutes();
-        let hours = now.getHours();
-        let suffix = '_AM';
-        if( hours > 12 ) {
-          hours = hours - 12;
-          suffix = '_PM';
-        }
-        if ( hours === 12 ){
-          suffix = '_PM';
-        }
-        const time = hours + ":" + minutes + ":" + seconds + suffix;
-        return time;
-      }
-      function loadScript(path, bust) {
-        console.log("Loading | " + path + " | " + bust)
-        const ref = document.getElementsByTagName( 'div' )[ 0 ];
-        const bundle = document.createElement( 'script' );
-        bundle.src = path + '?cache_buster=' + bust;
-        ref.parentNode.insertBefore( bundle, ref );
-      }
-      const time = getDate();
-      loadScript('dist/bundle.js', time);
+      function getTime(){var a=new Date,c=a.getSeconds(),d=a.getMinutes();a=a.getHours();var b="_AM";12<a&&(a-=12,b="_PM");12===a&&(b="_PM");return a+":"+d+":"+c+b}function loadScript(a,c){console.log("Loading | "+a+" | "+c);var d=document.getElementsByTagName("div")[0],b=document.createElement("script");b.src=a+"?cache_buster="+c;d.parentNode.insertBefore(b,d)};
+      
+      loadScript('dist/bundle.js', getTime());
     </script>
+
+
   </body>
 </html>
