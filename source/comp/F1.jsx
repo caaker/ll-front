@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import F1Apex    from './Apex/F1Apex.jsx';
 import F1Page    from './F1Page.jsx';
 
+import './F1.css';
+
 class F1 extends React.Component { 
   constructor(props) {
     super(props);

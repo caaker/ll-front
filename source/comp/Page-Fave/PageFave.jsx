@@ -29,4 +29,23 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(PageFave);
-          // <PageFaveContent />
+
+// <PageFaveContent />
+
+// .body_show{
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   transition: opacity 1s;
+//   display: block;
+//   opacity: 1;
+//   z-index: 10000;
+// }
+// .body_hide{
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   transition: opacity 1s;
+//   display: none;
+//   opacity: 0;
+// }

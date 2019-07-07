@@ -9,3 +9,21 @@
   align-items: flex-start;
   justify-content: space-around;
 }
+
+/* M-MQ-WIDTH
+**
+**
+*/
+
+@media screen and (max-width: 500px) {
+  .medd_article{
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+  }
+}
+
+@media screen and (max-width: 300px){
+  .medd_article{
+    width: 300px;
+  }
+}

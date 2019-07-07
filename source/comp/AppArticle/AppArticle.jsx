@@ -18,9 +18,9 @@ class AppArticle extends React.Component {
     });
 
     return (
-        <div id = "article_page_hold">
-          {render}
-        </div>
+      <div id = "article_page_hold">
+        {render}
+      </div>
     )
   }
 } 
@@ -32,6 +32,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(AppArticle);
-
-      // <div className={this.props.Menu.current === 'Articles' ? 'body_show' : 'body_hide'} >
-      // </div>

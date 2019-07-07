@@ -25,10 +25,4 @@ class Menu extends React.Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     Property: state.Property
-//   }
-// }
-
 export default connect()(Menu);
