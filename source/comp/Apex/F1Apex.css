@@ -14,3 +14,11 @@
   border-left: 1px dotted #eeeeee;
   border-right: 1px dotted #eeeeee;
 }
+
+/* match to container-2 in F1Page 
+*/
+@media screen and (max-width: 300px) {
+  .apex_inner {
+    width: 300px;
+  }
+}

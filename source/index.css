@@ -45,6 +45,7 @@ input[type=text]{
 **
 */
 
+
 @media screen and (max-width: 500px) {
   #apex_hold{
     background: rgba(255, 255, 255, 1);
@@ -52,15 +53,4 @@ input[type=text]{
   .bookmark_page{
     width: 100%;
   }
-
-}
-
-@media screen and (max-width: 300px){
-  .apex_inner {
-    width: 300px;
-  }
-  #container-2 {
-    width: 300px;
-  }
-
 }

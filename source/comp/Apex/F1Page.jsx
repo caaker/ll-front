@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AppArticle from       './AppArticle/AppArticle.jsx';
-import AppClock from         './AppClock/AppClock.jsx';
-import AppUser from          './AppUser/AppUser.jsx';
-import AppChat from          './AppChat/AppChat.jsx';
+import AppArticle from       '../AppArticle/AppArticle.jsx';
+import AppClock from         '../AppClock/AppClock.jsx';
+import AppUser from          '../AppUser/AppUser.jsx';
+import AppChat from          '../AppChat/AppChat.jsx';
 
-import AppFavicon from       './AppFavicon/AppFavicon.jsx';
-//import AppFave from         './AppFave/AppFave.jsx';
+import AppFavicon from       '../AppFavicon/AppFavicon.jsx';
+//import AppFave from         '../AppFave/AppFave.jsx';
 
 
 import './F1Page.css';
@@ -31,9 +31,11 @@ class F1Page extends React.Component {
             {true && (app === 'User') &&     <AppUser/>}
             {true && (app === 'Clock') &&    <AppClock/>}
 
-            {experimental && (app === 'Articles') &&    <AppArticle/>}
+
             {experimental && (app === 'Chat') &&        <AppChat/>}
-            {experimental && (app === 'Favicons') &&    <AppFavicon/>}
+
+            {false && (app === 'Articles') &&    <AppArticle/>}
+            {false && (app === 'Favicons') &&    <AppFavicon/>}
 
             {false && (app === 'Faves') &&    <AppFaves/>}
 

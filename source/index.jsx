@@ -11,7 +11,7 @@ import store        from './redux/store';
 
 // User
 import Header       from './classes/class.Header.js';
-import F1       from './comp/F1.jsx';
+import F1           from './comp/Apex/F1.jsx';
 import './index.css';
 
 class App extends React.Component {
