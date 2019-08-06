@@ -18,6 +18,26 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+    this.fetchUser()
+  }
+
+  fetchUser () {
+    const options = {
+      credentials: 'include'
+    };
+    fetch("/api/user", options)
+    .then((response) => {
+      return response.json();
+    })
+    .then((results) => {
+      console.log(results);
+      // this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
+      // this.findStatus(results);
+    })
+    .catch((err) => {
+      // this.notLoggedIn();
+      // console.log('DEBUG: fetch /api/items error');
+    });
   }
 
   render () {

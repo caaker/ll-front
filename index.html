@@ -21,6 +21,7 @@
       function getTime(){var a=new Date,c=a.getSeconds(),d=a.getMinutes();a=a.getHours();var b="_AM";12<a&&(a-=12,b="_PM");12===a&&(b="_PM");return a+":"+d+":"+c+b}function loadScript(a,c){console.log("Loading | "+a+" | "+c);var d=document.getElementsByTagName("div")[0],b=document.createElement("script");b.src=a+"?cache_buster="+c;d.parentNode.insertBefore(b,d)};
       
       loadScript('dist/bundle.js', getTime());
+
     </script>
 
 

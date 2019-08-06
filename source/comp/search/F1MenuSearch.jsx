@@ -43,7 +43,6 @@ const mapStateToProps = state => {
     Apex: state.Apex,
     Search: state.Search,
     Menu: state.Menu
-
   }
 }
 

@@ -98,24 +98,3 @@ class AppClock extends React.Component {
 }
 
 export default connect()(AppClock);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-brad
-oscar
-
-*/
