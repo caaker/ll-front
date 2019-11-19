@@ -19,10 +19,12 @@ const exportFunc = ( env ) => {
         {
           test: /\.jsx?/,
           include: SRC_DIR,
-          loader: 'babel-loader',
-          query: {
-            plugins: ["transform-object-rest-spread", "transform-class-properties"],
-            presets: ['react', 'es2015']
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-proposal-class-properties'],
+            }
           }
         }
       ]

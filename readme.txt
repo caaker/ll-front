@@ -1,0 +1,29 @@
+
+
+Install dependencies directions:
+
+Install Babel/Webpack, Webpack CLI, Advanced JS Features, & React
+
+(.) Install Babel per web site
+    npm install -D babel-loader @babel/core @babel/preset-env webpack
+
+(.) Install webpack CLI
+    npm install -D webpack-cli
+
+(.) For advanced JS Features
+    npm install -D @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-class-properties
+
+(.) For React Files
+    npm install -D @babel/preset-react
+
+(.) For CSS Files
+    npm install -D style-loader css-loader
+
+
+Install React / Redux and Sockets for the Client
+
+(.) Install React & Redux
+npm install react react-dom react-redux redux
+
+(.) Install Sockets for the Client
+npm install socket.io-client
