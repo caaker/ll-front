@@ -8,6 +8,7 @@ import React        from 'react';
 import ReactDOM     from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import store        from './redux/store';
+import io from 'socket.io-client';
 
 // User
 import Header       from './classes/class.Header.js';
@@ -18,7 +19,17 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.fetchUser()
+    this.fetchUser();
+    this.setUpSockets();
+  }
+ 
+   setUpSockets () {
+    console.log(this);
+    this.socket = io();
+    this.socket.on('beacon', (data) => {
+      console.log('DEBUG: beacon event received: ', data);
+    });
+    console.log("DEBUG: socket created: event handler ready ");
   }
 
   fetchUser () {
