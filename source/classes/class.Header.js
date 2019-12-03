@@ -7,6 +7,7 @@ class Header {
     this.addBackground();
   } 
   addMeta () {
+    // dynamic meta data if you please
     // http://stackoverflow.com/questions/18982228/how-to-add-meta-tag-in-javascript
   }
   addTitle () {

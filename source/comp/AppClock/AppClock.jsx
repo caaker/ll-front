@@ -13,13 +13,13 @@ class AppClock extends React.Component {
       color: 'white'
     }
     this.bg = '';                  // hold previous body background image
-    this.interval = 10000;         // holds clock update frequency - 10 seconds
+    this.interval = 1000;         //  holds clock update frequency - 1 seconds
   }
 
   componentDidMount () {
-    this.runInterval();
+    this.runIntervals();
     this.id = setInterval(()=>{
-      this.runInterval();
+      this.runIntervals();
     }, this.interval);
   }
 
@@ -28,19 +28,40 @@ class AppClock extends React.Component {
     document.body.style['background-image'] = this.bg;
   }
 
-  runInterval() {
+  runIntervals() {
     this.runTime();
     this.runImage();    
   }
 
-  runTime() {
+  getTime() {
     const date = new Date();
-    const min = date.getMinutes();
+    
+    // get minutes and add a 0 if needed
+    let min = date.getMinutes();
+    min =  (parseInt(min, 10) < 10 ? '0' : '') + min;
+    
+    // get hours, determine AM or PM and change to 12 hours
     let hour = date.getHours();
     const amPm = hour >= 12 ? 'PM' : 'AM';
     hour = ( hour % 12 ) || 12;
+
+    // get seconds and add a 0 if needed
+    let sec = date.getSeconds();
+    sec =  (parseInt(min, 10) < 10 ? '0' : '') + sec;
+    
+    // get milliseconds and add a 0 if needed
+    let ms = date.getMilliseconds();
+    ms =  (parseInt(ms, 10) < 10 ? '0' : '') + ms;
+
+    let timeString = `${hour}:${min}:${sec} ${amPm}`;
+    
+    return timeString;
+  }
+
+  runTime() {
+    let timeString = this.getTime();
     this.setState({
-      time: `${hour}:${this.addZero(min)} ${amPm}`
+      time: timeString
     });
   }
 
@@ -80,11 +101,12 @@ class AppClock extends React.Component {
   }
 
   render() {
+  
     const divStyle = {
       color: this.state.color
     };
-    let bg = document.body.style['background-image'];
-    this.saveBackground(bg);
+
+    this.saveBackground(document.body.style['background-image']);
     document.body.style['background-image'] = this.state.image;
 
     return (

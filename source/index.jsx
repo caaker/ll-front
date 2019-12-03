@@ -24,12 +24,20 @@ class App extends React.Component {
   }
  
    setUpSockets () {
-    console.log(this);
+    // https://socket.io/docs/client-api
+
     this.socket = io();
-    this.socket.on('beacon', (data) => {
-      console.log('DEBUG: beacon event received: ', data);
+
+    // built in event
+    this.socket.on('error', (error) => {
+      console.log("DEBUG: socket error occurred");
     });
-    console.log("DEBUG: socket created: event handler ready ");
+    
+    // user event
+    this.socket.on('beacon', (data) => {
+      console.log('DEBUG: Server Time: ', data);
+    });
+    // console.log("DEBUG: socket created: event handler ready ");
   }
 
   fetchUser () {
@@ -41,7 +49,7 @@ class App extends React.Component {
       return response.json();
     })
     .then((results) => {
-      console.log(results);
+      // console.log(results); // currently returning false
       // this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
       // this.findStatus(results);
     })
