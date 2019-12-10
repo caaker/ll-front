@@ -12,7 +12,7 @@ import io from 'socket.io-client';
 
 // User
 import Header       from './classes/class.Header.js';
-import F1           from './comp/Apex/F1.jsx';
+import F1           from './comp/F1/F1.jsx';
 import './index.css';
 
 class App extends React.Component {
@@ -39,6 +39,7 @@ class App extends React.Component {
     });
     // console.log("DEBUG: socket created: event handler ready ");
   }
+
 
   fetchUser () {
     const options = {
@@ -78,3 +79,27 @@ ReactDOM.render(
     <AppRedux></AppRedux>
   </Provider>
 , document.getElementById('app'));
+
+
+
+
+
+  // findStatus = (results) => {
+  //   if(results[results.length - 1].id_google){
+  //     const user = results.slice(-1);
+  //     this.loggedIn(user);
+  //   } else {
+  //     this.notLoggedIn();
+  //   }
+  // }
+ 
+  // notLoggedIn = () => {
+  //   window.setTimeout(() => {
+  //   }, 4000);
+  //   window.setTimeout(() => {
+  //   }, 8000);
+  // }
+
+  // loggedIn = (user) => {
+  //   this.props.dispatch({ type: 'setUser', current: user[0] });
+  // }

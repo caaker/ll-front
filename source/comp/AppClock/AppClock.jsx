@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './AppClock.css';
+import arc from '@arcarc/arc';
 
 class AppClock extends React.Component {
 
@@ -33,40 +34,11 @@ class AppClock extends React.Component {
     this.runImage();    
   }
 
-  getTime() {
-    const date = new Date();
-    
-    // get minutes and add a 0 if needed
-    let min = date.getMinutes();
-    min =  (parseInt(min, 10) < 10 ? '0' : '') + min;
-    
-    // get hours, determine AM or PM and change to 12 hours
-    let hour = date.getHours();
-    const amPm = hour >= 12 ? 'PM' : 'AM';
-    hour = ( hour % 12 ) || 12;
-
-    // get seconds and add a 0 if needed
-    let sec = date.getSeconds();
-    sec =  (parseInt(min, 10) < 10 ? '0' : '') + sec;
-    
-    // get milliseconds and add a 0 if needed
-    let ms = date.getMilliseconds();
-    ms =  (parseInt(ms, 10) < 10 ? '0' : '') + ms;
-
-    let timeString = `${hour}:${min}:${sec} ${amPm}`;
-    
-    return timeString;
-  }
-
   runTime() {
-    let timeString = this.getTime();
+    let timeString = arc.getTime();
     this.setState({
       time: timeString
     });
-  }
-
-  addZero(number) {
-    return (parseInt(number, 10) < 10 ? '0' : '') + number;
   }
 
   runImage(){    

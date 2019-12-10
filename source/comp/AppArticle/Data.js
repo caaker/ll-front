@@ -21,7 +21,7 @@ const json_string =
     "link":    "https://www.youtube.com/watch?v=BMOjVYgYaG8",
     "image":   "https://i.imgur.com/Z0yVBpO.png",
     "title":   "Debunking the paelo diet with Christina Warinner",
-    "summary": "Archeological scientist, Christina Warinner, who studies the health and diet of ancient peoples, debunks the paleo diet, by exposing many common false facts about our relationship to paleolithic people.",
+    "summary": "Archeological scientist, Christina Warinner, who studies the health and diet of ancient peoples, debunks the paleo diet, by exposing many common false facts about our paleolithic past.",
     "tag":     "Nutrition",
     "domain":  "youtube.com - TedX",
     "date":    "February 12, 2013",

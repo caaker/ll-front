@@ -6,7 +6,7 @@ import AppUser from          '../AppUser/AppUser.jsx';
 import AppChat from          '../AppChat/AppChat.jsx';
 
 import AppFavicon from       '../AppFavicon/AppFavicon.jsx';
-//import AppFave from         '../AppFave/AppFave.jsx';
+import AppFave from         '../AppFave/PageFave.jsx';
 
 
 import './F1Page.css';
@@ -34,10 +34,10 @@ class F1Page extends React.Component {
 
             {experimental && (app === 'Chat') &&        <AppChat/>}
 
-            {false && (app === 'Articles') &&    <AppArticle/>}
-            {false && (app === 'Favicons') &&    <AppFavicon/>}
+            {true && (app === 'Articles') &&    <AppArticle/>}
+            {true && (app === 'Favicons') &&    <AppFavicon/>}
 
-            {false && (app === 'Faves') &&    <AppFaves/>}
+            {true && (app === 'Faves') &&    <AppFave/>}
 
   	      </div>
   	    </div>

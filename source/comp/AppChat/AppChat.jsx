@@ -40,7 +40,6 @@ class AppChat extends React.Component {
         <button id="send">Send</button>
       </div>
 
-
     )
   }
 }
