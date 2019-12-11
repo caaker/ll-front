@@ -2,16 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './Input.css';
-import URL from './InputURLClass.js';
+import URL from '../URL/URL.js';
 
 // URL is in URLClass, this.url, current state, and redux ... too many places
 class Input extends React.Component {
+
 
   constructor(props) {
     super(props);
     this.url = new URL();
     this.state = this.url.obj;
   }
+
 
   handleChange = (event) => {
     event.persist();
@@ -20,8 +22,8 @@ class Input extends React.Component {
     this.setState((prevState, props) => {
       return this.url.obj;
     });
-
   }
+
 
   handleSubmission = (event) => {
     event.preventDefault();
@@ -32,6 +34,7 @@ class Input extends React.Component {
     }
   }
 
+
   render() {
     return (
         <form onSubmit = {this.handleSubmission} id = "rbar_form">
@@ -40,7 +43,7 @@ class Input extends React.Component {
             name = "search"
             type = "text"
             placeholder = " Enter or Paste a URL"
-            value = {this.state.input}
+            value = {this.state.url}
             ref = "filterTextInput"
             onChange = {this.handleChange}
           />

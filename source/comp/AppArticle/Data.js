@@ -1,10 +1,23 @@
 /*
 https://www.wired.com/story/sunscreen-chemicals-soak-all-the-way-into-your-bloodstream/?mbid=synd_digg
 https://elemental.medium.com/the-science-behind-the-mental-clarity-diet-a6b2d765ffa6
+https://futurism.com/dating-app-match-users-dna
 */
 
 const json_string = 
 `[
+
+  {
+    "link":    "https://futurism.com/dating-app-match-users-dna",
+    "image":   "https://i.imgur.com/m7DShlp.jpg",
+    "title":   "Famous Geneticist’s Dating App Would Match Users Based on DNA",
+    "summary": "The goal is to end disease caused by poor genetic matches.",
+    "tag":     "Genetics",
+    "domain":  "futurism.com",
+    "date":    "December 09, 2019",
+    "saved":   "200"
+  },
+
 
   {
     "link":    "https://www.hsph.harvard.edu/nutrition/2017/02/16/mind-trial/",

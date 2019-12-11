@@ -1,10 +1,10 @@
 import React       from 'react';
 import ReactDOM    from 'react-dom';
 
-import Image       from './image/Image.jsx';
-import Input       from './input/Input.jsx';
-import Paragraph   from './paragraph/Paragraph.jsx';
-import Output      from './output/Output.jsx';
+import Favicon     from '../Favicon/Favicon.jsx';
+import Input       from '../Input/Input.jsx';
+import P2          from '../P2/P2.jsx';
+import Output      from '../Output/Output.jsx';
 
 import './AppFavicon.css';
 
@@ -17,8 +17,8 @@ class AppFavicon extends React.Component {
   render () {
     return (
       <div id ="favicon-app">
-        <Paragraph/>
-        <Image/>
+        <P2/>
+        <Favicon/>
         <Output/>
         <Input/>
       </div>

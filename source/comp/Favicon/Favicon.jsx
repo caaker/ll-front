@@ -1,8 +1,8 @@
 import React from 'react';
-import './Image.css';
+import './Favicon.css';
 import { connect } from 'react-redux';
 
-class Image extends React.Component {
+class Favicon extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,4 +20,4 @@ const mapStateToProps = state => {
     User: state.User
   }
 }
-export default connect(mapStateToProps)(Image);
+export default connect(mapStateToProps)(Favicon);

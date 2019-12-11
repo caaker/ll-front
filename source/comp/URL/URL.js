@@ -2,23 +2,26 @@ class URL {
   
   constructor (url) {
     url = url || '';
+
+    // holds parsed elements using Crockford's Regex
     this.arr = [];
+
+    // holds named elements we want to keep
     this.obj = {};
     this.obj.url = url;
-    this.obj.input = url;
   }
 
   updateURL (url) {
     this.obj.url = url;
-    this.obj.input = url;
     this.parseURL();
     this.makeObj();
-    this.addDefaults();
     this.validateByTDL();
     this.removeWWW();
   }
 
   // break down Douglas Crockford's regexp so it is readable
+  // 0 - input
+  // groups, index, and input are also available on the array
   parseURL () {
     let start =     '^';
     let protocol =  '(?:([A-Za-z]+):)?';   // 1
@@ -32,6 +35,10 @@ class URL {
     let whole = start + protocol + slash + domain + port + path + query + hash + end;
     let regexp = new RegExp(whole, 'g');
     let test = regexp.exec(this.obj.url);
+    
+    console.log("DEBUG:");
+    console.log(test);
+    
     if (test) {
       this.arr = test;
     }
@@ -47,14 +54,6 @@ class URL {
     this.obj.path = this.arr[4];
     this.obj.query = this.arr[5];
     this.obj.hash = this.arr[6];
-  }
-
-  // add defaults similar to <a> element
-  addDefaults () {
-    if(!this.obj.protocol){
-      this.obj.protocol = 'http';
-    }
-    this.obj.url = 'http://' + this.obj.url;
   }
 
   // check for a TLD - top level domain
@@ -77,11 +76,22 @@ class URL {
 
   // remove www. if it exists
   removeWWW () {
-      if(this.obj.name.slice(0, 4) === 'www.'){
-        this.obj.name = this.obj.name.slice(4);  
-      }
+    if(this.obj.name.slice(0, 4) === 'www.'){
+      this.obj.name = this.obj.name.slice(4);  
+    }
   }
 
 }
 
 export default URL;
+
+
+  // // add defaults similar to <a> element
+  // addDefaults () {
+  //   if(!this.obj.protocol){
+  //     this.obj.protocol = 'http';
+  //   }
+  //   this.obj.url = 'http://' + this.obj.url;
+  // }
+
+    // this.addDefaults();

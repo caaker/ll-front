@@ -1,7 +1,7 @@
 import React       from 'react';
 import ReactDOM    from 'react-dom';
 import { Provider, connect } from 'react-redux';
-import P1 from '../paragraph/P1.jsx';
+import P1 from '../P1/P1.jsx';
 
 class Output extends React.Component {
 
@@ -10,10 +10,9 @@ class Output extends React.Component {
   }
 
   render () {
-    let parts = this.props.URL.current;
     return (
       <div id='output'>
-        <P1 value={parts.domain}/>
+        <P1 value={this.props.URL.current.domain}/>
       </div>
     )
   }

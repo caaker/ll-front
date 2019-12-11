@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Icon from '../icon/Icon.jsx';
+import Icon from '../Icon/Icon.jsx';
 import Menu from '../menu/Menu.jsx';
 import MenuBox from '../menu/MenuBox.jsx';
 

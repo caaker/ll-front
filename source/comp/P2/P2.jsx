@@ -1,7 +1,7 @@
 import React from 'react';
-import './Paragraph.css';
+import './P2.css';
 
-class Paragraph extends React.Component {
+class P2 extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,11 +10,10 @@ class Paragraph extends React.Component {
   render() {
     return (
       <p id ="rpara">
-
 Get favicons from any web site.
       </p>
     )
   }
 }
 
-export default Paragraph;
+export default P2;
