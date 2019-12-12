@@ -30,7 +30,7 @@ class AppChat extends React.Component {
   render() {
     return (
 
-      <div id="mario-chat">
+      <div id="chat-top">
         <div id="chat-window">
           <div id="output"></div>
           <div id="feedback"></div>
