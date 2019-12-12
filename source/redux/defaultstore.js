@@ -4,7 +4,7 @@ const defaultStore = {
   },
   
   Menu: {
-    current: 'Clock',
+    current: 'Articles',
     status: false
   },
 
