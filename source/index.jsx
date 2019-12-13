@@ -27,6 +27,7 @@ class App extends React.Component {
     // https://socket.io/docs/client-api
 
     this.socket = io();
+    // console.log("DEBUG: io() ran");
 
     // built in event
     this.socket.on('error', (error) => {
