@@ -24,13 +24,11 @@ class ComponentArticle extends React.Component {
   }
 
   render() {
-    let name = this.props.data.title.replace(/ /g, '_');
+    let hash = this.props.data.title.replace(/ /g, '_');
     return ( 
       <article className="medd_article">
         
-
-
-        <a id={name} 
+        <a id={hash} 
            className="medd_image_link" href={this.props.data.link} target="_blank">
           <img className="medd_image" src={this.props.data.image}></img>
         </a>
@@ -52,6 +50,8 @@ class ComponentArticle extends React.Component {
           {this.props.data.domain}
         </p>
 
+        <img className ='medd_favicon' src={'https://www.google.com/s2/favicons?domain=' + this.props.data.domain} />
+
       </article>
     )
   }
@@ -64,10 +64,15 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(ComponentArticle);
-
+// https://material.io/resources/icons/?icon=info&style=baseline
+// use the youtube style of saving bookmarks
 
         // <div className="medd_top">
         //   <ComponentBookmark name={name} count={+this.props.data.saved} />
         // </div>
 
           
+
+
+
+
