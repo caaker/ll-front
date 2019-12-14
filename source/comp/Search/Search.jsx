@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './F1MenuSearch.css';
+import './Search.css';
 
 
 // consider a re-factor to use a google search icon as it is language agnostic
 
-class F1MenuSearch extends React.Component {
+class Search extends React.Component {
 
   constructor(props) {
     super(props);
@@ -46,4 +46,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(F1MenuSearch);
+export default connect(mapStateToProps)(Search);

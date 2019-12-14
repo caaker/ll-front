@@ -6,8 +6,10 @@ class URL {
     // holds parsed elements using Crockford's Regex
     this.arr = [];
 
-    // holds named elements we want to keep
+    // holds named elements we want to keep from the Regex
     this.obj = {};
+
+    // start construction with an empty string or the URL we want to parse
     this.obj.url = url;
   }
 
@@ -34,11 +36,7 @@ class URL {
     let end =       '$';
     let whole = start + protocol + slash + domain + port + path + query + hash + end;
     let regexp = new RegExp(whole, 'g');
-    let test = regexp.exec(this.obj.url);
-    
-    console.log("DEBUG:");
-    console.log(test);
-    
+    let test = regexp.exec(this.obj.url);    
     if (test) {
       this.arr = test;
     }
@@ -58,6 +56,8 @@ class URL {
 
   // check for a TLD - top level domain
   // this is the minimal we need to form a correct URL
+  // oddly this is not guaranteed in Crockford's regexp
+  // add 4 new properties to our object
   validateByTDL () {
     let regexp = new RegExp('\\.([A-Za-z]+)$', 'g');
     let res = regexp.exec(this.obj.domain);
@@ -85,7 +85,8 @@ class URL {
 
 export default URL;
 
-
+  // we can't modify this.obj.url for controlled forms if we modify the url as this will show up in the input
+  // 
   // // add defaults similar to <a> element
   // addDefaults () {
   //   if(!this.obj.protocol){

@@ -1,11 +1,22 @@
 /*
 https://www.wired.com/story/sunscreen-chemicals-soak-all-the-way-into-your-bloodstream/?mbid=synd_digg
 https://elemental.medium.com/the-science-behind-the-mental-clarity-diet-a6b2d765ffa6
-https://futurism.com/dating-app-match-users-dna
+
 */
 
 const json_string = 
 `[
+
+  {
+    "link":    "https://elemental.medium.com/the-long-term-benefits-of-short-term-stress-ba254307d697",
+    "image":   "https://i.imgur.com/SEm6qP8.jpg",
+    "summary": "Why ‘hormesis’ is key to your health and longevity",
+    "title":   "The Long-Term Benefits of Short-Term Stress",
+    "tag":     "Longevity",
+    "domain":  "elemental.medium.com",
+    "date":    "December 13, 2019",
+    "saved":   "200"
+  },
 
   {
     "link":    "https://futurism.com/dating-app-match-users-dna",

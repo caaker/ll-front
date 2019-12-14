@@ -16,8 +16,7 @@ class Favicon extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    URL: state.URL,
-    User: state.User
+    URL: state.URL
   }
 }
 export default connect(mapStateToProps)(Favicon);
