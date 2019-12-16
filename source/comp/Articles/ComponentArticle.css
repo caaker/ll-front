@@ -80,4 +80,5 @@
 .medd_favicon {
   filter: grayscale(100%);
   margin-top:3px;
+  opacity: .5;
 }

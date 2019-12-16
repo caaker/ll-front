@@ -1,7 +1,6 @@
 class URL {
   
   constructor (url) {
-    url = url || '';
 
     // holds parsed elements using Crockford's Regex
     this.arr = [];
@@ -15,16 +14,21 @@ class URL {
 
   updateURL (url) {
     this.obj.url = url;
-    this.parseURL();
-    this.makeObj();
-    this.validateByTDL();
-    this.removeWWW();
+    if(this.obj.url) {
+      this.parseURL();
+      this.makeObj();
+      this.validateByTDL();
+      this.removeWWW();
+    } else {
+      this.clearObj();
+    }
   }
 
   // break down Douglas Crockford's regexp so it is readable
-  // 0 - input
   // groups, index, and input are also available on the array
   parseURL () {
+
+    // 0 - input
     let start =     '^';
     let protocol =  '(?:([A-Za-z]+):)?';   // 1
     let slash =     '(?:\\/{0,3})';        
@@ -36,10 +40,20 @@ class URL {
     let end =       '$';
     let whole = start + protocol + slash + domain + port + path + query + hash + end;
     let regexp = new RegExp(whole, 'g');
-    let test = regexp.exec(this.obj.url);    
-    if (test) {
-      this.arr = test;
-    }
+    this.arr = regexp.exec(this.obj.url);    
+  }
+
+  // solves the edge case error of empty string
+  clearObj () {
+
+    // formed from URL regular expression
+    this.obj.protocol = '';
+    this.obj.domain = '';
+    this.obj.port = '';
+    this.obj.path = '';
+    this.obj.query = '';
+    this.obj.hash = '';
+
   }
 
   // grab the elements we want and put in an object
@@ -52,6 +66,7 @@ class URL {
     this.obj.path = this.arr[4];
     this.obj.query = this.arr[5];
     this.obj.hash = this.arr[6];
+
   }
 
   // check for a TLD - top level domain
