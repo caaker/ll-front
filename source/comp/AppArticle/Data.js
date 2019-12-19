@@ -47,7 +47,8 @@ const json_string =
     "title":   "Debunking the paelo diet with Christina Warinner",
     "summary": "Archeological scientist, Christina Warinner, who studies the health and diet of ancient peoples, debunks the paleo diet, by exposing many common false facts about our paleolithic past.",
     "tag":     "Nutrition",
-    "domain":  "youtube.com - TedX",
+    "domain":  "youtube.com",
+    "channel": "TedX",
     "date":    "February 12, 2013",
     "saved":   "75"
   },
@@ -167,7 +168,8 @@ const json_string =
     "title": "Eating a plant based diet is linked to longer life",
     "summary": "This documentary explores the link between big industry and their effect on doctors' integrity.  It looks at the benefits of a plant based diet.  ",
     "tag": "Nutrition",
-    "domain": "youtube.com - what the health",
+    "domain": "youtube.com",
+    "channel": "What the Health",
     "date": "February 28, 2017",
     "saved": "78"
   },
@@ -187,7 +189,8 @@ const json_string =
     "title": "Why doctors don't support veganism",
     "summary": "Dr. Neal Barnard discusses the benefits of a plant-based diet.",
     "tag": "Nutrition",
-    "domain": "youtube.com - plant based news",
+    "domain": "youtube.com",
+    "channel": "plant based news",
     "date": " Oct 23, 2016",
     "saved": "43"
   },
@@ -197,7 +200,8 @@ const json_string =
     "title": "Mindset",
     "summary": "Alica Crum of Stanford speaks about mindset and how important it is for exercise, nutrition, medicine, and aging. ",
     "tag": "Psychology",
-    "domain": "youtube.com - TedX",
+    "domain": "youtube.com",
+    "channel": "TedX",
     "date": "Oct 15, 2014",
     "saved": "88"
   },

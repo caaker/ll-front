@@ -6,8 +6,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import F1Apex    from './F1Apex.jsx';
-import F1Page    from './F1Page.jsx';
+import F1Apex    from '../F1Apex/F1Apex.jsx';
+import F1Page    from '../F1Page/F1Page.jsx';
 
 import './F1.css';
 

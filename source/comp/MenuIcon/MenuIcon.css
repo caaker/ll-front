@@ -1,0 +1,10 @@
+.MenuIcon{
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+
+  float: right;
+  position: relative;
+  top:8px;
+  right: 4px;
+}

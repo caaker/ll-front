@@ -1,6 +1,5 @@
 import {combineReducers} from 'redux';
-
-
+import Tree from '../classes/class.Tree.js';
 
 
 const Footer = (state, action) => {
@@ -31,8 +30,9 @@ const Bookmarks = (state, action) => {
   let newState = { ...state };
   switch(action.type) {
     case "updateBookmarks":
-      // newState.bookmarks = Tree.createHierarchy(action.bookmarks);
-      newState.bookmarks = "broken";
+      newState.bookmarks = Tree.createHierarchy(action.bookmarks);
+      // console.log('Bookmarks -> updateBookmarks');
+      // console.log(newState)
   }
   return newState;
 };
@@ -73,11 +73,6 @@ const Menu = (state, action) => {
   }
   return newState;
 };
-
-
-
-
-//
 const URL = (state, action) => {
   let newState = { ...state };
   switch(action.type) {
@@ -86,17 +81,6 @@ const URL = (state, action) => {
   }
   return newState;
 };
-
-//
-const App = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "updateApp":
-      newState.current = !state.current;
-  }
-  return newState;
-};
-
 
 const reducers = combineReducers({
   Footer,
@@ -109,8 +93,7 @@ const reducers = combineReducers({
   User, // ok
   Menu, // ok
 
-  URL,
-  App
+  URL
 });
 
 export default reducers;

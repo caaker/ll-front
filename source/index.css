@@ -1,8 +1,6 @@
-
-
-/**  resets
-**/
-
+/*
+ - resets
+*/
 
 html{
   height: 100%;
@@ -28,23 +26,18 @@ input[type=text]{
   appearance: none;
 }
 
+/*
+  - app is directly below body tag
+*/
 
-/** CSS
-**/
-
-
-/* index.jsx holds 1st level div */
 #app{
   width: 100%;
   height: 100%;
 }
 
-
-/* M-MQ-WIDTH
-**
-**
+/*
+  - media query for responsive design -> move to component level
 */
-
 
 @media screen and (max-width: 500px) {
   #apex_hold{

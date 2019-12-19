@@ -8,20 +8,19 @@ const defaultStore = {
     status: false
   },
 
+  MenuFave: {
+    current: 'all'
+  },
+
   User:{
     current: null
   },
 
   URL: {
     current: {
-      domain: 'twitter.com'
+      domain: 'test.com'
     }
-  },
-
-  App:{
-    current: false
   }
-
 };
 
 export default defaultStore;

@@ -10,26 +10,18 @@ class PageFaveContentTag1 extends React.Component {
   }
   
   render () {
-
-    // bookmarks, search bar, current
     let bm = this.props.Bookmarks.bookmarks;
     let search = this.props.Search.current;
     let current = this.props.MenuFave.current;
     let tag1 = this.props.tag1;
-
-    // filter on search
     bm = Tree.filterByTag(bm, search);
-
     let render = Object.keys(bm[tag1]).map((tag0) =>
       <PageFaveContentTag1Tag0 tag0={tag0} key={tag0} bookmarks={bm[tag1][tag0]} />
     );
-
     return (
-
       <div className="bm_page_super" id={current===tag1 ? 'bm_page_super_show' : 'bm_page_super_hide'}> 
         {render} 
       </div>
-
     );
 
   }

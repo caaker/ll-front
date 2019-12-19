@@ -9,6 +9,7 @@ class URL {
     this.obj = {};
 
     // start construction with an empty string or the URL we want to parse
+    // do not modify this.obj.url as it mirrors a controlled form
     this.obj.url = url;
   }
 
@@ -99,15 +100,3 @@ class URL {
 }
 
 export default URL;
-
-  // we can't modify this.obj.url for controlled forms if we modify the url as this will show up in the input
-  // 
-  // // add defaults similar to <a> element
-  // addDefaults () {
-  //   if(!this.obj.protocol){
-  //     this.obj.protocol = 'http';
-  //   }
-  //   this.obj.url = 'http://' + this.obj.url;
-  // }
-
-    // this.addDefaults();

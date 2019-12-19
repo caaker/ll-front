@@ -16,14 +16,8 @@ class Input extends React.Component {
 
 
   handleChange = (event) => {
-    event.persist();
-    
-    console.log(event.target.value);
-    
-    this.url.updateURL(event.target.value);
-    
-    // console.log(this.url.obj.domain);
-    
+    // event.persist();
+    this.url.updateURL(event.target.value);    
     this.props.dispatch({type: 'updateURL', current: this.url.obj });
     this.setState((prevState, props) => {
       return this.url.obj;
