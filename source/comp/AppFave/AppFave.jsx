@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PageFaveContent from './PageFaveContent.jsx';
-import PageFaveMenu from './PageFaveMenu.jsx';
+import MenuFave from '../MenuFave/MenuFave.jsx';
 import './AppFave.css';
 
 class AppFave extends React.Component {
@@ -13,7 +13,7 @@ class AppFave extends React.Component {
   render () {
     return (
       <div id = "app_fave">
-        <PageFaveMenu />
+        <MenuFave />
         <PageFaveContent />
       </div>
     )

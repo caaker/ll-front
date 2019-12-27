@@ -11,6 +11,8 @@ class PageFaveContentTag1Tag0Fave extends React.Component {
     window.open(url, '_blank');
   }
  
+  // A bookmark consists of the  3 elements - the outer div, the image containing the domain favicon, and the url.
+  // It needs 4 data points - the id, the url, the domain, and the title to populate correctly
   render () {
     let bm = this.props.bookmark;
     let tagClicked = this.props.tagClicked;
@@ -30,9 +32,5 @@ class PageFaveContentTag1Tag0Fave extends React.Component {
     );
   }
 }
-
-// <img className='bookmark_image' id={bm.id + 'c'} src={'../_favicons/' + bm.favicon_local}/>
-
-// <img className='bookmark_image' id={bm.id + 'c'} src={'http://www.google.com/s2/favicons?domain=google.com'}/>
 
 export default PageFaveContentTag1Tag0Fave;

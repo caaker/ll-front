@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Icon from '../Icon/Icon.jsx';
-import MenuSVG from '../MenuSVG/MenuSVG.jsx';
+import MenuSVG from '../MenuBox/MenuSVG.jsx';
 import MenuBox from '../MenuBox/MenuBox.jsx';
 import MenuIcon from '../MenuIcon/MenuIcon.jsx';
 

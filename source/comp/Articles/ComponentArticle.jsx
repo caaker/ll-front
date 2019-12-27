@@ -25,6 +25,7 @@ class ComponentArticle extends React.Component {
 
   render() {
     let hash = this.props.data.title.replace(/ /g, '_');
+    //hash = hash.replace(/'/g, '_');
     return ( 
       <article className="medd_article">
         

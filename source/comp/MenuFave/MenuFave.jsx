@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './PageFaveMenu.css';
+import './MenuFave.css';
 
 
-class PageFaveMenu extends React.Component {
+class MenuFave extends React.Component {
 
   constructor(props) {
     super(props);
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(PageFaveMenu);
+export default connect(mapStateToProps)(MenuFave);
