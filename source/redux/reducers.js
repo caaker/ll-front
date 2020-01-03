@@ -1,15 +1,6 @@
 import {combineReducers} from 'redux';
 import Tree from '../classes/class.Tree.js';
 
-
-const Footer = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "toggleFooter":
-      newState.current = !state.current;
-  }
-  return newState;
-};
 const Search = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -83,7 +74,6 @@ const URL = (state, action) => {
 };
 
 const reducers = combineReducers({
-  Footer,
   Search,
   MenuFave,
   Bookmarks,

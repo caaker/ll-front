@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import ComponentArticle from '../Articles/ComponentArticle.jsx';
 import './AppArticle.css';
-import articles from './Data.js'
+import articles from './articles.js'
 
 class AppArticle extends React.Component {
 
@@ -13,7 +13,7 @@ class AppArticle extends React.Component {
 
   render () {
 
-    let render = articles.map((val, index) => {
+    const render = articles.map((val, index) => {
         return <ComponentArticle key={index} data={val}/>;
     });
 
