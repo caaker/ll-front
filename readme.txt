@@ -1,7 +1,5 @@
-
-
-Install dependencies directions:
-
+Install development dependencies
+----
 Install Babel/Webpack, Webpack CLI, Advanced JS Features, & React
 
 (.) Install Babel per web site
@@ -21,9 +19,15 @@ Install Babel/Webpack, Webpack CLI, Advanced JS Features, & React
 
 
 Install React / Redux and Sockets for the Client
-
+----
 (.) Install React & Redux
 npm install react react-dom react-redux redux
 
 (.) Install Sockets for the Client
 npm install socket.io-client
+
+
+General
+----
+In general commit your lock file
+https://stackoverflow.com/questions/44552348/should-i-commit-yarn-lock-and-package-lock-json-files/44904494

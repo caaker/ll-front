@@ -32,6 +32,7 @@ class App extends React.Component {
     .then((results) => {
     })
     .catch((err) => {
+      console.log(err);
     });
   }
 
@@ -47,6 +48,7 @@ class App extends React.Component {
       this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
     })
     .catch((err) => {
+      console.log(err);
     });
   }
 
