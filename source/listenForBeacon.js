@@ -9,6 +9,7 @@ function listenForBeacon () {
   // built in error event
   socket.on('error', (error) => {
     console.log("DEBUG: socket error occurred");
+    console.log(error);
   });
 
   // user event
