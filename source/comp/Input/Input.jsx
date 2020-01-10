@@ -7,13 +7,11 @@ import URL from '../URL/URL.js';
 // URL is in URLClass, this.url, current state, and redux ... too many places
 class Input extends React.Component {
 
-
   constructor(props) {
     super(props);
     this.url = new URL();
     this.state = this.url.obj;
   }
-
 
   handleChange = (event) => {
     // event.persist();
@@ -24,7 +22,6 @@ class Input extends React.Component {
     });
   }
 
-
   handleSubmission = (event) => {
     event.preventDefault();
     if (this.url.obj.valid) {
@@ -33,7 +30,6 @@ class Input extends React.Component {
       alert('Coming Soon: not valid!');
     }
   }
-
 
   render() {
     return (
@@ -53,4 +49,3 @@ class Input extends React.Component {
 }
 
 export default connect()(Input);
-// export default Input;

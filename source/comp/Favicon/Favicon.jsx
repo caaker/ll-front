@@ -7,9 +7,9 @@ class Favicon extends React.Component {
     super(props);
   }
   render() {
-    let domain = this.props.URL.current.domain; 
+    const domain = this.props.URL.current.domain; 
     return (
-      <img id ='rimage' src={'https://www.google.com/s2/favicons?domain=' + (domain || 'test.com')} />
+      <img id ='favicon' src={'https://www.google.com/s2/favicons?domain=' + (domain || 'test.com')} />
     )
   }
 }
