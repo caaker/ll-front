@@ -19,4 +19,5 @@ const mapStateToProps = state => {
     URL: state.URL
   }
 }
+
 export default connect(mapStateToProps)(Favicon);

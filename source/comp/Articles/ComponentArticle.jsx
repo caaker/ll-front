@@ -25,7 +25,6 @@ class ComponentArticle extends React.Component {
 
   render() {
     let hash = this.props.data.title.replace(/ /g, '_');
-    //hash = hash.replace(/'/g, '_');
     return ( 
       <article className="medd_article">
         
@@ -35,7 +34,7 @@ class ComponentArticle extends React.Component {
         </a>
 
         <p className="medd_heading">
-          <a className="medd_heading_link" href={this.props.data.link} id={this.props.data.title} 
+          <a className="medd_heading_link" href={this.props.data.link} 
              target="_blank">{this.props.data.title}</a>
         </p>
 
