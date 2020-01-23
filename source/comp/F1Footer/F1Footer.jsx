@@ -11,7 +11,7 @@ class F1Footer extends React.Component {
     return (
       
       <div class="footer">
-        <p class='contact'>contact@livelong.ai</p>
+        <p class='contact'>chris@livelong.ai</p>
       </div>
 
     )
