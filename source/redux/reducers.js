@@ -1,6 +1,14 @@
 import {combineReducers} from 'redux';
 import Tree from '../classes/class.Tree.js';
 
+/* 
+
+Reducers are pure functions that take the previous state, apply an action
+and return the new state.
+
+*/
+
+// plans to implement
 const Search = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -9,6 +17,8 @@ const Search = (state, action) => {
   }
   return newState;
 };
+
+// For bookmark/favorites
 const MenuFave = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -17,20 +27,17 @@ const MenuFave = (state, action) => {
   }
   return newState;
 };
+
 const Bookmarks = (state, action) => {
   let newState = { ...state };
   switch(action.type) {
     case "updateBookmarks":
       newState.bookmarks = Tree.createHierarchy(action.bookmarks);
-      // console.log('Bookmarks -> updateBookmarks');
-      // console.log(newState)
   }
   return newState;
 };
 
-
-
-
+// For the apex or top bar
 const Apex = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -42,6 +49,8 @@ const Apex = (state, action) => {
   }
   return newState;
 };
+
+// Holds the current user data
 const User = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -50,6 +59,8 @@ const User = (state, action) => {
   }
   return newState;
 };
+
+// Menu bar in the Apex
 const Menu = (state, action) => {
   const newState = { ...state };
   switch(action.type) {
@@ -64,6 +75,8 @@ const Menu = (state, action) => {
   }
   return newState;
 };
+
+// Holds the URL for Favicon Finder
 const URL = (state, action) => {
   let newState = { ...state };
   switch(action.type) {
@@ -77,12 +90,9 @@ const reducers = combineReducers({
   Search,
   MenuFave,
   Bookmarks,
-
-
-  Apex, // ok
-  User, // ok
-  Menu, // ok
-
+  Apex,
+  User,
+  Menu,
   URL
 });
 

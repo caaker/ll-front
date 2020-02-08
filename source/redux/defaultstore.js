@@ -1,6 +1,15 @@
 const defaultStore = {
+
+  MenuFave: {
+    current: 'all'
+  },
+
   Apex: {
     current: false
+  },
+
+  User:{
+    current: 'default - foo'
   },
   
   Menu: {
@@ -8,19 +17,12 @@ const defaultStore = {
     status: false
   },
 
-  MenuFave: {
-    current: 'all'
-  },
-
-  User:{
-    current: null
-  },
-
   URL: {
     current: {
       domain: 'test.com'
     }
   }
+
 };
 
 export default defaultStore;

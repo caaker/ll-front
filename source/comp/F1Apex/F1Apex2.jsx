@@ -23,6 +23,8 @@ class F1Apex2 extends React.Component {
       <div className='apex2-1'>
         <div className='apex_inner' id='apex2-2'>
           { true &&  <Icon/> }
+          
+          { true &&  <MenuIcon/> }
           { true &&  <MenuSVG/> }
           { true &&  <MenuBox/> }
         </div>
@@ -41,4 +43,3 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(F1Apex2);
 
 
-          // { true &&  <MenuIcon/> }

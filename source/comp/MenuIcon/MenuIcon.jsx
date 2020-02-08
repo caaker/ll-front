@@ -9,8 +9,16 @@ class MenuIcon extends React.Component {
   }
 
   render () {
+    let pic = this.props.User.current.pic_url;
+    let classes = 'MenuIcon';
+
+    if(!pic) {
+      pic = 'https://i.imgur.com/GHJVd0z.png';
+      classes += ' light';
+    }
+
     return (
-      <img class = "MenuIcon" src = "">
+      <img className = {classes} src = {pic}>
       </img>
     )
   }
@@ -18,17 +26,9 @@ class MenuIcon extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Menu: state.Menu
+    Menu: state.Menu,
+    User: state.User
   }
 }
 
 export default connect(mapStateToProps)(MenuIcon);
-
-/*
-test link
-https://lh3.googleusercontent.com/-c45-MnX8G-M/AAAAAAAAAAI/AAAAAAAAAAA/AGDgw-iii2mWcBxmlpNM15nbV7NaORuuJA/mo/photo.jpg?sz=50
-*/
-
-/*
-codepen - https://codepen.io/caaker/pen/abzpqep
-*/

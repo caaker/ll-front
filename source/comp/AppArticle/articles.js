@@ -2,6 +2,8 @@
 https://www.wired.com/story/sunscreen-chemicals-soak-all-the-way-into-your-bloodstream/?mbid=synd_digg
 https://elemental.medium.com/the-science-behind-the-mental-clarity-diet-a6b2d765ffa6
 
+
+
 */
 
 /*
@@ -22,11 +24,21 @@ const json_string =
 `[
 
   {
+    "link":    "https://graphics.reuters.com/ENVIRONMENT-PLASTIC/0100B4TF2MQ/index.html",
+    "image":   "https://i.imgur.com/WNVofQY.png",
+    "title":   "A plateful of plastic",
+    "summary": "Visualising the amount of microplastic we eat.",
+    "tag":     "Health",
+    "domain":  "graphics.reuters.com",
+    "date":    "December 31, 2019"
+  },
+
+  {
     "link":    "https://www.healthline.com/nutrition/13-benefits-of-fish-oil",
     "image":   "https://i.imgur.com/acK2PyC.jpg",
     "title":   "13 Benefits of Taking Fish Oil",
     "summary": "Fish oil is one of the most commonly consumed dietary supplements.",
-    "tag":     "nutrition health",
+    "tag":     "Nutrition",
     "domain":  "healthline.com",
     "date":    "December 18, 2018"
   },

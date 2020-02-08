@@ -11,64 +11,33 @@ import listenForBeacon from './listenForBeacon';
 // Framework 1
 import F1           from './comp/F1/F1.jsx';
 
+// Data
+import Data         from './Data.jsx';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     listenForBeacon();
-    this.getUser();
-    this.getItems();
   }
 
-  getUser () {    
-    const options = {
-      credentials: 'include'
-    };
-    fetch("/api/user", options)
-    .then((response) => {
-      return response.json();
-    })
-    .then((results) => {
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
-
-  getItems () {
-    const options = {
-      credentials: 'include'
-    };
-    fetch("/api/items", options)
-    .then((response) => {
-      return response.json();
-    })
-    .then((results) => {
-      this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
-
-  render () {
+  render() {
     return (
-      <F1/>
+      <div>
+        <F1/>
+        <Data/>
+      </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    Menu: state.Menu
-  }
-}
+// Get the top element in the body with id 'app'
+const app_element = document.getElementById('app');
 
-// Connect the redux store
-const AppRedux = connect(mapStateToProps)(App);
+// Render to the top element('app') using ReactDOM
+// Use Provider to make the redux store accessible to all components below it
 ReactDOM.render(
   <Provider store={store}>
-    <AppRedux></AppRedux>
+    <App></App>
   </Provider>
-, document.getElementById('app'));
+, app_element);

@@ -8,7 +8,7 @@ class AppClock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: '00:00:00 AM',
+      time: '12:00:00 AM',
       greeting: 'Hello ',
       image: 'none',
       color: 'white'
@@ -18,7 +18,6 @@ class AppClock extends React.Component {
   }
 
   componentDidMount () {
-    this.runIntervals();
     this.id = setInterval(()=>{
       this.runIntervals();
     }, this.interval);
@@ -35,9 +34,10 @@ class AppClock extends React.Component {
   }
 
   runTime() {
-    let timeString = arc.getTime();
+    // const time1 = arc.getTime(); // private implementation of toLocaleTimeString
+    const time2 = (new Date()).toLocaleTimeString();
     this.setState({
-      time: timeString
+      time: time2
     });
   }
 
