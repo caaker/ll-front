@@ -6,7 +6,6 @@ class Data extends React.Component {
   constructor(props) {
     super(props);
     this.getUser();
-    this.getItems();
   }
 
   getUser () {    
@@ -19,22 +18,6 @@ class Data extends React.Component {
     })
     .then((results) => {
       this.props.dispatch({type: 'setUser', current: results});
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
-
-  getItems () {
-    const options = {
-      credentials: 'include'
-    };
-    fetch("/api/items", options)
-    .then((response) => {
-      return response.json();
-    })
-    .then((results) => {
-      this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
     })
     .catch((err) => {
       console.log(err);

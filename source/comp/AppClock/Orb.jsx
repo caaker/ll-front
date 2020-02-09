@@ -12,22 +12,21 @@ class Orb extends React.Component {
     }
   }
 
-  updateState() {
+  bounce(){
+    // apply css
     this.setState((prev) => {
-      let index = prev.i;
-      index++;
-      const classes = [
-        'circle white', 
-        'circle blue'
-      ];
-      if(index === classes.length) {
-        index = 0;
-      }
       return {
-        i: index,
-        class_string: classes[index]
+        class_string: 'circle white bounce',
       };
     });
+
+    setTimeout(()=>{
+      this.setState((prev) => {
+        return {
+          class_string: 'circle white',
+        };
+      });
+    }, 1000);
   }
 
   listenForBeacon () {
@@ -38,7 +37,8 @@ class Orb extends React.Component {
     });
 
     socket.on('beacon', (data) => {
-      this.updateState();
+      // this.updateState();
+      this.bounce();
       console.log('DEBUG: Server Time: ', data);
     });
 
@@ -53,3 +53,23 @@ class Orb extends React.Component {
 }
 
 export default Orb;
+
+
+
+  // updateState() {
+  //   this.setState((prev) => {
+  //     let index = prev.i;
+  //     index++;
+  //     const classes = [
+  //       'circle white bounce', 
+  //       'circle blue bounce'
+  //     ];
+  //     if(index === classes.length) {
+  //       index = 0;
+  //     }
+  //     return {
+  //       i: index,
+  //       class_string: classes[index]
+  //     };
+  //   });
+  // }

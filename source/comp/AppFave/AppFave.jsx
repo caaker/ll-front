@@ -8,6 +8,24 @@ class AppFave extends React.Component {
 
   constructor(props) {
     super(props);
+    this.getItems();
+  }
+
+  getItems () {
+    const options = {
+      credentials: 'include'
+    };
+    fetch("/api/items", options)
+    .then((response) => {
+      return response.json();
+    })
+    .then((results) => {
+      console.log('RESULT', results);
+      this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
   render () {
