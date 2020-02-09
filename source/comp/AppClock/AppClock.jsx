@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './AppClock.css';
 import arc from '@arcarc/arc';
+import Orb from './Orb.jsx';
 
 class AppClock extends React.Component {
 
@@ -83,8 +84,13 @@ class AppClock extends React.Component {
 
     return (
       <div id="fast-app" style={divStyle} >
+        
+        <Orb></Orb>
+
         <time id="time">{this.state.time}</time>
+        
         <span id="greeting">{this.state.greeting}</span>
+
       </div>
 
     )

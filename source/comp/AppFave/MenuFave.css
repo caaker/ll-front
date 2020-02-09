@@ -1,0 +1,28 @@
+#tag1_hold{
+  position: relative;
+  text-align: center;
+}
+.tag1{
+  position: relative;
+  height: 28px;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border: solid 1px #ffffff;
+}
+.tag1_active{
+  position: relative;
+  height: 28px;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border: solid 1px #000000;
+}
+.tag1:hover{
+  background: rgba(255, 255, 255, 0.4);
+}
+.tag1:active{
+  background: rgba(255, 255, 255, 1);
+}

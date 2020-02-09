@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentFave from '../ComponentFave/ComponentFave.jsx';
+import ComponentFave from './ComponentFave.jsx';
 import './PageFaveContentTag1Tag0.css';
 
 class PageFaveContentTag1Tag0 extends React.Component {

@@ -6,7 +6,6 @@ import './index.css';
 
 // Dynamic header, beacon for testing sockets and check login status
 import Header       from './classes/class.Header.js';
-import listenForBeacon from './listenForBeacon';
 
 // Framework 1
 import F1           from './comp/F1/F1.jsx';
@@ -18,7 +17,6 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    listenForBeacon();
   }
 
   render() {

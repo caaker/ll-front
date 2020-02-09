@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PageFaveContent from './PageFaveContent.jsx';
-import MenuFave from '../MenuFave/MenuFave.jsx';
+import MenuFave from './MenuFave.jsx';
 import './AppFave.css';
 
 class AppFave extends React.Component {

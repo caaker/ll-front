@@ -39,3 +39,10 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(BoxAuth);
 
 // <div className='auth_button' onClick={this.clickHandler} ></div>
+
+/*
+
+We see you’ve read on Medium before - there’s a personalized experience waiting just a few clicks away. 
+Ready to make Medium yours?
+
+*/
