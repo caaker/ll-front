@@ -3,10 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './F1Apex0.css';
 
-/*
-  Fiddle - https://jsfiddle.net/u0sdra4e/1/
-*/
-
 class F1Apex0 extends React.Component {
   constructor(props) {
     super(props);

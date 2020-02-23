@@ -86,6 +86,18 @@ const URL = (state, action) => {
   return newState;
 };
 
+const Modal = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "toggleOn":
+      newState.on = true;
+      break;
+    case "toggleOff":
+      newState.on = false;
+  }
+  return newState;
+};
+
 const reducers = combineReducers({
   Search,
   MenuFave,
@@ -93,7 +105,8 @@ const reducers = combineReducers({
   Apex,
   User,
   Menu,
-  URL
+  URL,
+  Modal
 });
 
 export default reducers;

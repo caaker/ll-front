@@ -7,11 +7,12 @@
   border-style: solid;
   border-width: 2px;
   border-color: rgba(85, 172, 238, .5);
+  background-color: rgba(255, 255, 255, .5);
+  outline: none;
+
   height: 40px;
   width: 300px;
-  background-color: rgba(255, 255, 255, .5);
   margin: 10px 0px;
-  outline: none;
   padding-left: 20px;
   padding-right: 20px;
 }

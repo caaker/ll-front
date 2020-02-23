@@ -42,11 +42,10 @@ class Tree {
 
 
   filterByTag (tree, search) {
-
-    if(!tree){
-      throw new Error('Tree.filteByTag requires an object passed as the first parameter');
-    }
     let obj = {};
+    if(!tree) {
+      return obj;
+    }
     Object.keys(tree).forEach((tag1) => {
       obj[tag1] = {};
       Object.keys(tree[tag1]).forEach((tag0) => {

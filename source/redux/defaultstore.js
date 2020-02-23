@@ -21,6 +21,10 @@ const defaultStore = {
     current: {
       domain: 'test.com'
     }
+  },
+
+  Modal: {
+    on: false
   }
 
 };

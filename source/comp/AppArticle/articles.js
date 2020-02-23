@@ -1,10 +1,3 @@
-/*
-https://www.wired.com/story/sunscreen-chemicals-soak-all-the-way-into-your-bloodstream/?mbid=synd_digg
-https://elemental.medium.com/the-science-behind-the-mental-clarity-diet-a6b2d765ffa6
-
-
-
-*/
 
 /*
   {
@@ -14,14 +7,30 @@ https://elemental.medium.com/the-science-behind-the-mental-clarity-diet-a6b2d765
     "summary": "",
     "tag":     "",
     "domain":  "",
-    "date":    "",
-    "saved":   ""
+    "date":    ""
   },
 */
 
-
 const json_string = 
 `[
+  {
+    "link":    "https://www.fastcompany.com/90436824/silicon-valleys-psychedelic-wonder-drug-is-almost-here?utm_source=digg",
+    "image":   "https://i.imgur.com/jc7tYHD.jpg",
+    "title":   "Silicon Valley’s psychedelic wonder drug is almost here",
+    "summary": "A new startup called MindMed could have the key to providing the upsides of psychedelic drugs for both focus and addiction treatment—while cutting out the downsides of tripping.",
+    "tag":     "psychedelic",
+    "domain":  "fastcompany.com",
+    "date":    "December 9, 2019"
+  },
+  {
+    "link":    "https://www.wholefoodsmarket.com/blog/choose-best-sunscreen",
+    "image":   "https://i.imgur.com/1Iohvqg.jpg",
+    "title":   "Choose the Best Sunscreen",
+    "summary": "Picture this: You’re all packed up for a summer adventure ...",
+    "tag":     "Health",
+    "domain":  "wholefoodsmarket.com",
+    "date":    "May 14, 2014"
+  },
 
   {
     "link":    "https://graphics.reuters.com/ENVIRONMENT-PLASTIC/0100B4TF2MQ/index.html",

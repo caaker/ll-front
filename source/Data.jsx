@@ -6,6 +6,7 @@ class Data extends React.Component {
   constructor(props) {
     super(props);
     this.getUser();
+    this.getItems();
   }
 
   getUser () {    
@@ -21,6 +22,25 @@ class Data extends React.Component {
     })
     .catch((err) => {
       console.log(err);
+    });
+  }
+
+  getItems () {
+    const options = {
+      credentials: 'include'
+    };
+    //console.log('DEBUG: fetch() called for bookmarks');
+    fetch("/api/items", options)
+    .then((response) => {
+      // console.log('DEBUG: response received for bookmarks : ');
+      return response.json();
+    })
+    .then((results) => {
+      console.log('results dispatched');
+      this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
+    })
+    .catch((err) => {
+      console.log('DEBUG: /api/items endpoint failed : ', err);
     });
   }
 

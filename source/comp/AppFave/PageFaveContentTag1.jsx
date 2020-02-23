@@ -15,6 +15,10 @@ class PageFaveContentTag1 extends React.Component {
     let current = this.props.MenuFave.current;
     let tag1 = this.props.tag1;
     bm = Tree.filterByTag(bm, search);
+    if(!bm[tag1]) {
+      console.log('DEBUG: bm[tag1] is not populated, perhaps a service is down');
+      return null;
+    }
     let render = Object.keys(bm[tag1]).map((tag0) =>
       <PageFaveContentTag1Tag0 tag0={tag0} key={tag0} bookmarks={bm[tag1][tag0]} />
     );

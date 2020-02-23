@@ -4,12 +4,12 @@
 //
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect }  from 'react-redux';
 
-import F1Apex      from '../F1Apex/F1Apex.jsx';
-import F1Page      from '../F1Page/F1Page.jsx';
-import F1Footer    from '../F1Footer/F1Footer.jsx';
-
+import F1Apex       from '../F1Apex/F1Apex.jsx';
+import F1Page       from '../F1Page/F1Page.jsx';
+import F1Footer     from '../F1Footer/F1Footer.jsx';
+import ArticleModal from '../AppArticle/ArticleModal.jsx'
 
 import './F1.css';
 
@@ -24,6 +24,7 @@ class F1 extends React.Component {
         <F1Apex/>
         <F1Page/>
         <F1Footer/>
+        <ArticleModal/>
       </div>
     )
   }

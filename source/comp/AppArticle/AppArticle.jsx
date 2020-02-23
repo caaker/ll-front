@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ComponentArticle from '../Articles/ComponentArticle.jsx';
+import ComponentArticle from './ComponentArticle.jsx';
+
 import './AppArticle.css';
 import articles from './articles.js'
 
