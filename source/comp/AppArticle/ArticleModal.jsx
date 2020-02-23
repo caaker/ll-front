@@ -31,6 +31,7 @@ class ArticleModal extends React.Component {
   }
 
   getClass () {
+    console.log('this.props.Modal', this.props.Modal);
     if(this.props.Modal.on === true){
       return 'modal on';
     }

@@ -23,7 +23,26 @@ class ComponentArticle extends React.Component {
     // });
   }
 
+  linkClicked1 = (event) => {
+    console.log('link clicked');
+    console.log(event.target);
+
+  }
+
+  linkClicked = (event, text) => {
+    event.preventDefault();
+    let input = document.createElement("input");
+    input.style="position:absolute;opacity:0";
+    input.value = text;
+    document.body.append(input);
+    input.select();
+    document.execCommand("copy");
+    input.remove();
+    alert("Copied the text: " + text);
+  }
+
   render() {
+    let hash_link = 'livelong.ai#' + this.props.data.title.replace(/ /g, '_');
     let hash = this.props.data.title.replace(/ /g, '_');
     return ( 
       <article className="medd_article">
@@ -52,6 +71,17 @@ class ComponentArticle extends React.Component {
 
         <img className ='medd_favicon' src={'https://www.google.com/s2/favicons?domain=' + this.props.data.domain} />
 
+
+          <svg 
+            className ='medd_link'
+            ref={ref => this.link = ref} 
+            id={hash_link} 
+            onClick={event => this.linkClicked(event, this.link.id)}
+            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 7h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c1.65 0 3 1.35 3 3s-1.35 3-3 3h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c2.76 0 5-2.24 5-5s-2.24-5-5-5zm-9 5c0 .55.45 1 1 1h6c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1zm2 3H7c-1.65 0-3-1.35-3-3s1.35-3 3-3h3c.55 0 1-.45 1-1s-.45-1-1-1H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h3c.55 0 1-.45 1-1s-.45-1-1-1z"/>
+          </svg>
+
+
       </article>
     )
   }
@@ -76,3 +106,16 @@ export default connect(mapStateToProps)(ComponentArticle);
 
 
 
+        // <a className ='medd_link' id={hash} onClick={this.linkClicked}>
+        //   <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 7h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c1.65 0 3 1.35 3 3s-1.35 3-3 3h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c2.76 0 5-2.24 5-5s-2.24-5-5-5zm-9 5c0 .55.45 1 1 1h6c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1zm2 3H7c-1.65 0-3-1.35-3-3s1.35-3 3-3h3c.55 0 1-.45 1-1s-.45-1-1-1H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h3c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        // </a>
+
+
+          //       <a 
+          // className ='medd_link'
+          // ref={ref => this.link = ref} 
+          // id='some_string' 
+          // onClick={event => this.linkClicked(event, this.link.id)}
+          // >
+
+          // </a>
