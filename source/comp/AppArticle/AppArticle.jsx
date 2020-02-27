@@ -12,6 +12,31 @@ class AppArticle extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    let hash = document.location.hash.slice(1);
+    console.log('hash', hash);
+    if (hash) {
+      const hashElement = document.getElementById(hash);
+      if(hashElement){
+        hashElement.scrollIntoView();  
+      } else{
+        console.log('hash id does not exist: check yo self');
+      }
+      
+    }
+  }
+
+
+    // React.useEffect( function () {
+    //     let hash = document.location.hash;
+    //     console.log(hash)
+    //     if (hash) {
+    //       const hashElement = document.querySelector(document.location.hash);
+    //       hashElement.scrollIntoView();
+    //     }
+    //   }, []);
+
+
   render () {
 
     const render = articles.map((val, index) => {
