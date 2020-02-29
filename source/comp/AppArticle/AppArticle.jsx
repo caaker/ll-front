@@ -12,30 +12,36 @@ class AppArticle extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    let hash = document.location.hash.slice(1);
-    console.log('hash', hash);
-    if (hash) {
-      const hashElement = document.getElementById(hash);
-      if(hashElement){
-        hashElement.scrollIntoView();  
-      } else{
-        console.log('hash id does not exist: check yo self');
-      }
-      
-    }
+  useScrollTo(element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - 80;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
   }
 
+  useScrollIntoView(element){
+    element.scrollIntoView({
+      block: "start", 
+      behavior: "smooth"
+    });
+  }
 
-    // React.useEffect( function () {
-    //     let hash = document.location.hash;
-    //     console.log(hash)
-    //     if (hash) {
-    //       const hashElement = document.querySelector(document.location.hash);
-    //       hashElement.scrollIntoView();
-    //     }
-    //   }, []);
-
+  componentDidMount() {
+    let hash = document.location.hash.slice(1);
+    if(!hash) {
+      return;      
+    }
+    const element = document.getElementById(hash);
+    if(!element){
+      console.log('DEBUG: Hash ID is not in the DOM: ', hash)
+      return;
+    }
+    window.setTimeout(()=>{
+      this.useScrollTo(element);
+    }, 1000)         
+  }
 
   render () {
 

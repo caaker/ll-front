@@ -10,9 +10,39 @@
     "date":    ""
   },
 */
+ 
 
 const json_string = 
 `[
+  {
+    "link":    "https://news.utexas.edu/2020/02/11/can-ai-support-youth-mental-health/",
+    "image":   "https://i.imgur.com/oWUSqra.jpg",
+    "title":   "Can AI Support Youth Mental Health?",
+    "summary": "UT researchers explore whether artificial intelligence can help identify teens and young adults at risk for mental health problems by ethically following their online footprint.",
+    "tag":     "mental",
+    "domain":  "news.utexas.edu",
+    "date":    "February 11, 2020"
+  },
+
+  {
+    "link":    "https://www.youtube.com/watch?v=9-z0kglwpwo",
+    "image":   "https://i.imgur.com/pD4wdiy.jpg",
+    "title":   "Joe Rogan Experience #1432 - Aubrey de Grey",
+    "summary": "Aubrey de Grey is an English author and theoretician in the field of gerontology and the Chief Science Officer of the SENS Research Foundation.",
+    "tag":     "longevity gerontology",
+    "domain":  "youtube.com",
+    "date":    "February 26, 2020"
+  },
+  {
+    "link":    "https://www.newser.com/story/287504/new-findings-on-us-obesity-important-for-everyone.html",
+    "image":   "https://i.imgur.com/VktFqhR.jpg",
+    "title":   "New Findings on US Obesity 'Important for Everyone'",
+    "summary": "And it's not great news: Obesity rate in America is now over 40%",
+    "tag":     "health obesity",
+    "domain":  "newser.com",
+    "date":    "Feb 27, 2020"
+  },
+
   {
     "link":    "https://www.fastcompany.com/90436824/silicon-valleys-psychedelic-wonder-drug-is-almost-here?utm_source=digg",
     "image":   "https://i.imgur.com/jc7tYHD.jpg",
