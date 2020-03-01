@@ -38,7 +38,7 @@ class ComponentArticle extends React.Component {
 
   render() {
     
-    const id = getID();
+    const id = this.getID();
     const hash_link = 'http://www.livelong.ai#' + id ;
 
     return ( 
