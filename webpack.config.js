@@ -36,7 +36,7 @@ module.exports = outputPaths.map(outputPath => {
       }
     };
   }
-})
+});
 
 
 
