@@ -15,6 +15,14 @@
 const json_string = 
 `[
   {
+    "link":    "https://www.hsph.harvard.edu/nutritionsource/salt-and-sodium/",
+    "image":   "https://i.pinimg.com/564x/e1/fa/80/e1fa800c86db4f694465634870ff5273.jpg",
+    "title":   "Salt and Sodium",
+    "summary": "Salt, also known as sodium chloride, is about 40% sodium and 60% chloride. It flavors food and is used as a binder and stabilizer.",
+    "tag":     "nutrition",
+    "domain":  "hsph.harvard.edu"
+  },
+  {
     "link":    "https://news.utexas.edu/2020/02/11/can-ai-support-youth-mental-health/",
     "image":   "https://i.imgur.com/oWUSqra.jpg",
     "title":   "Can AI Support Youth Mental Health?",
