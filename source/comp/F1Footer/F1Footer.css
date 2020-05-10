@@ -8,11 +8,16 @@
   height: 30px;
 }
 .contact{
-  margin-top: 10px;
+  position: relative;
+  top: 8px;
   color: rgba(128, 128, 128, .99);
+  text-decoration: none;
 }
 
 /*
+
+  margin-top: 10px;
+
 Met at SB
 vruizsacs@gmail.com
 human dimensions of organization

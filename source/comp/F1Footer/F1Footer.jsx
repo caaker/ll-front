@@ -11,7 +11,7 @@ class F1Footer extends React.Component {
     return (
       
       <div className="footer">
-        <p className='contact'>chris@livelong.ai</p>
+        <a className="contact" href="mailto:contact@livelong.ai?subject='front page inquiry'">contact</a>
       </div>
 
     )
@@ -20,3 +20,5 @@ class F1Footer extends React.Component {
 }
 
 export default F1Footer;
+
+        // <p className='contact'>contact@livelong.ai</p>
