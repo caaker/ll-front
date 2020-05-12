@@ -8,7 +8,7 @@ class F1Apex extends React.Component {
   constructor(props) {
     super(props);
    }
-
+  // 3 levels - 1 is hidden
   render () {
     return (
       <div id = 'apex_hold'>

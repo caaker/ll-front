@@ -3,7 +3,7 @@ const IN_DIR = path.join(__dirname, '/source');
 const OUT_DIR = path.join(__dirname, '/dist');
 const OUT_DIR_PROD = path.join(__dirname, '../ll-back/dist');
 
-console.log(OUT_DIR, OUT_DIR_PROD);
+// console.log(OUT_DIR, OUT_DIR_PROD);
 
 const outputPaths = [OUT_DIR, OUT_DIR_PROD]
 

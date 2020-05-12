@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './ArticleModal.css';
+import './F1Modal.css';
 
-class ArticleModal extends React.Component {
+class F1Modal extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -11,11 +11,10 @@ class ArticleModal extends React.Component {
     this.props.dispatch({type: 'toggleOff'})
   }
 
-  // test-1-2
   handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    console.log(name, value);
+    // console.log(name);
     this.setState({
       [name]: value
     });
@@ -75,7 +74,7 @@ const mapStateToProps = state => {
     Modal: state.Modal
   }
 }
-export default connect(mapStateToProps)(ArticleModal);
+export default connect(mapStateToProps)(F1Modal);
 
 
   // data = {
