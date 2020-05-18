@@ -1,10 +1,10 @@
 import React       from 'react';
 import ReactDOM    from 'react-dom';
 
-import Favicon     from '../Favicon/Favicon.jsx';
-import Input       from '../Input/Input.jsx';
-import P2          from '../P2/P2.jsx';
-import Output      from '../Output/Output.jsx';
+import Favicon     from './Favicon.jsx';
+import Input       from './Input.jsx';
+import P2          from './P2.jsx';
+import Output      from './Output.jsx';
 
 import './AppFavicon.css';
 

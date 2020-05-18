@@ -41,6 +41,8 @@ class URL {
     let end =       '$';
     let whole = start + protocol + slash + domain + port + path + query + hash + end;
     let regexp = new RegExp(whole, 'g');
+    
+    // this.arr holds the "parsed" URL
     this.arr = regexp.exec(this.obj.url);    
   }
 
@@ -72,8 +74,7 @@ class URL {
 
   // check for a TLD - top level domain
   // this is the minimal we need to form a correct URL
-  // oddly this is not guaranteed in Crockford's regexp
-  // add 4 new properties to our object
+  // add 3 new properties to our object - tld, name, valid
   validateByTDL () {
     let regexp = new RegExp('\\.([A-Za-z]+)$', 'g');
     let res = regexp.exec(this.obj.domain);
@@ -81,12 +82,10 @@ class URL {
       this.obj.tld = res[1];
       this.obj.name = this.obj.domain.slice(0, res.index);
       this.obj.valid = true;
-      this.obj.message = false;
     } else {
       this.obj.tld = '';
       this.obj.name = '';
       this.obj.valid = false;
-      this.obj.message = 'Please enter a valid URL';
     }
   }
 

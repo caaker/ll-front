@@ -1,7 +1,7 @@
 import React       from 'react';
 import ReactDOM    from 'react-dom';
 import { Provider, connect } from 'react-redux';
-import P1 from '../P1/P1.jsx';
+import P1 from './P1.jsx';
 
 class Output extends React.Component {
 
