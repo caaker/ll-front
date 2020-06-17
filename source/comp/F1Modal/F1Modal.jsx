@@ -6,7 +6,7 @@ import URL from '../URL/URL.js';
 class F1Modal extends React.Component {
   constructor(props) {
     super(props);
-    this.initial_state = {url:"", img:"", title:"", summary:""};
+    this.initial_state = {url:"", img:"", title:"", summary:"", tag:"", domain:""};
     this.state = this.initial_state;
     this.url = new URL();
     this.img_url = new URL();
@@ -18,18 +18,23 @@ class F1Modal extends React.Component {
   }
 
   handleFormChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
     if(event.target.name === "url"){
       this.url.updateURL(event.target.value);
     }
     if(event.target.name === "img"){
       this.img_url.updateURL(event.target.value);
     }
+
+    this.setState({
+      [event.target.name]: event.target.value,
+      domain: this.url.obj.domain
+    });
   }
 
   handleFormSubmission = (event) => {
+
+    // console.log(this.state.domain);
+
     event.preventDefault();
     if ( !this.validateForm()) {
       return;
@@ -45,6 +50,7 @@ class F1Modal extends React.Component {
         this.clearForm();
       })
   }
+
   validateForm = () => {
     if(!this.url.obj.valid) {
       return false;
@@ -58,10 +64,12 @@ class F1Modal extends React.Component {
     if(this.state.summary === "") {
       return false;
     }
+    // tag requires no validation
     return true;
   }
+
   clearForm = () => {
-    this.setState(this.initial_state);
+    //this.setState(this.initial_state);
   }
 
   getClass () {
@@ -73,7 +81,6 @@ class F1Modal extends React.Component {
   }
 
   render () {
-    console.log(this.state)
     return (
       <div className = {this.getClass()}>
         <div id = 'modal-box'>
@@ -83,6 +90,7 @@ class F1Modal extends React.Component {
             <input value = {this.state.img} onChange={this.handleFormChange} className = 'mi' type="text" placeholder="img" name="img" placeholder="img"></input>
             <input value = {this.state.title} onChange={this.handleFormChange} className = 'mi' type="text" placeholder="title" name="title"></input>
             <input value = {this.state.summary} onChange={this.handleFormChange} className = 'mi' type="text" placeholder="summary" name="summary"></input>
+            <input value = {this.state.tag} onChange={this.handleFormChange} className = 'mi' type="text" placeholder="tag" name="tag"></input>
             <button className="butn butn3">Add</button>
           </form>
           <div onClick={this.clickedCross} id="modal-cross">+</div>

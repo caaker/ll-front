@@ -4,7 +4,6 @@ import { Provider, connect } from 'react-redux';
 import store        from './redux/store';
 import './index.css';
 
-// Dynamic header, beacon for testing sockets and check login status
 import Header       from './classes/class.Header.js';
 
 // Framework 1

@@ -1,18 +1,3 @@
-
-/* frame
-  {
-    "link":    "",
-    "image":   "",
-    "title":   "",
-    "summary": "",
-    "tag":     "",
-    "domain":  "",
-    "date":    ""
-  },
-*/
- 
-
-
 const json_string = 
 `[
   {
@@ -371,9 +356,7 @@ const json_string =
     "date":    "July 01, 2011",
     "saved":   "99"
   }
-  
-]`;
+]`
 
-const arr = JSON.parse(json_string);
-
-export default arr;
+const array = JSON.parse(json_string);
+export default array;

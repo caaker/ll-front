@@ -1,14 +1,14 @@
 const path = require('path');
 const IN_DIR = path.join(__dirname, '/source');
 const OUT_DIR = path.join(__dirname, '/dist');
-const OUT_DIR_PROD = path.join(__dirname, '../ll-back/dist');
+const OUT_DIR_PROD = path.join(__dirname, '../ll-server/dist');
 
 // console.log(OUT_DIR, OUT_DIR_PROD);
 
 const outputPaths = [OUT_DIR, OUT_DIR_PROD]
 
 module.exports = outputPaths.map(outputPath => {
-  return env => {
+  return (env) => {
     return {
       entry: `${IN_DIR}/index.jsx`,
       output: {
@@ -57,7 +57,7 @@ module.exports = outputPaths.map(outputPath => {
 //     entry: `${IN_DIR}/index.jsx`,
 //     output: {
 //       filename: 'bundle.js',
-//       path: '/Users/c/_top/ll-front/dist'
+//       path: '/Users/c/_top/ll-client/dist'
 //     },
 //     module: {
 //       rules: [
