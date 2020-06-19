@@ -44,6 +44,25 @@ class Data extends React.Component {
     });
   }
 
+  getArticles () {
+    const options = {
+      credentials: 'include'
+    };
+    console.log('DEBUG: fetch() called for articles');
+    fetch("/api/items", options)
+    .then((response) => {
+      console.log('DEBUG: response received for articles : ');
+      return response.json();
+    })
+    .then((results) => {
+      console.log('results dispatched');
+      this.props.dispatch({type: 'updateArticles', articles: results});
+    })
+    .catch((err) => {
+      console.log('DEBUG: /api/items endpoint failed : ', err);
+    });
+  }
+
   render () {
     return (
       <div></div>

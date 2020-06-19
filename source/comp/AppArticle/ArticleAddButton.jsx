@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './ArticleAddButton.css';
-import './ArticleAddButton1.css';
 
 class ArticleAddButton extends React.Component {
   

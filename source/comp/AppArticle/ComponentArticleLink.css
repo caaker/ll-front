@@ -1,0 +1,8 @@
+
+.medd_link {
+  filter: grayscale(100%);
+  margin-top:3px;
+  opacity: .5;
+  float: right;
+  height: 20px;
+}

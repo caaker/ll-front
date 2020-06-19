@@ -3,3 +3,32 @@
   right: 115px;
   top: 8px;
 }
+
+
+/*
+https://www.youtube.com/watch?v=kwrgKJzsgGE
+https://flatuicolors.com/palette/us
+*/
+
+.butn{
+  border: none;
+  margin: 0px;
+  padding: 5px;
+  width: 70px;
+  font-size: 12px;
+  font-family: "montserrat",sans-serif;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-size: 400%;
+  transition: 0.6s;
+}
+
+.butn3{
+  background-image: linear-gradient(to left,#000000,#222222,#000000);
+}
+
+.butn:hover{
+  background-position: right;
+}
