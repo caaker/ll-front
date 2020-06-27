@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import ComponentArticle from './ComponentArticle.jsx';
 
 import './AppArticle.css';
-import articles from './articles.js'
 
 class AppArticle extends React.Component {
 
@@ -44,15 +43,32 @@ class AppArticle extends React.Component {
     }, 1000)         
   }
 
+  // weird behavior were new_articles comes out in order and reversed order
+  // first call seems to be correct but random second call is not
+  makeList () {
+    let test = this.props.Articles.articles;
+
+    // console.log(test[0]);
+
+    let new_articles = test;
+    let render;
+    if(new_articles.length > 1){
+      render = new_articles.map((val, index) => {
+        return <ComponentArticle key={index} data={val}/>;
+      });            
+    }
+    return render;    
+  }
+
   render () {
 
-    const render = articles.map((val, index) => {
-        return <ComponentArticle key={index} data={val}/>;
-    });
+    // Do not remove untill you understand why render is being called 2x. 
+    // console.log('render called')
+    // should be twice, once for initial construction and once for props being updated on disptach
 
     return (
       <div id = "article_page_hold">
-        {render}
+        {this.makeList()}
       </div>
     )
   }
@@ -60,7 +76,7 @@ class AppArticle extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Menu: state.Menu
+    Articles: state.Articles
   }
 }
 

@@ -8,35 +8,6 @@ and return the new state.
 
 */
 
-// plans to implement
-const Search = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "updateSearch":
-      newState.current = action.current;
-  }
-  return newState;
-};
-
-// For bookmark/favorites
-const MenuFave = (state, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "updateMenuFave":
-      newState.current = action.current;
-  }
-  return newState;
-};
-
-const Bookmarks = (state, action) => {
-  let newState = { ...state };
-  switch(action.type) {
-    case "updateBookmarks":
-      newState.bookmarks = Tree.createHierarchy(action.bookmarks);
-  }
-  return newState;
-};
-
 // For the apex or top bar
 const Apex = (state, action) => {
   const newState = { ...state };
@@ -76,18 +47,9 @@ const Menu = (state, action) => {
   return newState;
 };
 
-// Holds the URL for Favicon Finder
-const URL = (state, action) => {
-  let newState = { ...state };
-  switch(action.type) {
-    case "updateURL":
-      newState.current = action.current;
-  }
-  return newState;
-};
-
 const Modal = (state, action) => {
   const newState = { ...state };
+  newState.data = action.data;
   switch(action.type) {
     case "toggleOn":
       newState.on = true;
@@ -98,10 +60,59 @@ const Modal = (state, action) => {
   return newState;
 };
 
+// For bookmark/favorites
+const MenuFave = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "updateMenuFave":
+      newState.current = action.current;
+  }
+  return newState;
+};
+
+// Holds the URL for Favicon Finder
+const URL = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateURL":
+      newState.current = action.current;
+  }
+  return newState;
+};
+
+const Bookmarks = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateBookmarks":
+      newState.bookmarks = Tree.createHierarchy(action.bookmarks);
+  }
+  return newState;
+};
+
+const Articles = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateArticles":
+      newState.articles = action.articles;
+  }
+  return newState;
+};
+
+// plans to implement
+const Search = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "updateSearch":
+      newState.current = action.current;
+  }
+  return newState;
+};
+
 const reducers = combineReducers({
   Search,
   MenuFave,
   Bookmarks,
+  Articles,
   Apex,
   User,
   Menu,

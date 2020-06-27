@@ -8,11 +8,3 @@
   height: 20px;
 }
 
-.medd_delete {
-  filter: grayscale(100%);
-  margin-top:3px;
-  margin-right: 3px;
-  opacity: .5;
-  float: right;
-  height: 20px;
-}

@@ -21,12 +21,6 @@ class AppFave extends React.Component {
   }
 } 
 
-const mapStateToProps = state => {
-  return {
-    Menu: state.Menu
-  }
-}
-
-export default connect(mapStateToProps)(AppFave);
+export default AppFave;
 
 

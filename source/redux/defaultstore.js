@@ -1,15 +1,11 @@
 const defaultStore = {
 
-  MenuFave: {
-    current: 'all'
-  },
-
   Apex: {
     current: false
   },
 
   User:{
-    current: 'default - foo'
+    current: 'default'
   },
   
   Menu: {
@@ -17,14 +13,27 @@ const defaultStore = {
     status: false
   },
 
+  Modal: {
+    on: false,
+    data: false
+  },
+
+  Bookmarks: {
+    bookmarks: ['not lodaded']
+  },
+
+  Articles: {
+    articles: ['not loaded']
+  },
+
+  MenuFave: {
+    current: 'all'
+  },
+
   URL: {
     current: {
       domain: 'test.com'
     }
-  },
-
-  Modal: {
-    on: false
   }
 
 };

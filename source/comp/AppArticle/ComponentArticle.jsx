@@ -35,6 +35,9 @@ class ComponentArticle extends React.Component {
   render() {
     
     const id = this.getID();
+    const _id = this.props.User.current._id;
+    console.log(this.props.User.current._id)
+    const admin = (_id === '5eebf1dc9148400351a49dd0')
 
     return ( 
       <article id={id} className="medd_article">
@@ -65,7 +68,7 @@ class ComponentArticle extends React.Component {
 
         <ComponentArticleLink data={this.props.data} />
 
-        <ComponentArticleMutate/>
+        {admin && <ComponentArticleMutate data={this.props.data}/>}
 
       </article>
     )
@@ -74,10 +77,9 @@ class ComponentArticle extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Modal: state.Modal
+    Modal: state.Modal,
+    User:  state.User
   }
 }
 
 export default connect(mapStateToProps)(ComponentArticle);
-
-          
