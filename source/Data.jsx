@@ -6,8 +6,9 @@ class Data extends React.Component {
   constructor(props) {
     super(props);
     this.getUser();
-    this.getItems();
+    this.getBookmarks();
     this.getArticles();
+    this.debug = true;
   }
 
   getUser () {    
@@ -19,7 +20,13 @@ class Data extends React.Component {
       return response.json();
     })
     .then((results) => {
-      console.log(results);
+
+      // figure why you need this here:
+      if(results === "false"){
+        results = false;
+      }
+      
+      this.debug && console.log('Data.getUser()', results);
       this.props.dispatch({type: 'setUser', current: results});
     })
     .catch((err) => {
@@ -27,7 +34,7 @@ class Data extends React.Component {
     });
   }
 
-  getItems () {
+  getBookmarks () {
     const options = {
       credentials: 'include'
     };
@@ -38,7 +45,7 @@ class Data extends React.Component {
       return response.json();
     })
     .then((results) => {
-      // console.log('results dispatched');
+      this.debug && console.log('Data.getBookmarks()', results);
       this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
     })
     .catch((err) => {
@@ -49,19 +56,14 @@ class Data extends React.Component {
   getArticles () {
     const options = {
       credentials: 'include'
-    };
-
-    // console.log('DEBUG: fetch() called for articles');
-    
+    };    
     fetch("/articles/articles", options)
     .then((response) => {
-      console.log('DEBUG: response received for articles');
       return response.json();
     })
     .then((results) => {
-      console.log(results[0]);
+      this.debug && console.log('Data.getArticles()', results[0]);
       results.reverse();
-      //console.log('DEBUG: results dispatched');
       this.props.dispatch({type: 'updateArticles', articles: results});
     })
     .catch((err) => {
@@ -77,4 +79,3 @@ class Data extends React.Component {
 }
 
 export default connect()(Data);
-

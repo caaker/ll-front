@@ -20,7 +20,7 @@ class F1Apex2 extends React.Component {
     let user = this.props.User.current;
     let health = !this.props.Apex.current ? true : false;
     let menu = this.props.Menu.current;
-
+    
     return (
       <div className='apex2-1'>
         <div className='apex_inner' id='apex2-2'>

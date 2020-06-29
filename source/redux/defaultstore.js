@@ -5,7 +5,7 @@ const defaultStore = {
   },
 
   User:{
-    current: 'default'
+    current: false
   },
   
   Menu: {

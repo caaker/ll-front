@@ -29,7 +29,7 @@ class F1Modal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.debug = true;
+    this.debug = false;
     this.debug && console.log('DEBUG: constuctor() called');
     this.initial_state = {link:"", image:"", title:"", summary:"", tag:"", domain:""};
     this.state = this.initial_state;

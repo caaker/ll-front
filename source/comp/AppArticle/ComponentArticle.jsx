@@ -36,7 +36,6 @@ class ComponentArticle extends React.Component {
     
     const id = this.getID();
     const _id = this.props.User.current._id;
-    console.log(this.props.User.current._id)
     const admin = (_id === '5eebf1dc9148400351a49dd0')
 
     return ( 
