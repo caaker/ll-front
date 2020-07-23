@@ -8,7 +8,7 @@ class Data extends React.Component {
     this.getUser();
     this.getBookmarks();
     this.getArticles();
-    this.debug = true;
+    this.debug = false;
   }
 
   getUser () {    
@@ -21,7 +21,7 @@ class Data extends React.Component {
     })
     .then((results) => {
 
-      // figure why you need this here:
+      // figure out why you need this here:
       if(results === "false"){
         results = false;
       }

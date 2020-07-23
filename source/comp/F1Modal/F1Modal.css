@@ -45,10 +45,21 @@ https://flatuicolors.com/palette/us
   left: 0px;
   justify-content: center;
   align-items: center;
-  z-index: 10000000
+  z-index: 10000000;
 }
+
+/* no body component but this CSS class will attach to <body>
+*/
+
+.modal-on {
+  overflow: hidden;
+}
+  
+/*  overflow-y: hidden;
+*/
 .on{
   display: flex;
+  overflow: hidden;
 }
 .off{
   display: none;

@@ -60,6 +60,23 @@ const Modal = (state, action) => {
   return newState;
 };
 
+const Bookmarks = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateBookmarks":
+      newState.bookmarks = Tree.createHierarchy(action.bookmarks);
+  }
+  return newState;
+};
+
+const Articles = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateArticles":
+      newState.articles = action.articles;
+  }
+  return newState;
+};
 // For bookmark/favorites
 const MenuFave = (state, action) => {
   const newState = { ...state };
@@ -80,24 +97,6 @@ const URL = (state, action) => {
   return newState;
 };
 
-const Bookmarks = (state, action) => {
-  let newState = { ...state };
-  switch(action.type) {
-    case "updateBookmarks":
-      newState.bookmarks = Tree.createHierarchy(action.bookmarks);
-  }
-  return newState;
-};
-
-const Articles = (state, action) => {
-  let newState = { ...state };
-  switch(action.type) {
-    case "updateArticles":
-      newState.articles = action.articles;
-  }
-  return newState;
-};
-
 // plans to implement
 const Search = (state, action) => {
   const newState = { ...state };
@@ -109,15 +108,15 @@ const Search = (state, action) => {
 };
 
 const reducers = combineReducers({
-  Search,
-  MenuFave,
-  Bookmarks,
-  Articles,
   Apex,
   User,
   Menu,
+  Modal, 
+  Bookmarks,
+  Articles,
+  MenuFave,
   URL,
-  Modal
+  Search
 });
 
 export default reducers;
