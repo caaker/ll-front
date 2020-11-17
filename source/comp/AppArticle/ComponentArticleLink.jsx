@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './ComponentArticleLink.css';
-
+import Common from '../Common/Common.js';
 
 class ComponentArticleLink extends React.Component {
 
@@ -25,14 +25,8 @@ class ComponentArticleLink extends React.Component {
   }
 
   getID(){
-    let id = this.props.data.title.replace(/ /g, '_');
-
-    // youtube does not like double underscore in its comments so adjust to use double dash
-    id = id.replace(/#/g, '--');
-
-    // this is a special character and if you copy past it into the URL it will be substituted with %FOO
-    id = id.replace(/’/g, '_');
-
+    let id = this.props.data.title;
+    id = Common.makeHash(id);
     return id;
   }
 
@@ -42,7 +36,7 @@ class ComponentArticleLink extends React.Component {
     const hash_link = 'http://www.livelong.ai#' + id ;
 
     return ( 
-      <span>
+      <span id={id}>
           <svg 
             className ='medd_link'
             ref={ref => this.link = ref} 

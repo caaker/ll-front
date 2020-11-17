@@ -18,6 +18,10 @@ const validate = (data) => {
     return 'summary not valid';
   }
 
+  if(data.state.tag === "") {
+    return 'tag not valid';
+  }
+
   return true;
   
 }

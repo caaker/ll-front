@@ -1,8 +1,3 @@
-// This file needs a massive re-factor into two files 
-// - logic for logging in
-// - page rendering
-//
-
 import React from 'react';
 import { connect }  from 'react-redux';
 

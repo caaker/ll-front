@@ -1,3 +1,5 @@
+// from unknown source on the web
+
 ['log', 'warn', 'error'].forEach((methodName) => {
   const originalMethod = console[methodName];
   console[methodName] = (...args) => {

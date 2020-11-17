@@ -7,12 +7,17 @@ class F1Modal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.debug = false;
   }
 
-  closeModal = (e) => {
-    this.props.dispatch({type: 'toggleOff'});
-    // bug here - you need to clear the form 
+  componentDidUpdate(prevProps) {
+
+    // console.log("DEBUG: componenetDidUpdate() called:")
+    // DOM updates should also ocur in componentDidUpdate
+    if(this.props.Modal.on === true){
+      document.body.classList.add("modal-on");
+    } else {
+      document.body.classList.remove("modal-on");
+    }
   }
 
   render () {    
@@ -21,7 +26,6 @@ class F1Modal extends React.Component {
         <div id = 'modal-box'>
           <img id = 'modal-pic' src = "dist/images/svg/favicon.svg"/>
             <F1ModalForm/>
-          <div onClick={this.closeModal} id="modal-cross">+</div>
         </div>
       </div>
     )

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import URL   from '../Common/URL.js';
 import validate from './Validate.js'
-
+import './F1ModalForm.css';
 
 class F1ModalForm extends React.Component {
 
@@ -15,8 +15,9 @@ class F1ModalForm extends React.Component {
     this.state = this.initial_state;
   }
 
-  // becasue the form did not update but populates we must call update manually for both URLs
   componentDidUpdate(prevProps) {
+
+    // console.log("DEBUG: componenetDidUpdate() called:")
     if ((this.props.Modal.data !== prevProps.Modal.data) && this.props.Modal.data) {
       this.url.updateURL(this.props.Modal.data.link);
       this.img_url.updateURL(this.props.Modal.data.image);
@@ -26,15 +27,11 @@ class F1ModalForm extends React.Component {
       }); 
     }
 
-    // DOM updatedes should also ocur in componentDidUpdate
-    if(this.props.Modal.on === true){
-      document.body.classList.add("modal-on");
-    } else {
-      document.body.classList.remove("modal-on");
-    }
   }
 
   updateForm = (event) => {
+
+    // console.log("DEBUG: updateForm() called:")
     if(event.target.name === "link"){
       this.url.updateURL(event.target.value);
     }
@@ -49,9 +46,9 @@ class F1ModalForm extends React.Component {
 
   submitForm = (event) => {
     event.preventDefault();
-    const valid = validate(this);
-    if (valid !== true) {
-      alert(valid);
+    const valid_status = validate(this);
+    if (valid_status !== true) {
+      alert(valid_status);
       return;
     }
     const options = { 
@@ -61,16 +58,19 @@ class F1ModalForm extends React.Component {
     };    
     fetch("/articles/add", options )
       .then((response) => {
-        this.props.dispatch({type: 'toggleOff'});
-        this.clearForm();
+        console.log("DEBUG: fetch/POST success: ")
       })
+      .catch((error) => {
+        console.log('fetch/POST error', error);
+      });
+    this.closeModal();
   }
 
   submitFormPUT = (event) => {
     event.preventDefault();
-    const valid = validate(this);
-    if (valid !== true) {
-      alert(valid)
+    const valid_status = validate(this);
+    if (valid_status !== true) {
+      alert(valid_status);
       return;
     }
     let _id = encodeURIComponent(this.state._id);
@@ -81,32 +81,33 @@ class F1ModalForm extends React.Component {
     };
     fetch("/articles/put/" + _id, options )
       .then((response) => {
-        // console.log('response', response);
+        console.log("DEBUG: fetch/PUT success: ", _id)
       })
       .catch((error) => {
-        console.log('edit/put clicked error', error);
+        console.log('fetch/PUT error', error);
       });
-      this.closeModal();
+    this.closeModal();
   }
 
   closeModal = (e) => {
     this.props.dispatch({type: 'toggleOff'});
     this.setState(this.initial_state);
-    // bug here - you need to clear the form on a dispatch of toogle off so 
-    // F1Modal can reset the form as well
   }
 
   render() {
     return (
-      <form onSubmit = {this.props.Modal.data ? this.submitFormPUT : this.submitForm} >
-        <input value = {this.state.link}    onChange={this.updateForm} className = 'mi' type="text" placeholder="link"    name="link"></input>
-        <input value = {this.state.image}   onChange={this.updateForm} className = 'mi' type="text" placeholder="image"   name="image"></input>
-        <input value = {this.state.title}   onChange={this.updateForm} className = 'mi' type="text" placeholder="title"   name="title"></input>
-        <input value = {this.state.summary} onChange={this.updateForm} className = 'mi' type="text" placeholder="summary" name="summary"></input>
-        <input value = {this.state.tag}     onChange={this.updateForm} className = 'mi' type="text" placeholder="tag"     name="tag"></input>
-        <input value = {this.state.domain}  onChange={this.updateForm} className = 'mi' type="text" placeholder="domain"  name="domain"></input>
-        {this.props.Modal.data ? <button className="butn butn3">Update</button> : <button className="butn butn3">Add</button>}
-      </form>
+      <div>
+        <form onSubmit = {this.props.Modal.data ? this.submitFormPUT : this.submitForm} >
+          <input value = {this.state.link}    onChange={this.updateForm} className = 'mi' type="text" placeholder="link"    name="link"></input>
+          <input value = {this.state.image}   onChange={this.updateForm} className = 'mi' type="text" placeholder="image"   name="image"></input>
+          <input value = {this.state.title}   onChange={this.updateForm} className = 'mi' type="text" placeholder="title"   name="title"></input>
+          <input value = {this.state.summary} onChange={this.updateForm} className = 'mi' type="text" placeholder="summary" name="summary"></input>
+          <input value = {this.state.tag}     onChange={this.updateForm} className = 'mi' type="text" placeholder="tag"     name="tag"></input>
+          <input value = {this.state.domain}  onChange={this.updateForm} className = 'mi' type="text" placeholder="domain"  name="domain"></input>
+          {this.props.Modal.data ? <button className="butn butn3">Update</button> : <button className="butn butn3">Add</button>}
+        </form>
+        <div onClick={this.closeModal} id="modal-cross">+</div>
+      </div>
     )
   }
 }

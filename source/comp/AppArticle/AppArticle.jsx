@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import ComponentArticle from './ComponentArticle.jsx';
-
 import './AppArticle.css';
 
 class AppArticle extends React.Component {
@@ -10,8 +8,7 @@ class AppArticle extends React.Component {
   constructor(props) {
     super(props);
   }
-    
-  //
+
   useScrollTo(element) {
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition - 80;
@@ -29,28 +26,26 @@ class AppArticle extends React.Component {
   }
 
   componentDidMount() {
-    let hash = document.location.hash.slice(1);
+    const hash = document.location.hash.slice(1);
     if(!hash) {
-      return;      
-    }
-    const element = document.getElementById(hash);
-    if(!element){
-      console.log('DEBUG: Hash ID is not in the DOM: ', hash)
+      console.log('DEBUG: No hash part found in the URL');
       return;
     }
+    console.log('DEBUG: Hash found', hash);
     window.setTimeout(()=>{
+
+      const element = document.getElementById(hash);
+      if(!element){
+        console.log('DEBUG: Element with Hash ID is not in the DOM: ', hash)
+        return;
+      }
       this.useScrollTo(element);
-    }, 1000)         
+
+    }, 500)         
   }
 
-  // weird behavior were new_articles comes out in order and reversed order
-  // first call seems to be correct but random second call is not
   makeList () {
-    let test = this.props.Articles.articles;
-
-    // console.log(test[0]);
-
-    let new_articles = test;
+    let new_articles = this.props.Articles.articles;
     let render;
     if(new_articles.length > 1){
       render = new_articles.map((val, index) => {
@@ -61,11 +56,6 @@ class AppArticle extends React.Component {
   }
 
   render () {
-
-    // Do not remove untill you understand why render is being called 2x. 
-    // console.log('render called')
-    // should be twice, once for initial construction and once for props being updated on disptach
-
     return (
       <div id = "article_page_hold">
         {this.makeList()}
