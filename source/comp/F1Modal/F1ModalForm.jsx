@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import URL   from '../Common/URL.js';
 import validate from './Validate.js'
 import './F1ModalForm.css';
+import ComponentArticleLink from '../AppArticle/ComponentArticleLink.jsx';
+
 
 class F1ModalForm extends React.Component {
 
@@ -94,6 +96,11 @@ class F1ModalForm extends React.Component {
     this.setState(this.initial_state);
   }
 
+/*
+
+
+*/
+
   render() {
     return (
       <div>
@@ -101,10 +108,15 @@ class F1ModalForm extends React.Component {
           <input value = {this.state.link}    onChange={this.updateForm} className = 'mi' type="text" placeholder="link"    name="link"></input>
           <input value = {this.state.image}   onChange={this.updateForm} className = 'mi' type="text" placeholder="image"   name="image"></input>
           <input value = {this.state.title}   onChange={this.updateForm} className = 'mi' type="text" placeholder="title"   name="title"></input>
+
+          <ComponentArticleLink className = 'medd_link_modal' title={this.state.title} />
+
           <input value = {this.state.summary} onChange={this.updateForm} className = 'mi' type="text" placeholder="summary" name="summary"></input>
           <input value = {this.state.tag}     onChange={this.updateForm} className = 'mi' type="text" placeholder="tag"     name="tag"></input>
           <input value = {this.state.domain}  onChange={this.updateForm} className = 'mi' type="text" placeholder="domain"  name="domain"></input>
+
           {this.props.Modal.data ? <button className="butn butn3">Update</button> : <button className="butn butn3">Add</button>}
+
         </form>
         <div onClick={this.closeModal} id="modal-cross">+</div>
       </div>

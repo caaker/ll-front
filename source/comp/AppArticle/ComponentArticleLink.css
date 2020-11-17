@@ -6,3 +6,12 @@
   float: right;
   height: 20px;
 }
+
+.medd_link_modal {
+  filter: grayscale(100%);
+  opacity: .5;
+  height: 20px;
+  position: absolute;
+  top: 150px;
+  left: 366px;
+}

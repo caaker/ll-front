@@ -25,20 +25,19 @@ class ComponentArticleLink extends React.Component {
   }
 
   getID(){
-    let id = this.props.data.title;
-    id = Common.makeHash(id);
-    return id;
+    return Common.makeHash(this.props.title); 
   }
 
   render() {
     
     const id = this.getID();
     const hash_link = 'http://www.livelong.ai#' + id ;
+    const medd_link_className = this.props.className || 'medd_link';
 
     return ( 
       <span id={id}>
           <svg 
-            className ='medd_link'
+            className={medd_link_className}
             ref={ref => this.link = ref} 
             id={hash_link} 
             onClick={event => this.linkClicked(event, this.link.id)}

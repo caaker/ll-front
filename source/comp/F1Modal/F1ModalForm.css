@@ -47,3 +47,9 @@
 .butn:hover{
   background-position: right;
 }
+
+.foo{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+}
