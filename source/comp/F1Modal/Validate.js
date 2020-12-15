@@ -1,6 +1,10 @@
 
 
-const validate = (data) => {
+const validate = (data, bypass) => {
+
+  if(bypass){
+    return true;
+  }
   
   if(!data.url.obj.valid) {
     return 'url not valid';

@@ -1,12 +1,19 @@
+/* NOTES
+
+  Refactor as each recuder is checked for every action:
+  Refactor to move code into each individual case:
+
+  The spread operation is causing a shallow copy
+
+  In React (and redux), state should never be mutated, because React uses Object.is to determine whether 
+  a stateful value has changed (and if it doesn't detect a change, re-rendering will be skipped).
+  
+*/
+
+
+
 import {combineReducers} from 'redux';
 import Tree from '../classes/class.Tree.js';
-
-/* 
-
-Reducers are pure functions that take the previous state, apply an action
-and return the new state.
-
-*/
 
 // For the apex or top bar
 const Apex = (state, action) => {
@@ -74,9 +81,19 @@ const Articles = (state, action) => {
   switch(action.type) {
     case "updateArticles":
       newState.articles = action.articles;
+      break;
+    case "deleteArticle":
+      // console.log('REDUX: deleteArticle() called', action.index);
+      newState.articles.splice(action.index, 1)
+      break;
+    case "addArticle":
+      // console.log('REDUX: addArticle() called', action.component_state);
+      newState.articles.unshift(action.component_state)
+      break;
   }
   return newState;
 };
+
 // For bookmark/favorites
 const MenuFave = (state, action) => {
   const newState = { ...state };
@@ -120,3 +137,20 @@ const reducers = combineReducers({
 });
 
 export default reducers;
+
+
+
+/* 
+NOTES
+
+Reducers are pure functions that take the previous state, apply an action
+and return the new state.
+
+This line acts as a shallow clone:
+
+  let newState = { ...state };
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+https://redux.js.org/recipes/structuring-reducers/basic-reducer-structure
+
+*/

@@ -20,10 +20,4 @@ class ArticleAddButton extends React.Component {
 
 }
 
-const mapStateToProps = state => {
-  return {
-    Modal: state.Modal
-  }
-}
-
-export default connect(mapStateToProps)(ArticleAddButton);
+export default connect()(ArticleAddButton);

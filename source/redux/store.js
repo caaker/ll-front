@@ -16,7 +16,7 @@ const store = createStore(reducers, defaultstore, middleware);
 
 // callback will log any change to the state
 store.subscribe( () => {
-  // console.log('STORE.SUBSCRIBE', store.getState());
+  // console.log('REDUX: store.getState()', store.getState());
 });
 
 export default store;

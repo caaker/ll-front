@@ -49,10 +49,4 @@ class ComponentArticleLink extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    Modal: state.Modal
-  }
-}
-
-export default connect(mapStateToProps)(ComponentArticleLink);
+export default connect()(ComponentArticleLink);

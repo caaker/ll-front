@@ -6,29 +6,36 @@ class ComponentArticleMutateDelete extends React.Component {
 
   constructor(props){
     super(props);
-    this.debug = true;
   }
   
-  deleteClicked = (event) => {
-    event.preventDefault();
-    let _id = encodeURIComponent(this.props.data._id);
-    alert('Are you sure you want to delete "' + _id + '" ?');
-    
+  sendToServer = (data) => {
+  }
+
+  verifyDelete = (data) => {
+    // console.log('verifyDelete() called', data);
+    let _id = encodeURIComponent(data._id);  
+    let index = encodeURIComponent(data.index);
+
+    alert('Are you sure you want to delete index: ' + index);
+
+    this.props.dispatch({type: 'deleteArticle', index: index});
     const options = { 
       headers: {'Content-Type': 'application/json'}, 
       method: 'DELETE', 
-      body: JSON.stringify(this.props.data)
+      body: JSON.stringify(data)
     };
-    
-    this.debug && console.log('DEBUG: Cleint sending for deletion: _id : ', _id);
-    
     fetch("/articles/delete/" + _id, options )
       .then((response) => {
-        console.log('response', response);
+        // console.log('response', response);
       })
       .catch((error) => {
         console.log('delete clicked error', error);
       });
+  }
+
+  deleteClicked = (event) => {
+    event.preventDefault();
+    setTimeout(this.verifyDelete.bind(null, this.props.data), 1);
   }
 
   render() {
@@ -44,3 +51,8 @@ class ComponentArticleMutateDelete extends React.Component {
 }
 
 export default connect()(ComponentArticleMutateDelete);
+
+
+
+
+        //this.props.dispatch({type: 'deleteArticle', id: 'id1'});

@@ -70,11 +70,4 @@ class ComponentArticleBookmark extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    Modal: state.Modal,
-    User: state.User
-  }
-}
-
-export default connect(mapStateToProps)(ComponentArticleBookmark);
+export default connect()(ComponentArticleBookmark);

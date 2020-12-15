@@ -16,10 +16,13 @@ class URL {
   }
 
   updateURL (url) {
+    // console.log('DEBUG: updateURL', url)
     this.debug && console.log('DEBUG: URL.updateURL() called');
-
     this.obj.url = url;
-    if(this.obj.url) {
+
+    // strange value to url being passed
+    // DEBUG: componentDidUpdate() with value:  ƒ link() { [native code] }
+    if(typeof this.obj.url === 'string') {
       this.parseURL();
       this.makeObj();
       this.validateByTDL();
@@ -65,15 +68,13 @@ class URL {
 
   // grab the elements we want and put in an object
   makeObj () {
-
     // formed from URL regular expression
     this.obj.protocol = this.arr[1];
     this.obj.domain = this.arr[2];
     this.obj.port = this.arr[3];
     this.obj.path = this.arr[4];
     this.obj.query = this.arr[5];
-    this.obj.hash = this.arr[6];
-
+    this.obj.hash = this.arr[6]; 
   }
 
   // check for a TLD - top level domain

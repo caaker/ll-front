@@ -10,10 +10,11 @@ class F1Apex1 extends React.Component {
    }
 
   render () {
+    const admin = (this.props.User.current._id === '5eebf1dc9148400351a49dd0');
     return (
 		  <div className='apex1-1' id={this.props.Apex.current ? 'apex1-1_show' : 'apex1-1_hide'}>
 		    <div className='apex_inner' id='apex1-2'>
-          {false && <Search/>}
+          {admin && <Search/>}
 		    </div>
 		  </div>
     )
@@ -23,6 +24,7 @@ class F1Apex1 extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    User:  state.User,
     Apex: state.Apex
   }
 }

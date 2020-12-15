@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect }  from 'react-redux';
 
+// Frame 1 consistes of Apex, Page, Footer, and Modal
 import F1Apex       from '../F1Apex/F1Apex.jsx';
 import F1Page       from '../F1Page/F1Page.jsx';
 import F1Footer     from '../F1Footer/F1Footer.jsx';
 import F1Modal      from '../F1Modal/F1Modal.jsx'
 
+// CSS
 import './F1.css';
 
 class F1 extends React.Component { 

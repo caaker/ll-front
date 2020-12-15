@@ -29,7 +29,7 @@ const defaultStore = {
 
   // holds articles data
   Articles: {
-    articles: ['not loaded']
+    articles: false
   },
 
   // holds the current bookmark Menu
@@ -47,3 +47,15 @@ const defaultStore = {
 };
 
 export default defaultStore;
+
+/*
+
+Articles are stored as follows:
+
+  The store is a object of objects.
+
+    Articles is an object in the store.
+
+      Articles.articles is an an array of articles.
+
+*/

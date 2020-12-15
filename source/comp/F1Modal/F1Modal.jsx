@@ -10,9 +10,6 @@ class F1Modal extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-
-    // console.log("DEBUG: componenetDidUpdate() called:")
-    // DOM updates should also ocur in componentDidUpdate
     if(this.props.Modal.on === true){
       document.body.classList.add("modal-on");
     } else {

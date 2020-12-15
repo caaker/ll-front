@@ -12,25 +12,26 @@ class Data extends React.Component {
   }
 
   getUser () {    
+    // console.log('getUser() called');
+
     const options = {
       credentials: 'include'
     };
+    
     fetch("/users/user", options)
     .then((response) => {
+      // console.log('getUser() responed');
       return response.json();
     })
     .then((results) => {
-
-      // figure out why you need this here:
       if(results === "false"){
         results = false;
       }
-      
       this.debug && console.log('Data.getUser()', results);
       this.props.dispatch({type: 'setUser', current: results});
     })
     .catch((err) => {
-      console.log(err);
+      console.log('DEBUG: /api/user endpoint failed : ', err);
     });
   }
 
@@ -54,6 +55,7 @@ class Data extends React.Component {
   }
 
   getArticles () {
+    // this.props.dispatch({type: 'addArticle', id1: 'id1'});
     const options = {
       credentials: 'include'
     };    

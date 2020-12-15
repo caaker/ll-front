@@ -16,6 +16,7 @@ class ComponentArticle extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {pending: false}
   }
 
   getID(){
@@ -26,9 +27,11 @@ class ComponentArticle extends React.Component {
     
     const id = this.getID();
     const admin = (this.props.User.current._id === '5eebf1dc9148400351a49dd0');
+    let pending = false;
 
     return ( 
-      <article id={id} className="medd_article">
+
+      <article id={id} className={pending ? 'medd_article_pending' : 'medd_article'}>
   
         <a 
            className="medd_image_link" href={this.props.data.link} target="_blank">
@@ -65,7 +68,6 @@ class ComponentArticle extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Modal: state.Modal,
     User:  state.User
   }
 }
