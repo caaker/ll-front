@@ -13,7 +13,7 @@ class Search extends React.Component {
 
   handleChange = (event) => {
     this.props.dispatch({type: 'updateSearch', current: event.target.value });
-    console.log(event.target.value);
+    // console.log(event.target.value);
   }
 
   handleSubmit = (event) => {
@@ -42,8 +42,7 @@ class Search extends React.Component {
 const mapStateToProps = state => {
   return {
     Apex: state.Apex,
-    Search: state.Search,
-    Menu: state.Menu
+    Search: state.Search
   }
 }
 

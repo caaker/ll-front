@@ -27,15 +27,47 @@ class AppArticle extends React.Component {
     }, 500)         
   }
 
+  // 3 "extra" renders occur before this is populated, try and reduce
   makeList () {
-
-    // 3 "extra" renders occur before this is populated, try and reduce
     if(this.props.Articles.articles){
-      return this.props.Articles.articles.map((val, index) => {
+
+      return this.props.Articles.articles.filter((val)=>{
+        return this.implementSearch(val);
+      }).map((val, index) => {
         val.index = index;
         return <ComponentArticle key={index} data={val}/>;
       });      
+    
+
     }
+  }
+
+// https://stackoverflow.com/questions/177719/case-insensitive-search
+  implementSearch(val) {
+    let search = this.props.Search.current; 
+    console.log(search); 
+
+    // will be undefined or empty string when no search text has been entered  
+    if(!search){
+      return true;
+    }
+
+    // simple search     
+    if( val.tag === search || val.domain === search || val.title === search || val.summary === search ){
+      return true
+    }
+
+    // complex search - look at the text
+    if( val.title.toLowerCase().search(search.toLowerCase()) !== -1 ){
+      return true
+    }
+
+    // complex search - look at the text
+    if( val.summary.toLowerCase().search(search.toLowerCase()) !== -1 ){
+      return true
+    }
+
+    return false;
   }
 
   render () {
@@ -51,7 +83,8 @@ class AppArticle extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Articles: state.Articles
+    Articles: state.Articles,
+    Search: state.Search
   }
 }
 

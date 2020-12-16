@@ -14,7 +14,7 @@ class F1Apex1 extends React.Component {
     return (
 		  <div className='apex1-1' id={this.props.Apex.current ? 'apex1-1_show' : 'apex1-1_hide'}>
 		    <div className='apex_inner' id='apex1-2'>
-          {admin && <Search/>}
+          {true && <Search/>}
 		    </div>
 		  </div>
     )
