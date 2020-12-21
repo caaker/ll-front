@@ -45,24 +45,25 @@ class AppArticle extends React.Component {
 // https://stackoverflow.com/questions/177719/case-insensitive-search
   implementSearch(val) {
     let search = this.props.Search.current; 
-    console.log(search); 
+    // console.log(search); 
 
     // will be undefined or empty string when no search text has been entered  
     if(!search){
       return true;
     }
 
-    // simple search     
-    if( val.tag === search || val.domain === search || val.title === search || val.summary === search ){
+    if( val.domain.toLowerCase().search(search.toLowerCase()) !== -1 ){
       return true
     }
 
-    // complex search - look at the text
+    if( val.tag.toLowerCase().search(search.toLowerCase()) !== -1 ){
+      return true
+    }
+
     if( val.title.toLowerCase().search(search.toLowerCase()) !== -1 ){
       return true
     }
 
-    // complex search - look at the text
     if( val.summary.toLowerCase().search(search.toLowerCase()) !== -1 ){
       return true
     }
