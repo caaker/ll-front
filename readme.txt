@@ -29,6 +29,12 @@ npm install socket.io-client
 General
 ----------------
 
+Install NPM
+https://docs.npmjs.com/cli/v7/commands/npm-install
+
+Install webpack
+https://webpack.js.org/guides/installation/
+
 In general commit your lock file.
 https://stackoverflow.com/questions/44552348/should-i-commit-yarn-lock-and-package-lock-json-files/44904494
 
