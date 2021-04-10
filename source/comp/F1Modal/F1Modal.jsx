@@ -17,12 +17,12 @@ class F1Modal extends React.Component {
     }
   }
 
+
   render () {    
     return (
       <div className = {this.props.Modal.on === true ? 'modal on' : 'modal off'}>
         <div id = 'modal-box'>
-          <img id = 'modal-pic' src = "dist/images/svg/favicon.svg"/>
-            <F1ModalForm/>
+          <F1ModalForm/>
         </div>
       </div>
     )

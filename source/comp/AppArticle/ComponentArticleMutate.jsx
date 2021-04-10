@@ -16,8 +16,7 @@ class ComponentArticleMutate extends React.Component {
 
   editClicked = (event) => {
     event.preventDefault();
-    this.props.dispatch({type: 'toggleOn', data: this.props.data})
-
+    this.props.dispatch({type: 'toggleOn', data: this.props.data});
   }
 
   render() {

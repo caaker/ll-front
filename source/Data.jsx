@@ -12,8 +12,6 @@ class Data extends React.Component {
   }
 
   getUser () {    
-    // console.log('getUser() called');
-
     const options = {
       credentials: 'include'
     };

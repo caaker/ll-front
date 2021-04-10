@@ -5,38 +5,33 @@ class URL {
     // holds parsed elements using Crockford's Regex
     this.arr = [];
 
-    // holds named elements we want to keep from the Regex
+    // holds named elements we want to keep from Crockford's Regex
     this.obj = {};
 
     // start construction with an empty string or the URL we want to parse
-    // do not modify this.obj.url as it mirrors a controlled form
     this.obj.url = url;
 
-    this.debug = false;
+    this.debug = true;
   }
 
   updateURL (url) {
-    // console.log('DEBUG: updateURL', url)
-    this.debug && console.log('DEBUG: URL.updateURL() called');
     this.obj.url = url;
+    
 
-    // strange value to url being passed
-    // DEBUG: componentDidUpdate() with value:  ƒ link() { [native code] }
+    this.debug && console.log('DEBUG:URL.updateURL()', url);
+
     if(typeof this.obj.url === 'string') {
       this.parseURL();
       this.makeObj();
-      this.validateByTDL();
+      this.validateByTLD();
       this.removeWWW();
     } else {
+      this.debug && console.log('DEBUG: Why are you passing garbage into this.obj.url?', this.obj.url);
       this.clearObj();
     }
   }
 
-  // break down Douglas Crockford's regexp so it is readable
-  // groups, index, and input are also available on the array
   parseURL () {
-
-    // 0 - input
     let start =     '^';
     let protocol =  '(?:([A-Za-z]+):)?';   // 1
     let slash =     '(?:\\/{0,3})';        
@@ -49,14 +44,32 @@ class URL {
     let whole = start + protocol + slash + domain + port + path + query + hash + end;
     let regexp = new RegExp(whole, 'g');
     
-    // this.arr holds the "parsed" URL
+    // this.arr holds the "parsed" URL using Crockfords Regex
     this.arr = regexp.exec(this.obj.url);    
+  }
+
+  // extract the elements we want and put in an object
+  makeObj () {
+    this.debug && console.log('DEBUG: URL.makeObj()', this.arr);
+    if(this.arr){
+      this.obj.protocol = this.arr[1]; // broken
+      this.obj.domain = this.arr[2];
+      this.obj.port = this.arr[3];
+      this.obj.path = this.arr[4];
+      this.obj.query = this.arr[5];
+      this.obj.hash = this.arr[6];       
+    }
+
+    // if the regex does not match the URL, the regex will return null
+    if(this.arr === null){
+      this.clearObj();
+    }
   }
 
   // solves the edge case error of empty string
   clearObj () {
+    // this.debug && console.log('DEBUG: URL.clearObj() called');
 
-    // formed from URL regular expression
     this.obj.protocol = '';
     this.obj.domain = '';
     this.obj.port = '';
@@ -64,23 +77,16 @@ class URL {
     this.obj.query = '';
     this.obj.hash = '';
 
-  }
-
-  // grab the elements we want and put in an object
-  makeObj () {
-    // formed from URL regular expression
-    this.obj.protocol = this.arr[1];
-    this.obj.domain = this.arr[2];
-    this.obj.port = this.arr[3];
-    this.obj.path = this.arr[4];
-    this.obj.query = this.arr[5];
-    this.obj.hash = this.arr[6]; 
+    // don't forget to reset created properties
+    this.obj.tld = '';
+    this.obj.name = '';
+    this.obj.valid = false;
   }
 
   // check for a TLD - top level domain
-  // this is the minimal we need to form a correct URL
-  // add 3 new properties to our object - tld, name, valid
-  validateByTDL () {
+  // this is the minimal we need to form a correct URL to find a favicon
+  // adds 3 new properties to our object - tld, name, valid
+  validateByTLD () {
     let regexp = new RegExp('\\.([A-Za-z]+)$', 'g');
     let res = regexp.exec(this.obj.domain);
     if(res){
@@ -92,15 +98,11 @@ class URL {
       this.obj.name = '';
       this.obj.valid = false;
     }
-    // console.log(this.obj);
   }
 
-  // remove www. if it exists
+  // remove www. if it exists, have not found a use for it
   removeWWW () {    
     let test = this.obj.name.slice(0, 4)
-    
-    this.debug && console.log('DEBUG: URL.xxx called', test);
-
     if(test === 'www.'){
       this.obj.name = this.obj.name.slice(4);
       this.obj.domain = this.obj.domain.slice(4);

@@ -1,7 +1,19 @@
-/*
-  https://www.youtube.com/watch?v=kwrgKJzsgGE
-  https://flatuicolors.com/palette/us
-*/
+
+#title{
+  color: #000000;
+  font-size: 20px;
+  font-style: inherit;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.solid{
+  border-top: 1px solid #bbbbbb;
+  margin: auto;
+  width: 80%;
+  margin-bottom: 30px;
+}
 
 #modal-cross{
   position: absolute;
@@ -11,37 +23,38 @@
   transform: rotate(45deg);
   cursor: pointer;
 }
+
 .mi{
   width: 80%;
   height: 25px;
   display: block;
   margin: 13px auto;
-  border-radius: 16px;
+  border-radius: 8px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(0, 0, 0, .5);
-  background-color: rgba(255, 255, 255, .5);
+  border-color: #aaaaaa;
+  background-color: #ffffff;
   outline: none;
   padding: 0px 8px 0px 8px;
 }
+
 .butn{
   border: none;
   margin: 0px;
-  padding: 5px;
-  width: 70px;
+  padding: 7px;
+  width: 80%;
   font-size: 12px;
   font-family: "montserrat",sans-serif;
-  text-transform: uppercase;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   color: #fff;
   background-size: 400%;
   transition: 0.6s;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .butn3{
-  background-image: linear-gradient(to left,#000000,#222222,#000000);
+  background-color: #222222;
 }
 
 .butn:hover{

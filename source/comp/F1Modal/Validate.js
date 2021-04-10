@@ -7,7 +7,7 @@ const validate = (data, bypass) => {
   }
   
   if(!data.url.obj.valid) {
-    return 'url not valid';
+    return 'link not valid';
   }
 
   if(!data.img_url.obj.valid) {
