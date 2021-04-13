@@ -15,10 +15,8 @@ class Data extends React.Component {
     const options = {
       credentials: 'include'
     };
-    
     fetch("/users/user", options)
     .then((response) => {
-      // console.log('getUser() responed');
       return response.json();
     })
     .then((results) => {
@@ -37,10 +35,8 @@ class Data extends React.Component {
     const options = {
       credentials: 'include'
     };
-    //console.log('DEBUG: fetch() called for bookmarks');
     fetch("/bookmarks/bookmarks", options)
     .then((response) => {
-      // console.log('DEBUG: response received for bookmarks : ');
       return response.json();
     })
     .then((results) => {
@@ -57,7 +53,7 @@ class Data extends React.Component {
     const options = {
       credentials: 'include'
     };    
-    fetch("/articles/articles", options)
+    fetch("/articles/get", options)
     .then((response) => {
       return response.json();
     })
