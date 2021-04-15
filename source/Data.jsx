@@ -1,5 +1,7 @@
 import React        from 'react';
 import { connect } from 'react-redux';
+import io from 'socket.io-client';
+
 
 class Data extends React.Component {
 
@@ -8,7 +10,21 @@ class Data extends React.Component {
     this.getUser();
     this.getBookmarks();
     this.getArticles();
+    this.listenForBeacon();
+    
     this.debug = false;
+  }
+
+  listenForBeacon () {
+    const socket = io();
+
+    socket.on('error', (error) => {
+      console.log("DEBUG: socket error occurred", error);
+    });
+
+    socket.on('beacon', (data) => {
+      console.log('DEBUG: Server Log: ', data);
+    });
   }
 
   getUser () {    
@@ -75,3 +91,5 @@ class Data extends React.Component {
 }
 
 export default connect()(Data);
+
+
