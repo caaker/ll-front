@@ -19,11 +19,13 @@ class Data extends React.Component {
     const socket = io();
 
     socket.on('error', (error) => {
-      console.log("DEBUG: socket error occurred", error);
+      console.log("DEBUG/SERVER: ERROR");
+      console.log(error);
     });
 
     socket.on('beacon', (data) => {
-      console.log('DEBUG: Server Log: ', data);
+      console.log('DEBUG/SERVER:');
+      console.log(data);
     });
   }
 
@@ -51,7 +53,7 @@ class Data extends React.Component {
     const options = {
       credentials: 'include'
     };
-    fetch("/bookmarks/bookmarks", options)
+    fetch("/bookmarks/get", options)
     .then((response) => {
       return response.json();
     })
@@ -60,7 +62,8 @@ class Data extends React.Component {
       this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
     })
     .catch((err) => {
-      console.log('DEBUG: /api/items endpoint failed : ', err);
+      console.log('DEBUG: /bookmarks/get endpoint failed : ');
+      //console.log(err);
     });
   }
 
@@ -79,7 +82,8 @@ class Data extends React.Component {
       this.props.dispatch({type: 'updateArticles', articles: results});
     })
     .catch((err) => {
-      console.log('DEBUG: /api/articles endpoint failed : ', err);
+      console.log('DEBUG: /api/articles endpoint failed : ');
+      //console.log(err);
     });
   }
 
