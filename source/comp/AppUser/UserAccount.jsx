@@ -9,12 +9,12 @@ class UserAccount extends React.Component {
   }
 
   render () {
-    const user = this.props.User.current;
+    console.log(this.props.User.current)
     return (
       <div id = "user-container">
         <div id = "user-container-2">
-          <img id = "user-image" src = "https://lh3.googleusercontent.com/a-/AOh14GiReqt-hbfr-UFzWM9gePMtv1vLMPtaACWHpn1e5Q"/>
-          <p id = "user-name">Joe Coffee</p>
+          <img id = "user-image" src={this.props.User.current.pic_url}/>
+          <p id = "user-name">{this.props.User.current.name}</p>
           <a id="user-button" href="/auth/logout">Logoff</a>
         </div>
       </div>

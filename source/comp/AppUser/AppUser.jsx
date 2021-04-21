@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import UserAuth    from './UserAuth.jsx';
 import UserAccount from './UserAccount.jsx'
 
-
-
 class AppUser extends React.Component {
 
   constructor(props) {
@@ -13,8 +11,6 @@ class AppUser extends React.Component {
 
   render () {
     const user = this.props.User.current;
-    console.log("user", user)
-
     return (
       <div>
        {user && <UserAccount></UserAccount>}
