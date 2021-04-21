@@ -26,8 +26,6 @@ class F1Page extends React.Component {
         <div id='container-1'>
   	      <div id='container-2'>
             {true && (app === 'User') &&                <AppUser/>}
-            {true && (app === 'Clock') &&               <AppClock/>}
-            {true && (app === 'Chat') &&                <AppChat/>}
             {true && (app === 'Articles') &&            <AppArticle/>}
             {true && (app === 'Favicons') &&            <AppFavicon/>}
             {true && (app === 'Faves') &&               <AppFave/>}

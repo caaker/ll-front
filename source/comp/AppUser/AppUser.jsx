@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BoxAuth from '../BoxAuth/BoxAuth.jsx';
+import UserAuth    from './UserAuth.jsx';
+import UserAccount from './UserAccount.jsx'
+
+
 
 class AppUser extends React.Component {
 
@@ -9,10 +12,22 @@ class AppUser extends React.Component {
   }
 
   render () {
+    const user = this.props.User.current;
+    console.log("user", user)
+
     return (
-      <BoxAuth/>
-    )
+      <div>
+       {user && <UserAccount></UserAccount>}
+       {!user && <UserAuth></UserAuth>}
+      </div>
+    );
   }
 }
 
-export default connect()(AppUser);
+const Mapper = state => {
+  return {
+    User: state.User
+  }
+}
+
+export default connect(Mapper)(AppUser);

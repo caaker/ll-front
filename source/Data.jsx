@@ -11,7 +11,6 @@ class Data extends React.Component {
     this.getBookmarks();
     this.getArticles();
     this.listenForBeacon();
-    
     this.debug = false;
   }
 
