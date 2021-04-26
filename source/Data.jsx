@@ -11,7 +11,6 @@ class Data extends React.Component {
     this.getBookmarks();
     this.getArticles();
     this.listenForBeacon();
-    this.debug = false;
   }
 
   listenForBeacon () {
@@ -40,7 +39,6 @@ class Data extends React.Component {
       if(results === "false"){
         results = false;
       }
-      this.debug && console.log('Data.getUser()', results);
       this.props.dispatch({type: 'setUser', current: results});
     })
     .catch((err) => {
@@ -57,12 +55,10 @@ class Data extends React.Component {
       return response.json();
     })
     .then((results) => {
-      this.debug && console.log('Data.getBookmarks()', results);
       this.props.dispatch({type: 'updateBookmarks', bookmarks: results});
     })
     .catch((err) => {
       console.log('DEBUG: /bookmarks/get endpoint failed : ');
-      //console.log(err);
     });
   }
 
@@ -76,13 +72,11 @@ class Data extends React.Component {
       return response.json();
     })
     .then((results) => {
-      this.debug && console.log('Data.getArticles()', results[0]);
       results.reverse();
       this.props.dispatch({type: 'updateArticles', articles: results});
     })
     .catch((err) => {
       console.log('DEBUG: /api/articles endpoint failed : ');
-      //console.log(err);
     });
   }
 

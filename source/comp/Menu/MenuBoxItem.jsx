@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './MenuItem.css';
+import './MenuBoxItem.css';
 
-class MenuItem extends React.Component {
+class MenuBoxItem extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,5 +30,5 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(MenuItem);
+export default connect(mapStateToProps)(MenuBoxItem);
 

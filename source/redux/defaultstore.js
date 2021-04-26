@@ -11,23 +11,22 @@ const defaultStore = {
   },
   
   // holds the current page as well as the status of the menu - show or don't show
+  // change to MenuPage
   Menu: {
     current: 'Articles',
     status: false
   },
 
-  // is the modal displayed, also if it is pre-poulated with data ( sent from ?? )
+  // is the modal displayed, also if it is pre-poulated with data
   Modal: {
     on: false,
     data: false
   },
 
-  // holds bookmark data
   Bookmarks: {
-    bookmarks: ['not lodaded']
+    bookmarks: false
   },
 
-  // holds articles data
   Articles: {
     articles: false
   },
@@ -38,6 +37,7 @@ const defaultStore = {
   },
 
   // holds the current URL in the favicon finder app
+  // move this to local state
   URL: {
     current: {
       domain: 'test.com'
@@ -47,15 +47,3 @@ const defaultStore = {
 };
 
 export default defaultStore;
-
-/*
-
-Articles are stored as follows:
-
-  The store is a object of objects.
-
-    Articles is an object in the store.
-
-      Articles.articles is an an array of articles.
-
-*/

@@ -13,9 +13,9 @@ class Header {
   addTitle () {
     document.title = "livelong";
   }
-    addBackground () {
-    const url_long = "https://i.imgur.com/ienF7ad.png";
-    document.body.style.background = "url(" + url_long + ")";
+  addBackground () {
+    const url = "https://i.imgur.com/ienF7ad.png";
+    document.body.style.background = "url(" + url + ")";
   }
   addFavicon () {
     let link = document.querySelector("link[rel*='icon']") || document.createElement('link');

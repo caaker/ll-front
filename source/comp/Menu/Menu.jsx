@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './MenuSVG.css';
+import './Menu.css';
 
-class MenuSVG extends React.Component {
+class Menu extends React.Component {
 
   constructor(props) {
     super(props);
@@ -25,4 +25,4 @@ class MenuSVG extends React.Component {
   }
 }
 
-export default connect()(MenuSVG);
+export default connect()(Menu);

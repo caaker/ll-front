@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './Icon.css';
+import './MenuIcon.css';
 
-class Icon extends React.Component {
+class MenuIcon extends React.Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class Icon extends React.Component {
            onClick = {this.clickHandler} src='dist/images/svg/favicon.svg'/>
     )
   }
-}
+} 
 
 const mapStateToProps = state => {
   return {
@@ -27,4 +27,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Icon);
+export default connect(mapStateToProps)(MenuIcon);

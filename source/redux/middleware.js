@@ -1,7 +1,7 @@
 import { applyMiddleware } from 'redux';
 
 const logger = store => next => action => {
-  // log every action / event to the console
+  // logs every action / event to the console
   // console.log('REDUX - ACTION: ', action);
   next(action);
 };

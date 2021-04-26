@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 // apps
 import AppArticle from       '../AppArticle/AppArticle.jsx';
-import AppClock from         '../AppClock/AppClock.jsx';
 import AppUser from          '../AppUser/AppUser.jsx';
 import AppFavicon from       '../AppFavicon/AppFavicon.jsx';
 import AppFave from          '../AppFave/AppFave.jsx';
-import AppChat from          '../AppChat/AppChat.jsx';
+import AppMap from           '../AppMap/AppMap.jsx';
+
 
 // css
 import './F1Page.css';
@@ -29,6 +29,8 @@ class F1Page extends React.Component {
             {true && (app === 'Articles') &&            <AppArticle/>}
             {true && (app === 'Favicons') &&            <AppFavicon/>}
             {true && (app === 'Faves') &&               <AppFave/>}
+            {true && (app === 'Map') &&                 <AppMap/>}
+
   	      </div>
   	    </div>
       </div>
