@@ -23,13 +23,14 @@ class F1Page extends React.Component {
     const app = this.props.Menu.current;
     return (
       <div id='container_hold'>
-        <div id='container-1'>
-  	      <div id='container-2'>
-            {true && (app === 'User') &&                <AppUser/>}
-            {true && (app === 'Articles') &&            <AppArticle/>}
-            {true && (app === 'Favicons') &&            <AppFavicon/>}
-            {true && (app === 'Faves') &&               <AppFave/>}
-            {true && (app === 'Map') &&                 <AppMap/>}
+        <div id='container-1' className='container-1'>
+  	      <div id='container-2' className='container-2'>
+          
+            {(app === 'User') &&                <AppUser/>}
+            {(app === 'Articles') &&            <AppArticle/>}
+            {(app === 'Favicons') &&            <AppFavicon/>}
+            {(app === 'Faves') &&               <AppFave/>}
+            {(app === 'Map') &&                 <AppMap/>}
 
   	      </div>
   	    </div>
