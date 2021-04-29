@@ -27,6 +27,10 @@ const defaultStore = {
     bookmarks: false
   },
 
+  Domains: {
+    domains: false
+  },
+
   Articles: {
     articles: false
   },

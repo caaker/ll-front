@@ -57,7 +57,17 @@ const Bookmarks = (state, action) => {
   let newState = { ...state };
   switch(action.type) {
     case "updateBookmarks":
-      newState.bookmarks = Tree.createHierarchy(action.bookmarks);
+      newState.bookmarks = Tree.createTree1(action.bookmarks);
+  }
+  return newState;
+};
+
+const Domains = (state, action) => {
+  let newState = { ...state };
+  switch(action.type) {
+    case "updateDomains":
+      newState.domains = Tree.createTree2(action.domains, action.tag1);
+      // console.log(newState);
   }
   return newState;
 };
@@ -116,6 +126,7 @@ const reducers = combineReducers({
   Menu,
   Modal, 
   Bookmarks,
+  Domains,
   Articles,
   MenuFave,
   URL,

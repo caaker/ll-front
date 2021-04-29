@@ -71,9 +71,19 @@ class Data extends React.Component {
     .then((response) => {
       return response.json();
     })
-    .then((results) => {
-      results.reverse();
-      this.props.dispatch({type: 'updateArticles', articles: results});
+    .then((articles) => {
+      articles.reverse();
+      console.log(articles);
+      const domains = articles.map((obj)=>{
+        return {
+          domain: obj.domain,
+          tag0: obj.tag,
+          url: 'http://' + obj.domain
+        }
+      });
+            
+      this.props.dispatch({type: 'updateDomains', domains: domains, tag1: 'health'});
+      this.props.dispatch({type: 'updateArticles', articles: articles});
     })
     .catch((err) => {
       console.log('DEBUG: /api/articles endpoint failed : ');

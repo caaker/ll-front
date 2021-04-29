@@ -10,18 +10,30 @@ class PageFaveContentTag1 extends React.Component {
   }
   
   render () {
-    let bm = this.props.Bookmarks.bookmarks;
-    let search = this.props.Search.current;
-    let current = this.props.MenuFave.current;
-    let tag1 = this.props.tag1;
-    bm = Tree.filterByTag(bm, search);
-    if(!bm[tag1]) {
-      console.log('DEBUG: bm[tag1] is not populated, perhaps a service is down');
+
+    // only render if the user clicked the menu for tag1
+    const tag1 = this.props.tag1;
+    const current = this.props.MenuFave.current;
+
+    // access to mySQL and MongoDB from Redux store via props
+    const bookmarks = this.props.Bookmarks.bookmarks;
+    const domains = this.props.Domains.domains;
+
+    // Redux store will enforce an object : object : array structure for both bookmarks and domains
+    // Combine    
+    let combinedDB = {
+      ...domains,
+      ...bookmarks
+    };
+
+    if(!combinedDB[tag1]) {
       return null;
     }
-    let render = Object.keys(bm[tag1]).map((tag0) =>
-      <PageFaveContentTag1Tag0 tag0={tag0} key={tag0} bookmarks={bm[tag1][tag0]} />
+
+    const render = Object.keys(combinedDB[tag1]).map((tag0) =>
+      <PageFaveContentTag1Tag0 tag0={tag0} key={tag0} bookmarks={combinedDB[tag1][tag0]} />
     );
+
     return (
       <div className="bm_page_super" id={current===tag1 ? 'bm_page_super_show' : 'bm_page_super_hide'}> 
         {render} 
@@ -35,8 +47,14 @@ const mapStateToProps = state => {
   return {
     Search: state.Search,
     Bookmarks: state.Bookmarks,
-    MenuFave: state.MenuFave
+    MenuFave: state.MenuFave,
+    Domains: state.Domains
   }
 }
 
 export default connect(mapStateToProps)(PageFaveContentTag1);
+
+
+    // const search = this.props.Search.current;
+
+        // const bookmarks = Tree.filterByTag(this.props.Bookmarks.bookmarks, search);

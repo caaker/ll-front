@@ -8,7 +8,6 @@ class AppFave extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.getItems();
   }
 
   render () {

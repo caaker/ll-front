@@ -3,6 +3,7 @@ import ComponentFave from './ComponentFave.jsx';
 import './PageFaveContentTag1Tag0.css';
 
 class PageFaveContentTag1Tag0 extends React.Component {
+  
   constructor(props) {
     super(props);
   }
@@ -11,9 +12,11 @@ class PageFaveContentTag1Tag0 extends React.Component {
   }
 
   render () {
-    const bookmarks = this.props.bookmarks.map((bookmark) =>
-      <ComponentFave bookmark={bookmark} key={bookmark.id} tagClicked={this.tagClicked} />
-    );
+    let count = 0;
+    let render = this.props.bookmarks.map((bookmark) => {
+      return <ComponentFave bookmark={bookmark} key={count++} tagClicked={this.tagClicked} />
+    });      
+
     return (
       <div className="bookmark_page" id="{this.props.tag0}">
         <div className="bookmark_tag_title" onClick={this.tagClicked}>
@@ -21,11 +24,10 @@ class PageFaveContentTag1Tag0 extends React.Component {
             {this.props.tag0}
           </p>
         </div>
-        {bookmarks}
+        {render}
       </div>
     )
   }
 }
 
 export default PageFaveContentTag1Tag0;
-

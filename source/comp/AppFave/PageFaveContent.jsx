@@ -13,19 +13,13 @@ class PageFaveContent extends React.Component {
     return (
       <div id='bm_hold'>
         <PageFaveContentTag1 tag1="all" />
-        <PageFaveContentTag1 tag1="news" />
-        <PageFaveContentTag1 tag1="software" />
+        <PageFaveContentTag1 tag1="health" />
       </div>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    Search: state.Search,
-    Bookmarks: state.Bookmarks,
-    MenuFave: state.MenuFave
-  }
-}
  
-export default connect(mapStateToProps)(PageFaveContent);
+export default connect()(PageFaveContent);
+
+        // <PageFaveContentTag1 tag1="news" />
+        // <PageFaveContentTag1 tag1="software" />
