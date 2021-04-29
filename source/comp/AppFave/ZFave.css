@@ -1,0 +1,22 @@
+/* FramePageFaveFaveContentPartsTagFave
+*/
+.bookmark_div{
+  background-color: rgba(255, 255, 255, 1);
+  display: inline-block;
+  width: 100%;
+  padding: 3px;
+}
+.bookmark_div:hover{
+  background-color: rgba(255, 255, 255, 0);
+}
+.bookmark_image{
+  vertical-align: middle;
+  height: 16px;
+}
+.bookmark_link{
+  vertical-align: middle;
+  font-size: 12px;
+  text-decoration: none;
+  color: #113c71;
+  margin: 0 0 0 4px;
+}

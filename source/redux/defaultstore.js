@@ -37,7 +37,7 @@ const defaultStore = {
 
   // holds the current bookmark Menu
   MenuFave: {
-    current: 'all'
+    current: 'health'
   },
 
   // holds the current URL in the favicon finder app

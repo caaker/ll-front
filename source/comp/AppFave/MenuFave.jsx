@@ -14,7 +14,7 @@ class MenuFave extends React.Component {
   }
 
   render () {
-    let item = this.props.MenuFave.current;
+    const item = this.props.MenuFave.current;
 
     return (
       <div id='tag1_hold'>
@@ -38,6 +38,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(MenuFave);
 
-
-        // <img className={item==='news' ? 'tag1_active' : 'tag1'} 
-        //   id="arc_news" src="dist/images/svg/news.svg" onClick={this.clickHandler.bind(this, 'news')} ></img>
+//  add more level1 tags later  
+//  <img className={item==='news' ? 'tag1_active' : 'tag1'} 
+//  id="arc_news" src="dist/images/svg/news.svg" onClick={this.clickHandler.bind(this, 'news')} ></img>
