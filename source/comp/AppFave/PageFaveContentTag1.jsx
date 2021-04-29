@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Tree from '../../classes/class.Tree.js';
 import PageFaveContentTag1Tag0 from './PageFaveContentTag1Tag0.jsx';
 import './PageFaveContentTag1.css';
 
@@ -25,6 +24,8 @@ class PageFaveContentTag1 extends React.Component {
       ...domains,
       ...bookmarks
     };
+
+    console.log(combinedDB)
 
     if(!combinedDB[tag1]) {
       return null;
@@ -53,8 +54,6 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(PageFaveContentTag1);
-
-
     // const search = this.props.Search.current;
-
-        // const bookmarks = Tree.filterByTag(this.props.Bookmarks.bookmarks, search);
+    // const bookmarks = Tree.filterByTag(this.props.Bookmarks.bookmarks, search);
+    // import Tree from '../../classes/class.Tree.js';

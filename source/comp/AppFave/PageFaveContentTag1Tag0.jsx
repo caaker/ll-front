@@ -13,6 +13,11 @@ class PageFaveContentTag1Tag0 extends React.Component {
 
   render () {
     let count = 0;
+
+    if(this.props.bookmarks.length === 0) {
+      return null;
+    }
+
     let render = this.props.bookmarks.map((bookmark) => {
       return <ComponentFave bookmark={bookmark} key={count++} tagClicked={this.tagClicked} />
     });      

@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import Tree from '../classes/class.Tree.js';
+import Tree from './class.Tree.js';
 
 // For the apex or top bar
 const Apex = (state, action) => {
