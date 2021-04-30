@@ -20,7 +20,3 @@ class PageFave extends React.Component {
 }
  
 export default connect()(PageFave);
-
-// Can there be a better way to add both menu item and page at the same time?
-// <PageFaveContentTag1 tag1="news" />
-// <PageFaveContentTag1 tag1="software" />

@@ -13,16 +13,16 @@ class Header {
   addTitle () {
     document.title = "livelong";
   }
-  addBackground () {
-    const url = "https://i.imgur.com/ienF7ad.png";
-    document.body.style.background = "url(" + url + ")";
-  }
   addFavicon () {
     let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon'; 
     link.href = 'dist/images/png/favicon.png';
     document.getElementsByTagName('head')[0].appendChild(link);
+  }
+  addBackground () {
+    const url = "https://i.imgur.com/ienF7ad.png";
+    document.body.style.background = "url(" + url + ")";
   }
 }
 

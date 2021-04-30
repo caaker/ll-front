@@ -20,13 +20,7 @@ class MenuBox extends React.Component {
   }
 
   onClickOutside = e => {    
-    const clickedElement = e.target;
-    const menuElement = this.menuRef.current;
-    if(this.menuRef.current !== clickedElement){
-      // this.props.dispatch({type: 'closeMenu'});  
-      // e.preventDefault();
-      // e.stopPropagation();
-    }
+    this.props.dispatch({type: 'closeMenu'});  
   }
 
   render() {

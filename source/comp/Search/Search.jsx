@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './Search.css';
 
-
-// consider a re-factor to use a google search icon as it is language agnostic
-
 class Search extends React.Component {
 
   constructor(props) {
@@ -13,7 +10,6 @@ class Search extends React.Component {
 
   handleChange = (event) => {
     this.props.dispatch({type: 'updateSearch', current: event.target.value });
-    // console.log(event.target.value);
   }
 
   handleSubmit = (event) => {
@@ -30,7 +26,6 @@ class Search extends React.Component {
             type="text"
             placeholder=" Search"
             value={this.props.Search.current}
-            ref="filterTextInput"
             onChange={this.handleChange}
           />
         </form>
@@ -41,8 +36,8 @@ class Search extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Apex: state.Apex,
-    Search: state.Search
+    Search: state.Search,
+    Apex: state.Apex
   }
 }
 

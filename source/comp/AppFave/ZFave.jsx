@@ -19,7 +19,7 @@ class ZFave extends React.Component {
       <div id={bookmark.id + 'a'} 
            className = 'bookmark_div' 
            onClick = {() => {this.bookmarkClicked(bookmark.url)}} >
-        
+
         <img className='bookmark_image' 
              src = {'http://www.google.com/s2/favicons?domain=' + bookmark.domain}/>
         
@@ -29,7 +29,7 @@ class ZFave extends React.Component {
            onClick = {() => {e.preventDefault();}}>
            {bookmark.title || bookmark.domain}
         </a>
-        
+
       </div>
 
     );

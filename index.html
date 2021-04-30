@@ -6,18 +6,164 @@
     <meta name="keywords" content="health, articles, favorites, sharing, saving">
     <meta name='description' content='Your trusted ally in health and strength. 
       Join us in a pursuit to live longer and stronger.'>
-    <link rel="apple-touch-icon" sizes="57x57"   href="png/apple.png" />
-    <link rel="apple-touch-icon" sizes="72x72"   href="png/apple.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="png/apple.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="png/apple.png" />
+    <link rel="apple-touch-icon" sizes="57x57"   href="dist/images/png/favicon.png" />
+    <link rel="apple-touch-icon" sizes="72x72"   href="dist/images/png/favicon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="dist/images/png/favicon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="dist/images/png/favicon.png" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
   </head>
-
   <body>
+
+    <style>
+      body{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        font-size: 11px;
+        font-family: Arial;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+        line-height: 100%; 
+      }
+      input[type=text]{   
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      #app{
+        width: 100%;
+        height: 100%;
+      }
+    <style/>
+
+
     <div id="app"></div>
+
+
+    <style>
+      /* ArcA CSS - move to moudle */
+      #indicator{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .indicator-off{
+        display: none;
+      }
+      .indicator-on{
+        display: flex;
+      }
+      #percentage{
+        font-size: 40px;
+        font-weight: bold;
+      }
+    </style>
+
+
+    <!-- ArcA HTML - move to module -->
+    <div id="indicator" class="indicator-on" >
+      <img src="dist/images/svg/favicon.svg" alt="Livelong.ai" width="128" height="128">
+      <p id="percentage"></p>
+    </div>
+
+
     <script>
-      function getTime(){var a=new Date,c=a.getSeconds(),d=a.getMinutes();a=a.getHours();var b="_AM";12<a&&(a-=12,b="_PM");12===a&&(b="_PM");return a+":"+d+":"+c+b}function loadScript(a,c){console.log("Loading | "+a+" | "+c);var d=document.getElementsByTagName("div")[0],b=document.createElement("script");b.src=a+"?cache_buster="+c;d.parentNode.insertBefore(b,d)};
-      
-      loadScript('dist/bundle.js', getTime());
+
+
+/* jshint esversion: 8 */
+
+// jslint.com
+/*global
+   localStorage console document XMLHttpRequest
+*/
+
+const ArcA = {};
+
+function runScript(path, version, bust, conventional){
+
+  if(conventional){
+    console.log("DEBUG: app loaded from network conventionally: ", version);
+    runConventional(path);
+    turnOffIndicator();
+  } else if(!conventional && ((localStorage.version === undefined) || (version > localStorage.version) || bust)){
+    localStorage.version = version;
+    callServerPopulateStorage(path, ()=>{
+      console.log("DEBUG: app loaded from server via ajax: ", version);
+      runFromStorage();
+      turnOffIndicator();
+    });
+  } else if ( version <= localStorage.version){
+    console.log("DEBUG: app loaded from client via localStorage: ", version);
+    runFromStorage();
+    turnOffIndicator();
+  }
+};
+
+function runConventional(path) {
+  let script = document.createElement("script");
+  script.src = path;
+  document.head.appendChild(script);
+}
+
+function runFromStorage() {
+  let script = document.createElement("script");
+  script.innerHTML = localStorage.file;
+  document.head.appendChild(script);
+};
+
+function turnOffIndicator(){
+  const element = document.getElementById("indicator");
+  element.classList.add("indicator-off");
+  element.classList.remove("indicator-on");
+}
+
+function callServerPopulateStorage(path, callback){
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {                         // throwing a violation on Chrome for taking 356msec
+    if (this.readyState === 4 && this.status === 200) {
+      try {
+        // localStorage.file = this.responseText;                 // quota exceeded for 4.3 MB on Safari
+        localStorage.setItem('file', this.responseText);
+      } catch (domException) {
+        console.log("DEBUG: " + domException.name);
+        console.log(domException);
+      }
+      callback();
+    }
+  };
+  xhttp.addEventListener("progress", updateProgress);
+  xhttp.open("GET", path, true);
+  xhttp.send();
+};
+
+function updatePercentage(percent){
+  const element = document.getElementById("percentage");
+  element.innerHTML = "      " + percent + " % ";  
+}
+
+function updateProgress(ev){
+  if(ev.lengthComputable){
+    const percent = Math.round(ev.loaded / ev.total * 100);
+    console.log('DEBUG: % of data received: ' + percent);
+    console.log('DEBUG: fraction of data received ' + ev.loaded + ' / ' + ev.total);
+    updatePercentage(percent);
+  } else {
+    console.log('DEBUG: ajax data received - not computable');
+  }
+}
+
+// options - path, version, bust storage, run conventionally
+//--------------------------1619745751659
+runScript("dist/bundle.js", 1619745751659, false, false);
+
     </script>
+
+
+
   </body>
 </html>
