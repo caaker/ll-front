@@ -20,11 +20,14 @@
 .container-2-mapview{
   width: 100%;
 }
-
-
 /*match to .apex_inner in F1Apex*/
 @media screen and (max-width: 300px) {
   #container-2 {
     width: 300px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #container-2{
+    width: 100%;
   }
 }

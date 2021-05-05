@@ -7,7 +7,6 @@ class Favicon extends React.Component {
     super(props);
   }
 
-  // given a domain property will render a favicon for that domain using google api
   render() {
     const domain = this.props.URL.current.domain; 
     return (

@@ -7,8 +7,7 @@ class AppChat extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {}
     this.setUpSockets();
   }
 
@@ -29,22 +28,27 @@ class AppChat extends React.Component {
 
   render() {
     return (
-
-      <div id="chat-top">
-        <div id="chat-window">
-          <div id="output"></div>
-          <div id="feedback"></div>
-        </div>
-        <input id="handle" type="text" placeholder="Handle" />
-        <input id="message" type="text" placeholder="Message" />        
-        <button id="send">Send</button>
-      </div>
-
     )
   }
 }
 
 export default connect()(AppChat);
+
+
+
+
+      // <div id="chat-top">
+      //   <div id="chat-window">
+      //     <div id="chat-output"></div>
+      //     <div id="chat-feedback"></div>
+      //   </div>
+      //   <input id="handle" type="text" placeholder="Handle" />
+      //   <input id="message" type="text" placeholder="Message" />        
+      //   <button id="send">Send</button>
+      // </div>
+
+
+
 
 // // Make Connection
 // var socket = io.connect('http://localhost:4000');

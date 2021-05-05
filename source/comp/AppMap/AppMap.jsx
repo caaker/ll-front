@@ -28,18 +28,19 @@ class AppMap extends React.Component {
   success = (position) => {
     this.setup([position.coords.longitude, position.coords.latitude]);
   }
+
+  error = () => {
+    this.setup([-122.42, 37.77]);
+  }
   
   setup = (center) => {
     this.map = new mapboxgl.Map({
       container: "app_map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: center,
-      zoom: 7
+      zoom: 8
     });
 
-  }
-  error = () => {
-    this.setup([-122.42, 37.77]);
   }
 
   render () {

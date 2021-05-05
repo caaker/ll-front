@@ -14,8 +14,8 @@ class MenuIcon extends React.Component {
 
   render() {
     return (
-      <img className = 'common_icon' 
-           id = {true ? 'common_icon_rotate' : 'common_icon_still'} 
+      <img className = 'common_favicon_all' 
+           id = {true ? 'common_favicon_rotate' : 'common_favicon_still'} 
            onClick = {this.clickHandler} src='dist/images/svg/favicon.svg'/>
     )
   }

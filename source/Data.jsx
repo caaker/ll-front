@@ -63,7 +63,6 @@ class Data extends React.Component {
   }
 
   getArticles () {
-    // this.props.dispatch({type: 'addArticle', id1: 'id1'});
     const options = {
       credentials: 'include'
     };    
@@ -73,12 +72,14 @@ class Data extends React.Component {
     })
     .then((articles) => {
       articles.reverse();
-      // console.log(articles);
+      console.log(articles);
       const domains = articles.map((obj)=>{
         return {
           domain: obj.domain,
           tag0: obj.tag,
-          url: 'http://' + obj.domain
+          url: 'http://' + obj.domain,
+          link: obj.link,
+          titleurl: obj.title
         }
       });
             

@@ -21,7 +21,7 @@ class Tree {
 
   // tag1 is not longer abstacted out of the db, it is set explicitly
   // tag0 comes from db
-  // add a ttile as it is not comtained in the database
+  // add a title as it is not contained in the database
   // remove duplicates by domain
   createTree2 (db, tag1) {
     let tree = {};
@@ -40,14 +40,17 @@ class Tree {
     let unique = [];
     Object.keys(tree[tag1]).forEach((tag0)=>{
       unique = [];
+
       tree[tag1][tag0] = tree[tag1][tag0].filter((item)=>{
         if(unique.includes(item.domain) === false && item.domain !== "youtube.com"){
           unique.push(item.domain);
           return true;
         } else {
+          item.domain
           return false;
         }
       });
+
     });
 
     return tree;

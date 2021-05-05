@@ -13,7 +13,6 @@ class Orb extends React.Component {
   }
 
   bounce(){
-    // apply css
     this.setState((prev) => {
       return {
         class_string: 'circle white bounce',
@@ -31,17 +30,13 @@ class Orb extends React.Component {
 
   listenForBeacon () {
     const socket = io();
-
     socket.on('error', (error) => {
       console.log("DEBUG: socket error occurred", error);
     });
-
     socket.on('beacon', (data) => {
-      // this.updateState();
       this.bounce();
       console.log('DEBUG: Server Time: ', data);
     });
-
   }
 
   render () {
@@ -53,23 +48,3 @@ class Orb extends React.Component {
 }
 
 export default Orb;
-
-
-
-  // updateState() {
-  //   this.setState((prev) => {
-  //     let index = prev.i;
-  //     index++;
-  //     const classes = [
-  //       'circle white bounce', 
-  //       'circle blue bounce'
-  //     ];
-  //     if(index === classes.length) {
-  //       index = 0;
-  //     }
-  //     return {
-  //       i: index,
-  //       class_string: classes[index]
-  //     };
-  //   });
-  // }

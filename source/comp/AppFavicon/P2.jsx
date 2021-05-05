@@ -9,7 +9,7 @@ class P2 extends React.Component {
 
   render() {
     return (
-      <p id ="rpara">
+      <p id ="rp2">
 Get favicons from any web site.
       </p>
     )

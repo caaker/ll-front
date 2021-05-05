@@ -13,6 +13,7 @@ class ZFave extends React.Component {
 
   render () {
     const bookmark = this.props.bookmark;
+    console.log(bookmark)
 
     return (
 

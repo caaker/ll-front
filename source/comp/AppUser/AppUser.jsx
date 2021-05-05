@@ -13,8 +13,8 @@ class AppUser extends React.Component {
     const user = this.props.User.current;
     return (
       <div>
-       {user && <UserAccount></UserAccount>}
-       {!user && <UserAuth></UserAuth>}
+        {user && <UserAccount></UserAccount>}
+        {!user && <UserAuth></UserAuth>}
       </div>
     );
   }

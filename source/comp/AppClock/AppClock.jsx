@@ -4,7 +4,6 @@ import './AppClock.css';
 import arc from '@arcarc/arc';
 import Orb from './Orb.jsx';
 
-//foo-1-2-3
 class AppClock extends React.Component {
 
   constructor(props) {

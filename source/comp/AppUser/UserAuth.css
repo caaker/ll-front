@@ -8,15 +8,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  
-  width:  250px;
-  height:  185px;
+  flex-direction: column;
+  width: 250px;
+  height: 185px;
   background: rgba(255,255,255,0.5);
-  box-shadow:   0px 1px 3px rgba(25, 25, 25, 0.4);
+  box-shadow:  0px 1px 3px rgba(25, 25, 25, 0.4);
+}
+#auth-logon{
+  font-size:16px;
+  margin-bottom: 12px;
+  color: #444444;
 }
 #auth-google-link{
-  margin: auto;
+  
 }
 #auth-google-image{
   width: 64px;

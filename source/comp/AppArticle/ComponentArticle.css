@@ -1,3 +1,4 @@
+
 /* heading sets the width
 */
 
@@ -14,7 +15,7 @@
   background: rgba(255,255,255, .5);
   border-radius: 4px;
   padding: 10px;
-  margin: 10px 5px 10px 5px;
+  margin: 10px 0px 10px 0px;
 }
 .medd_article_pending{
   display: inline-block;
@@ -22,7 +23,7 @@
   background: rgba(128,128,128, .5);
   border-radius: 4px;
   padding: 10px;
-  margin: 10px 5px 10px 5px;
+  margin: 10px 0px 10px 0px;
 }
 #medd_hook{
   position: absolute;
@@ -104,4 +105,16 @@
   opacity: .5;
   float: right;
   height: 20px;
+}
+
+/* MQ-WIDTH
+**
+**     margin: 10px 0px 10px 0px;
+
+*/
+
+@media screen and (max-width: 500px) {
+  .medd_article{
+    width: 100%;
+  }
 }

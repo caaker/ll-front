@@ -29,7 +29,6 @@
   margin: 20px 0px 0px 0px; 
   font-size: 30px;
   font-weight: bold;
-  font-family: arial;
 }
 #user-button{
   border: none;
@@ -37,7 +36,6 @@
   padding: 7px;
   width: 200px;
   font-size: 12px;
-  font-family: "montserrat",sans-serif;
   border-radius: 8px;
   cursor: pointer;
   color: #fff;

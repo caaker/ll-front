@@ -29,8 +29,8 @@ class F1Apex0 extends React.Component {
           
           <svg
             onClick={this.searchClicked}
-            className='circular_arrows'
-            id={this.props.Apex.current ? 'common_icon_rotate' : 'common_icon_still'}
+            className='search_icon_all'
+            id={this.props.Apex.current ? 'search_icon_rotate' : 'search_icon_still'}
             xmlns="http://www.w3.org/2000/svg" 
             width="18"
             height="18"

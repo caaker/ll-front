@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import './Input.css';
 import URL from '../Common/URL.js';
 
-// URL is in URLClass, this.url, current state, and redux ... too many places
 class Input extends React.Component {
 
   constructor(props) {
