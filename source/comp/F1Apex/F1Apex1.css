@@ -2,6 +2,8 @@
   width: 100%;
 }
 #apex1-1_show{
+  border-bottom: 1px dotted;
+  border-color: #eeeeee;
   height: 40px;
   transition: height .5s;
 }
@@ -9,9 +11,6 @@
   height: 0px;
   transition: height .5s;
 }
-
-/* pull width
-*/
 #apex1-2{
   position: relative;
   height: 100%;

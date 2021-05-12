@@ -22,18 +22,13 @@ class F1Apex0 extends React.Component {
       component_on = true;
     }
     return (
-      <div className={component_on ? 'apex0-1_on' : 'apex0-1_off'} 
-           id={this.props.Apex.current ? 'apex0-1_color1' : 'apex0-1_color2'}>
-
+      <div className={component_on ? 'apex0-1_on' : 'apex0-1_off'} >
         <div className='apex_inner' id='apex0-2'>
-          
           <svg
             onClick={this.searchClicked}
             className='search_icon_all'
             id={this.props.Apex.current ? 'search_icon_rotate' : 'search_icon_still'}
             xmlns="http://www.w3.org/2000/svg" 
-            width="18"
-            height="18"
             viewBox="0 0 24 24" 
             >
             <path d="M0 0h24v24H0V0z" fill="none"/>

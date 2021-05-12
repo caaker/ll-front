@@ -1,6 +1,18 @@
 import {combineReducers} from 'redux';
 import Tree from './class.Tree.js';
 
+
+// Holds the current user data
+const App = (state, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "toggleAppStyle":
+      newState.current = !state.current;
+      break;
+  }
+  return newState;
+};
+
 // For the apex or top bar
 const Apex = (state, action) => {
   const newState = { ...state };
@@ -41,6 +53,19 @@ const Menu = (state, action) => {
 };
 
 const Modal = (state, action) => {
+  const newState = { ...state };
+  newState.data = action.data;
+  switch(action.type) {
+    case "toggleOn":
+      newState.on = true;
+      break;
+    case "toggleOff":
+      newState.on = false;
+  }
+  return newState;
+};
+
+const Modal2 = (state, action) => {
   const newState = { ...state };
   newState.data = action.data;
   switch(action.type) {
@@ -121,10 +146,12 @@ const Search = (state, action) => {
 };
 
 const reducers = combineReducers({
+  App,
   Apex,
   User,
   Menu,
-  Modal, 
+  Modal,
+  Modal2,
   Bookmarks,
   Domains,
   Articles,

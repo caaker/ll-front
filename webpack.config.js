@@ -2,7 +2,7 @@ const path = require('path');
 const IN_DIR = path.join(__dirname, '/source');
 const OUT_DIR = path.join(__dirname, '/dist');
 const OUT_DIR_PROD = path.join(__dirname, '../ll-server/dist');
-const outputPaths = [OUT_DIR, OUT_DIR_PROD];
+const outputPaths = [OUT_DIR_PROD];
 
 module.exports = outputPaths.map(outputPath => {
   return (env) => {

@@ -1,20 +1,20 @@
 /* FramePageFaveFaveContentPartsTagFave
 */
-.bookmark_div{
+.domain_div{
   cursor: pointer;
   background-color: rgba(255, 255, 255, 1);
   display: inline-block;
   width: 100%;
   padding: 3px;
 }
-.bookmark_div:hover{
+.domain_div:hover{
   background-color: rgba(255, 255, 255, 0);
 }
-.bookmark_image{
+.domain_image{
   vertical-align: middle;
   height: 16px;
 }
-.bookmark_link{
+.domain_link{
   vertical-align: middle;
   font-size: 12px;
   text-decoration: none;

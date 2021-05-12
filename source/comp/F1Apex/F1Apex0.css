@@ -1,21 +1,15 @@
 .apex0-1_on{
   width: 100%;
+  height: 18px;
   border-bottom: 1px dotted;
+  border-color: #eeeeee;
+  transition: height 1s;
 }
 
 .apex0-1_off{
   width: 100%;
-  display: none;
-}
-
-#apex0-1_color1{
-  border-color: #ffffff;
-  transition: border-color 1s;
-}
-
-#apex0-1_color2{
-  border-color: #eeeeee;
-  transition: border-color 1s;
+  height: 0px;
+  transition: height 1s;
 }
 
 #apex0-2{
@@ -24,10 +18,11 @@
   margin: 0 auto;
 }
 
-/* ?
+/*
 */
 
 .search_icon_all{
+  height: 100%;
   margin: 0 auto;
   display: block;
 }

@@ -28,24 +28,22 @@ class AppChat extends React.Component {
 
   render() {
     return (
-    )
+
+      <div id="chat-top">
+        <div id="chat-window">
+          <div id="chat-output"></div>
+          <div id="chat-feedback"></div>
+        </div>
+        <input id="handle" type="text" placeholder="Handle" />
+        <input id="message" type="text" placeholder="Message" />        
+        <button id="send">Send</button>
+      </div>
+
+    );
   }
 }
 
 export default connect()(AppChat);
-
-
-
-
-      // <div id="chat-top">
-      //   <div id="chat-window">
-      //     <div id="chat-output"></div>
-      //     <div id="chat-feedback"></div>
-      //   </div>
-      //   <input id="handle" type="text" placeholder="Handle" />
-      //   <input id="message" type="text" placeholder="Message" />        
-      //   <button id="send">Send</button>
-      // </div>
 
 
 

@@ -1,0 +1,39 @@
+/* F1PageFaveContentPartsTag
+*/
+
+.domain_group_div{
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(255, 255, 255, .5);
+  height: 23px;
+  width: 100%;
+}
+.domain_group_div_title{
+  position: relative;
+  top: 5px;
+  text-align: center;
+}
+
+/*
+*/
+
+.domain_group{
+  display: inline-block;
+  border-radius: 4px;
+  width: 300px;
+  margin: 6px 0px 6px 0px;
+  border: 6px solid white;
+  box-shadow: 0px 1px 3px rgba(34,25,25,0.4);
+}
+
+@media screen and (max-width: 300px) {
+  .domain_group {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .domain_group{
+    width: 100%;
+  }
+}

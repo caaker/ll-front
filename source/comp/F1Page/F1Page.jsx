@@ -9,6 +9,9 @@ import AppFavicon from       '../AppFavicon/AppFavicon.jsx';
 import AppFave from          '../AppFave/AppFave.jsx';
 import AppMap from           '../AppMap/AppMap.jsx';
 
+// release
+import AppChat from           '../AppChat/AppChat.jsx';
+
 
 // css
 import './F1Page.css';
@@ -23,7 +26,7 @@ class F1Page extends React.Component {
     const app = this.props.Menu.current;
     return (
       <div id='container_hold'>
-        <div id='container-1' className='container-1'>
+        <div className='container-1'>
   	      <div id='container-2' className='container-2'>
           
             {(app === 'User') &&                <AppUser/>}
@@ -31,6 +34,7 @@ class F1Page extends React.Component {
             {(app === 'Favicons') &&            <AppFavicon/>}
             {(app === 'Faves') &&               <AppFave/>}
             {(app === 'Map') &&                 <AppMap/>}
+            {(app === 'Chat') &&                <AppChat/>}
 
   	      </div>
   	    </div>

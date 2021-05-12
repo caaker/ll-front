@@ -1,4 +1,4 @@
-.bm_page_super{
+.T1_page{
   position: absolute;
   top:40px;
 
@@ -7,9 +7,9 @@
   align-items: flex-start;
   justify-content: space-around;
 }
-#bm_page_super_show{
+#T1_page_show{
   display: flex;
 }
-#bm_page_super_hide{
+#T1_page_hide{
   display: none;
 }

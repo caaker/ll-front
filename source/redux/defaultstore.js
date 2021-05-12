@@ -1,6 +1,11 @@
 const defaultStore = {
 
   // shows wether top bar is displayed or not
+  App: {
+    current: true
+  },
+
+  // shows wether top bar is displayed or not
   Apex: {
     current: false
   },
@@ -19,6 +24,11 @@ const defaultStore = {
 
   // is the modal displayed, also if it is pre-poulated with data
   Modal: {
+    on: false,
+    data: false
+  },
+
+  Modal2: {
     on: false,
     data: false
   },

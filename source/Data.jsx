@@ -72,7 +72,7 @@ class Data extends React.Component {
     })
     .then((articles) => {
       articles.reverse();
-      console.log(articles);
+      // console.log(articles);
       const domains = articles.map((obj)=>{
         return {
           domain: obj.domain,

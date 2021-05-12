@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PageFaveTag1 from './PageFaveTag1.jsx';
+import YT1 from './YT1.jsx';
 import './PageFave.css';
 
 
@@ -12,8 +12,8 @@ class PageFave extends React.Component {
   render () {
     return (
       <div id='bm_hold'>
-        <PageFaveTag1 tag1="all" />
-        <PageFaveTag1 tag1="health" />
+        <YT1 tag1="all" />
+        <YT1 tag1="health" />
       </div>
     );
   }

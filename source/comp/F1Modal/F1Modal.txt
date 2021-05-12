@@ -1,7 +1,0 @@
-The F1Modal directory contains both the modal and the form contained in the modal.  They are named F1Modal.jsx and F1ModalForm.jsx.
-
-It also contains Validate.js used to validate fields and references URL.js to validate the URLs in the form.  There is some overlap here.
-
-F1ModalForm is a React controlled form, in such that as the user updates the form, the state of the React object updates with it.  Also, as the user update the form, two URL objects are updated as well which analyze the URL.
-
-F1ModalForm also sends the data to the server using built in fetch().

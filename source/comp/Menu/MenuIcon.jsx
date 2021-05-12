@@ -9,13 +9,16 @@ class MenuIcon extends React.Component {
   }
 
   clickHandler = () => {
-    this.props.dispatch({type: 'updateApp'});
+    this.props.dispatch({type: 'toggleAppStyle'});
+    console.log('this.props.App', this.props.App);
   }
 
   render() {
+    const state = this.props.App.current;
+    console.log(state);
     return (
-      <img className = 'common_favicon_all' 
-           id = {true ? 'common_favicon_rotate' : 'common_favicon_still'} 
+      <img className = 'favicon_all' 
+           id = {state === true ? 'favicon_01' : 'favicon_90'} 
            onClick = {this.clickHandler} src='dist/images/svg/favicon.svg'/>
     )
   }
@@ -23,7 +26,7 @@ class MenuIcon extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    SideBar: state.SideBar
+    App: state.App
   }
 }
 

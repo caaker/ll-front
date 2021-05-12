@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './F1Modal.css';
-import F1ModalForm from './F1ModalForm.jsx'
+import ModalForm from '../ModalForm/ModalForm.jsx'
 
 class F1Modal extends React.Component {
 
@@ -17,12 +17,11 @@ class F1Modal extends React.Component {
     }
   }
 
-
   render () {    
     return (
       <div className = {this.props.Modal.on === true ? 'modal on' : 'modal off'}>
         <div id = 'modal-box'>
-          <F1ModalForm/>
+          <ModalForm/>
         </div>
       </div>
     )

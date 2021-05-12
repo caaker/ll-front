@@ -1,6 +1,5 @@
 
 #chat-top{
-  font-family: 'Nunito';
   max-width: 600px;
   margin: 30px auto;
   border: 1px solid #ddd;
@@ -48,7 +47,6 @@ input{
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #eee;
-  font-family: Nunito;
   font-size: 16px;
 }
 

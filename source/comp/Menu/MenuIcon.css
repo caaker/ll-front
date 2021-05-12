@@ -1,14 +1,14 @@
-.common_favicon_all{
+.favicon_all{
   position: relative;
   width: 24px;
   top: 8px;
   left: 8px;
 }
-#common_favicon_still{
-  transform: rotate(0deg);
+#favicon_01{
+  transform: rotate(1deg);
   transition: transform 1s;
 }
-#common_favicon_rotate{
-  transform: rotate(360deg);
+#favicon_90{
+  transform: rotate(90deg);
   transition: transform 1s;
 }

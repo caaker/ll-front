@@ -1,14 +1,22 @@
 
-#apex_hold{
+.apex_hold{
   position: fixed;
   z-index: 1000000;
   width: 100%;
   box-shadow: 0px 1px 3px rgba(25, 25, 25, 0.4);
-  background: rgba(255, 255, 255, .90);
 }
 
-/* used in all 3 apex levels
-*/
+#apex_style_99{
+  background: rgba(255, 255, 255, .99);
+  transition: background 1s;
+
+}
+
+#apex_style_45{
+  background: rgba(255, 255, 255, .45);
+  transition: background 1s;
+}
+
 
 .apex_inner {
   width: 90%;
@@ -16,16 +24,14 @@
   border-right: 1px dotted #eeeeee;
 }
 
-/* match to container-2 in F1Page 
-*/
+@media screen and (max-width: 500px) {
+  .apex_inner{
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 300px) {
   .apex_inner {
     width: 300px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .apex_inner{
-    width: 100%;
   }
 }
