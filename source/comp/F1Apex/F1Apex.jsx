@@ -13,8 +13,6 @@ class F1Apex extends React.Component {
 
   render () {
     const app_style = this.props.App.current;
-    console.log(app_style);
-
     return (
       <div className = 'apex_hold'
            id = {app_style ? 'apex_style_99' : 'apex_style_45'}>

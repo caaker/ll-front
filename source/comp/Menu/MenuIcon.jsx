@@ -10,12 +10,10 @@ class MenuIcon extends React.Component {
 
   clickHandler = () => {
     this.props.dispatch({type: 'toggleAppStyle'});
-    console.log('this.props.App', this.props.App);
   }
 
   render() {
     const state = this.props.App.current;
-    console.log(state);
     return (
       <img className = 'favicon_all' 
            id = {state === true ? 'favicon_01' : 'favicon_90'} 
