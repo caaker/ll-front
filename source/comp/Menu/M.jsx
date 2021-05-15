@@ -13,13 +13,16 @@ class M extends React.Component {
    }
 
   render () { 
+    const menu_on = this.props.Menu.status;
     return (
       <div>
         { true &&  <MenuIcon/> }
         { (this.props.Menu.current === 'Articles') &&  <ArticleAddButton/> }          
         { true &&  <MenuPic/> }
         { true &&  <Menu/> }
+
         { true &&  <MenuBox/> }
+
       </div>
     )
   }

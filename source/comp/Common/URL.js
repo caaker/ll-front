@@ -18,15 +18,18 @@ class URL {
     this.obj.url = url;
     
 
-    this.debug && console.log('DEBUG:URL.updateURL()', url);
+    // this.debug && console.log('DEBUG:URL.updateURL()', url);
 
     if(typeof this.obj.url === 'string') {
+
       this.parseURL();
       this.makeObj();
       this.validateByTLD();
       this.removeWWW();
+
     } else {
-      this.debug && console.log('DEBUG: Why are you passing garbage into this.obj.url?', this.obj.url);
+
+      // this.debug && console.error('DEBUG: URL.updateURL called()', this.obj.url);
       this.clearObj();
     }
   }

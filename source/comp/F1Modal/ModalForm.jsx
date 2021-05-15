@@ -16,6 +16,7 @@ class ModalForm extends React.Component {
     this.state = this.initial_state;
   }
 
+  // wtf is this doing? why does this comp keep updating?
   componentDidUpdate(prevProps) {
     if ((this.props.Modal.data !== prevProps.Modal.data) && this.props.Modal.data) {
       this.setState(this.props.Modal.data);

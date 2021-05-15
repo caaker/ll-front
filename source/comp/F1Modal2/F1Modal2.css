@@ -26,9 +26,25 @@
 }
 
 #modal-box-2{
+  padding: 10px;
   width: 400px;
   background-color: rgba(255, 255, 255, .95);
   border-radius: 12px;
-  text-align: center;
   position: relative;
+}
+
+#list-title{
+  text-align: center;
+  font-size: 14px;
+  margin: 0px 0px 4px 0px;
+  font-weight: bold;
+}
+
+#modal-cross-2{
+  position: absolute;
+  top: 5px;
+  right: 14px;
+  font-size: 30px;
+  transform: rotate(45deg);
+  cursor: pointer;
 }

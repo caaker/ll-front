@@ -5,7 +5,6 @@ import store        from './redux/store';
 
 import Header       from './class.Header.js';
 import F1           from './comp/F1/F1.jsx';
-import Data         from './Data.jsx';
 
 class App extends React.Component {
 
@@ -14,11 +13,9 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("DEBUG: L0 : index");
     return (
-      <div>
-        <F1/>
-        <Data/>
-      </div>
+      <F1/>
     )
   }
 }
@@ -28,3 +25,5 @@ ReactDOM.render(
     <App></App>
   </Provider>
 , document.getElementById('app'));
+
+

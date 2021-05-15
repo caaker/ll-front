@@ -23,6 +23,7 @@ class YT1 extends React.Component {
       return null;
     }
 
+    // loop through level - tag1 to get all level - tag0
     const render = Object.keys(combinedDB[tag1]).map((tag0) =>
       <YT1T0 tag0={tag0} key={tag0} bookmarks={combinedDB[tag1][tag0]} />
     );
@@ -38,7 +39,6 @@ class YT1 extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Search: state.Search,
     Bookmarks: state.Bookmarks,
     MenuFave: state.MenuFave,
     Domains: state.Domains
@@ -48,6 +48,8 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(YT1);
 
 // add search later
+//    Search: state.Search,
+
 // const search = this.props.Search.current;
 // const bookmarks = Tree.filterByTag(this.props.Bookmarks.bookmarks, search);
 // import Tree from '../../classes/class.Tree.js';

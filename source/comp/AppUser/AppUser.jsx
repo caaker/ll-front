@@ -11,6 +11,7 @@ class AppUser extends React.Component {
 
   render () {
     const user = this.props.User.current;
+    console.log("DEBUG: L3 : F1-Page-User ");
     return (
       <div>
         {user && <UserAccount></UserAccount>}

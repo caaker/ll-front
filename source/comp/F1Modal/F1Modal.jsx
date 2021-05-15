@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './F1Modal.css';
-import ModalForm from '../ModalForm/ModalForm.jsx'
+import ModalForm from './ModalForm.jsx'
 
 class F1Modal extends React.Component {
 

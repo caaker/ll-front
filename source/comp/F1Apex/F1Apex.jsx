@@ -11,11 +11,23 @@ class F1Apex extends React.Component {
     super(props);
    }
 
+  getStyle = () => {
+    let apex_style;
+
+    // this is here for testing how Redux effects rendering
+    // this is a test component
+    if(this.props.App){
+      apex_style = this.props.App.current;  
+    }
+
+    // return the style based on the user clicking the icon
+    return apex_style ? 'apex_style_99' : 'apex_style_45'
+  }
+
   render () {
-    const app_style = this.props.App.current;
+    console.log("DEBUG: L2 : F1-Apex ");
     return (
-      <div className = 'apex_hold'
-           id = {app_style ? 'apex_style_99' : 'apex_style_45'}>
+      <div className ='apex_hold' id={this.getStyle()} >
         <F1Apex0/>
         <F1Apex1/>
         <F1Apex2/>

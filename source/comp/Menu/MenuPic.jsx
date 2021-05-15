@@ -9,8 +9,10 @@ class MenuPic extends React.Component {
   }
 
   clicked = () => {
-    console.log('picture clicked');
-    this.props.dispatch({type: 'updateMenu', current: "User" });
+    // see if you can move this into Redux
+    if(this.props.Menu.current !== 'User'){
+      this.props.dispatch({type: 'updateMenu', current: "User" });
+    }
   }
 
   render () {

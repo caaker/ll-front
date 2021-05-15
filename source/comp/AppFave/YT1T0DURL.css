@@ -1,0 +1,24 @@
+/* FramePageFaveFaveContentPartsTagFave
+*/
+.url1_div{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 1);
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  margin: 5px
+}
+.url1_div:hover{
+  background-color: rgba(255, 255, 255, 0);
+}
+.url1_image{
+  vertical-align: middle;
+  height: 16px;
+}
+.url1_link{
+  vertical-align: middle;
+  font-size: 12px;
+  text-decoration: none;
+  color: #113c71;
+  margin: 0 0 0 4px;
+}

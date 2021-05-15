@@ -1,5 +1,5 @@
 import React from 'react';
-import YT1T0Domain from './YT1T0Domain.jsx';
+import YT1T0D from './YT1T0D.jsx';
 import './YT1T0.css';
 
 class YT1T0 extends React.Component {
@@ -13,13 +13,14 @@ class YT1T0 extends React.Component {
 
   render () {
     let count = 0;
+    
+    let tag0 = this.props.bookmarks;
 
-    if(this.props.bookmarks.length === 0) {
-      return null;
-    }
+    // console.log("DEBUG: " + tag0)
 
-    let render = this.props.bookmarks.map((domain) => {
-      return <YT1T0Domain domain={domain} key={count++} tagClicked={this.tagClicked} />
+    // loop through all level tag - 0 to get domains
+    let render = Object.keys(tag0).map((url_list) => {
+      return <YT1T0D url_list={tag0[url_list]} key={count++} tagClicked={this.tagClicked} />
     });      
 
     return (
@@ -36,3 +37,7 @@ class YT1T0 extends React.Component {
 }
 
 export default YT1T0;
+
+    // if(this.props.bookmarks.length === 0) {
+    //   return null;
+    // }

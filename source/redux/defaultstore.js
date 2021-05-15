@@ -1,21 +1,30 @@
 const defaultStore = {
 
-  // shows wether top bar is displayed or not
-  App: {
-    current: true
-  },
-
-  // shows wether top bar is displayed or not
-  Apex: {
-    current: false
-  },
-
   // holds the id of the current user or false if noboby is logged in
   User:{
     current: false
   },
-  
-  // holds the current page as well as the status of the menu - show or don't show
+
+  Articles: {
+    articles: false
+  },
+
+  Domains: {
+    domains: false
+  },
+
+  Bookmarks: {
+    bookmarks: false
+  },
+
+  App: {
+    current: true
+  },
+
+  Apex1: {
+    current: false
+  },
+
   // change to MenuPage
   Menu: {
     current: 'Articles',
@@ -33,18 +42,6 @@ const defaultStore = {
     data: false
   },
 
-  Bookmarks: {
-    bookmarks: false
-  },
-
-  Domains: {
-    domains: false
-  },
-
-  Articles: {
-    articles: false
-  },
-
   // holds the current bookmark Menu
   MenuFave: {
     current: 'health'
@@ -56,6 +53,10 @@ const defaultStore = {
     current: {
       domain: 'test.com'
     }
+  },
+
+ Search: {
+    current: ""
   }
 
 };

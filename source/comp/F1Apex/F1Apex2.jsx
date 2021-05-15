@@ -11,6 +11,7 @@ class F1Apex2 extends React.Component {
    }
 
   render () { 
+    console.log("DEBUG: L3 : F1-Apex-2 ");
     return (
       <div className='apex2-1'> 
         <div className='apex_inner' id='apex2-2'>

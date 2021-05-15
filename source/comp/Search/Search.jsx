@@ -18,7 +18,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div id={this.props.Apex.current ? 'search_bar_show' : 'search_bar_hide'}>
+      <div id={this.props.Apex1.current ? 'search_bar_show' : 'search_bar_hide'}>
         <form onSubmit={this.handleSubmit} id="search_bar_form">
           <input
             id="search_bar_input"
@@ -37,7 +37,7 @@ class Search extends React.Component {
 const mapStateToProps = state => {
   return {
     Search: state.Search,
-    Apex: state.Apex
+    Apex1: state.Apex1
   }
 }
 

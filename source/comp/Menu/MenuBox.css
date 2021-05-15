@@ -1,5 +1,5 @@
   .off{
-    display: none;
+    display: none;  
   }
   .on {
     display: inline-block;
@@ -18,3 +18,6 @@
     width: 24px;
     height: 24px;
   }
+/*
+
+  */

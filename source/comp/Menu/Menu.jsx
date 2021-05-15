@@ -11,7 +11,7 @@ class Menu extends React.Component {
   clickHandler = () => {
     this.props.dispatch({type: 'toggleMenu'});
   }
-// toggleMenu, updateMenu, closeMenu
+
   render() {
     return (
       <svg 

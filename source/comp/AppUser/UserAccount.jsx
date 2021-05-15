@@ -9,7 +9,6 @@ class UserAccount extends React.Component {
   }
 
   render () {
-    console.log(this.props.User.current)
     return (
       <div id = "user-container">
         <div id = "user-container-2">

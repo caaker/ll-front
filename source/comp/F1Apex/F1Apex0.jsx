@@ -6,28 +6,30 @@ import './F1Apex0.css';
 class F1Apex0 extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {rotate: false};
   }
 
   searchClicked = (id) => {
-    if(this.props.Menu.current !== 'splash') {
-      this.props.dispatch({type: 'toggleApex'});
-    } else {
-
-    }
+    this.props.dispatch({type: 'toggleApex1'});
+    this.setState((previous) => {
+      return {rotate: !previous.rotate};
+    });
   }
 
   render () {
-    let component_on = false; 
+    let component_on = false;
     if(this.props.Menu.current === 'Articles'){
       component_on = true;
     }
+    console.log("DEBUG: L3 : F1-Apex-0 ");
+    
     return (
       <div className={component_on ? 'apex0-1_on' : 'apex0-1_off'} >
         <div className='apex_inner' id='apex0-2'>
           <svg
             onClick={this.searchClicked}
             className='search_icon_all'
-            id={this.props.Apex.current ? 'search_icon_rotate' : 'search_icon_still'}
+            id={this.state.rotate ? 'search_icon_rotate' : 'search_icon_still'}
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 24 24" 
             >
@@ -43,8 +45,7 @@ class F1Apex0 extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    Menu: state.Menu,
-    Apex: state.Apex
+    Menu: state.Menu
   }
 }
 

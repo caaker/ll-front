@@ -11,6 +11,8 @@ class AppFave extends React.Component {
   }
 
   render () {
+    console.log("DEBUG: L3 : F1-Page-Fave ");
+
     return (
       <div id = "app_fave">
         <MenuFave />

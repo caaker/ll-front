@@ -15,6 +15,8 @@ class AppFavicon extends React.Component {
   }
 
   render () {
+    console.log("DEBUG: L3 : F1-Page-Favicon ");
+
     return (
       <div id ="favicon-app">
         <P2/>

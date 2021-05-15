@@ -39,7 +39,7 @@ class AppArticle extends React.Component {
     }
   }
 
-// https://stackoverflow.com/questions/177719/case-insensitive-search
+  // https://stackoverflow.com/questions/177719/case-insensitive-search
   implementSearch(val) {
     const search = this.props.Search.current; 
     if(!search){
@@ -61,6 +61,7 @@ class AppArticle extends React.Component {
   }
 
   render () {
+    console.log("DEBUG: L3 : F1-Page-Article ");
     return (
       <div id = "article_page_hold">
         {this.makeList()}

@@ -24,25 +24,65 @@ class Tree {
   // add a title as it is not contained in the database
   // remove duplicates by domain
   createTree2 (db, tag1) {
-    let tree = {};
+    const tree = {};
+    tree[tag1] || ( tree[tag1] = {} );
     db.forEach((item) => {
       const tag0 = item.tag0;
-      tree[tag1] || ( tree[tag1] = {} );
       tree[tag1][tag0] || ( tree[tag1][tag0] = [] );
-      item.title = item.domain.split(".")[0];
-      if(tree[tag1][tag0]){
-        tree[tag1][tag0].push(item);  
-      }
+      let test = item.domain.split(".");
+      item.title = test[test.length - 2];
+      tree[tag1][tag0].push(item);
     });
-
     this.sortByTitle(tree);
+    // this.makeUnique(tree, tag1);
+    return tree;
+  }
 
+
+  // fix the foo.boo.com & moo.boo.com issue later
+  createTree3 (db, tag1) {
+    const tree = {};
+
+    // level - tag1
+    tree[tag1] || ( tree[tag1] = {} );
+    db.forEach((item) => {
+
+      // level - tag0
+      const tag0 = item.tag0;
+      tree[tag1][tag0] || ( tree[tag1][tag0] = {} );
+      
+      // level - domain
+      let domain = item.domain;
+
+      if (Array.isArray( tree[tag1][tag0][domain] )){
+        // console.log('DEBUG: tree[tag1][tag0][domain] array found: ', )
+      } else {
+        // console.log('DEBUG: tree[tag1][tag0][domain] array created: ', )
+        tree[tag1][tag0][domain] = [];
+        tree[tag1][tag0][domain]['meta'] = item;
+
+      }
+      
+      // level - url
+      tree[tag1][tag0][domain].push(item);
+    });
+    // console.log(tree);
+    return tree;
+  }
+
+
+    //   let test = item.domain.split(".");
+    //   item.title = test[test.length - 2];
+    // this.sortByTitle(tree);
+    // this.makeUnique(tree, tag1);
+
+
+  makeUnique(tree, tag1){
     let unique = [];
     Object.keys(tree[tag1]).forEach((tag0)=>{
       unique = [];
-
       tree[tag1][tag0] = tree[tag1][tag0].filter((item)=>{
-        if(unique.includes(item.domain) === false && item.domain !== "youtube.com"){
+        if(unique.includes(item.domain) === false ){
           unique.push(item.domain);
           return true;
         } else {
@@ -50,10 +90,7 @@ class Tree {
           return false;
         }
       });
-
     });
-
-    return tree;
   }
 
   sortByTitle (tree) {

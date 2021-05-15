@@ -7,10 +7,6 @@ import AppArticle from       '../AppArticle/AppArticle.jsx';
 import AppUser from          '../AppUser/AppUser.jsx';
 import AppFavicon from       '../AppFavicon/AppFavicon.jsx';
 import AppFave from          '../AppFave/AppFave.jsx';
-import AppMap from           '../AppMap/AppMap.jsx';
-
-// release
-import AppChat from           '../AppChat/AppChat.jsx';
 
 
 // css
@@ -24,6 +20,7 @@ class F1Page extends React.Component {
 
   render () {
     const app = this.props.Menu.current;
+    console.log("DEBUG: L2 : F1-Page ");
     return (
       <div id='container_hold'>
         <div className='container-1'>
@@ -33,8 +30,6 @@ class F1Page extends React.Component {
             {(app === 'Articles') &&            <AppArticle/>}
             {(app === 'Favicons') &&            <AppFavicon/>}
             {(app === 'Faves') &&               <AppFave/>}
-            {(app === 'Map') &&                 <AppMap/>}
-            {(app === 'Chat') &&                <AppChat/>}
 
   	      </div>
   	    </div>
@@ -50,3 +45,9 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(F1Page);
+
+            // {(app === 'Map') &&                 <AppMap/>}
+            // {(app === 'Chat') &&                <AppChat/>}
+
+            // import AppMap from           '../AppMap/AppMap.jsx';
+            // import AppChat from           '../AppChat/AppChat.jsx';
