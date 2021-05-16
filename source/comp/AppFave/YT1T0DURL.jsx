@@ -6,17 +6,28 @@ class YT1T0DURL extends React.Component {
 
   constructor(props) {
     super(props);
-    this.divClicked = this.divClicked.bind(this);
   }
 
-  divClicked (e) {
-    console.log("DEBUG: divClicked bitch!", e);
+  itClicked = (e) => {
+    e.preventDefault();
+    console.log("DEBUG: itClicked!", e);
+    window.open(this.props.data.link, "_blank");
+  }
+
+  linkClicked = (e) => {
+    console.log("DEBUG: linkClicked!", e);
   }
  
   render () {
     const data = this.props.data;
     return (
-      <div onClick={this.divClicked} id={data.id + 'a'} className='url1_div'>
+      <div onClick={this.itClicked} id={data.id + 'a'} className='url1_div'>
+
+        <img className='url1_image' src = {'http://www.google.com/s2/favicons?domain=' + data.domain}/>
+        <a onClick={this.itClicked} className='url1_link' href = {data.link} target='_blank'>
+           {data.titleurl}
+        </a>
+
       </div>
     );
   }
@@ -34,8 +45,4 @@ export default connect()(YT1T0DURL);
 // onclick={()=>{console.log("DEBUG: divClicked!"}}
 
 
-// out for minimal example
-// <img className='url1_image' src = {'http://www.google.com/s2/favicons?domain=' + data.domain}/>
-// <a onClick={this.linkClicked} className='url1_link' href = {data.url} target='_blank'>
-//    {data.titleurl}
-// </a>
+

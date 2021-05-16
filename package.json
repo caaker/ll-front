@@ -6,7 +6,6 @@
   },
   "dependencies": {
     "@arcarc/arc": "^1.0.2",
-    "mapbox-gl": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",

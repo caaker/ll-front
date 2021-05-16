@@ -35,6 +35,7 @@ class F1Modal2 extends React.Component {
   }
 
   render () {
+    const data = this.props.Modal2.data;
 
     return (
       <div className = {this.props.Modal2.on === true ? 'modal-2 on-2' : 'modal-2 off-2'}>
@@ -56,12 +57,6 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(F1Modal2);
-
-
-
-
-
-
 
 
 

@@ -28,6 +28,7 @@ class F1 extends React.Component {
         <F1Page/>
         <F1Footer/>
         <F1Modal/>
+        <F1Modal2/>
       </div>
     )
   }

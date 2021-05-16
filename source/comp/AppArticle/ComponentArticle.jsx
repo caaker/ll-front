@@ -26,8 +26,12 @@ class ComponentArticle extends React.Component {
   render() {
     
     const id = this.getID();
-    const admin = (this.props.User.current._id === '5eebf1dc9148400351a49dd0');
+    const admin = (this.props.User.current._id === '607a3978fd067e7377a3322e');
     let pending = false;
+
+    console.log("DEBUG: L4 : F1-Page-Article-ComponentArticle ");
+    // console.log("5eebf1dc9148400351a49dd0", this.props.User.current._id);
+
 
     return ( 
 
