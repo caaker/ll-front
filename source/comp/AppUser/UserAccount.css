@@ -19,6 +19,7 @@
   border-radius: 50px;
 }
 #user-image{
+  width: 200px;
   border-radius: 45px;
   border: 5px solid rgba(255, 255, 255, .9);
 }
