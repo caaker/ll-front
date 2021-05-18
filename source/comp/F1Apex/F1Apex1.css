@@ -5,11 +5,11 @@
   border-bottom: 1px dotted;
   border-color: #eeeeee;
   height: 40px;
-  transition: height .5s;
+  transition: height 1s;
 }
 #apex1-1_hide{
   height: 0px;
-  transition: height .5s;
+  transition: height 1s;
 }
 #apex1-2{
   position: relative;

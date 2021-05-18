@@ -9,24 +9,38 @@ class F1Apex1 extends React.Component {
     super(props);
    }
 
+   // this.props.Menu.current
+   // why is this not built in, this is weird, anti-pattern?
+   componentRendered = (user_selected) => {     
+     if(!user_selected){
+       this.props.dispatch({type: 'updateSearch', current: "" });
+     }
+   }
+
   render () {
+
+    let user_selected = this.props.Apex1.current;
+    let correct_page = (this.props.Menu.current === "Articles");
+    let show_apex_1 = user_selected && correct_page;
+
+    this.componentRendered(user_selected);
+
     console.log("DEBUG: L3 : F1-Apex-1 ");
-    const admin = (this.props.User.current._id === '5eebf1dc9148400351a49dd0');
+    
     return (
-		  <div className='apex1-1' id={this.props.Apex1.current ? 'apex1-1_show' : 'apex1-1_hide'}>
+		  <div className='apex1-1' id={show_apex_1 ? 'apex1-1_show' : 'apex1-1_hide'}>
 		    <div className='apex_inner' id='apex1-2'>
-          {true && <Search/>}
+          {show_apex_1 && <Search/>}
 		    </div>
 		  </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {
   return {
-    User:  state.User,
-    Apex1: state.Apex1
+    Apex1: state.Apex1,
+    Menu: state.Menu
   }
 }
 

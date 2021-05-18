@@ -1,6 +1,30 @@
 import {combineReducers} from 'redux';
 import Tree from './class.Tree.js';
 
+const Style = (state = {current: true}, action) => {
+  if(action.type === "toggleAppStyle"){
+    const newState = { ...state };
+    newState.current = !state.current;
+    return newState;
+  }
+  return state;
+};
+
+
+// For the apex or top bar
+const Apex1 = (state = {current: false}, action) => {
+  const newState = { ...state };
+  switch(action.type) {
+    case "toggleApex1":
+      newState.current = !state.current;
+      return newState;
+    case "closeApex1":
+      newState.current = false;
+      return newState;
+  }
+  return state;
+};
+
 // Holds the current user data
 const User = (state = {current: false}, action) => {
   switch(action.type) {
@@ -43,29 +67,6 @@ const Bookmarks = (state = {bookmarks: false}, action) => {
     case "updateBookmarks":
       const newState = { ...state };
       newState.bookmarks = Tree.createTree1(action.bookmarks);
-      return newState;
-  }
-  return state;
-};
-
-const App = (state = {current: true}, action) => {
-  if(action.type === "toggleAppStyle"){
-    const newState = { ...state };
-    newState.current = !state.current;
-    return newState;
-  }
-  return state;
-};
-
-// For the apex or top bar
-const Apex1 = (state = {current: false}, action) => {
-  const newState = { ...state };
-  switch(action.type) {
-    case "toggleApex1":
-      newState.current = !state.current;
-      return newState;
-    case "closeApex1":
-      newState.current = false;
       return newState;
   }
   return state;
@@ -153,7 +154,7 @@ const Search = (state={current: ""}, action) => {
 };
 
 const reducers = combineReducers({
-  App,
+  Style,
   Apex1,
   User,
   Menu,

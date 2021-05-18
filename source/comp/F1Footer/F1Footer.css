@@ -4,8 +4,15 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .9);
+}
+#footer_show{
   height: 30px;
+  transition: height 1s; 
+}
+#footer_hide{
+  height: 0px;
+  transition: height 1s;
 }
 .contact{
   position: relative;
@@ -14,14 +21,3 @@
   color: rgba(128, 128, 128, .99);
   text-decoration: none;
 }
-
-/*
-
-  margin-top: 10px;
-
-Met at SB
-vruizsacs@gmail.com
-human dimensions of organization
-liberal arts
-
-*/

@@ -16,8 +16,8 @@ class F1Apex extends React.Component {
 
     // this is here for testing how Redux effects rendering
     // this is a test component
-    if(this.props.App){
-      apex_style = this.props.App.current;  
+    if(this.props.Style){
+      apex_style = this.props.Style.current;  
     }
 
     // return the style based on the user clicking the icon
@@ -38,7 +38,7 @@ class F1Apex extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    App: state.App
+    Style: state.Style
   }
 }
 

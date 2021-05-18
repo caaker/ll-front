@@ -31,6 +31,6 @@
   transition: transform 1s;
 }
 #search_icon_rotate{
-  transform: rotate(180deg);
+  transform: rotate(360deg);
   transition: transform 1s;
 }

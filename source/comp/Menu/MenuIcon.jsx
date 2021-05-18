@@ -13,7 +13,7 @@ class MenuIcon extends React.Component {
   }
 
   render() {
-    const state = this.props.App.current;
+    const state = this.props.Style.current;
     return (
       <img className = 'favicon_all' 
            id = {state === true ? 'favicon_01' : 'favicon_90'} 
@@ -24,7 +24,7 @@ class MenuIcon extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    App: state.App
+    Style: state.Style
   }
 }
 
