@@ -100,7 +100,7 @@ class ModalForm extends React.Component {
       <div>
         {this.props.Modal.data ? <p id='title'>Update Article</p> : <p id='title'>Create Article</p>}
         <div className="solid-line"> </div>
-        <ArticleCopy className = 'medd_link_modal' title={this.state.title} />
+        <ArticleCopy className = 'medd_copy_modal' title={this.state.title} />
         <form onSubmit = {this.props.Modal.data ? this.submitFormPUT : this.submitForm} >
           <input value = {this.state.link}    onChange={this.updateForm} className = 'mi' type="text" placeholder="link"    name="link"></input>
           <input value = {this.state.image}   onChange={this.updateForm} className = 'mi' type="text" placeholder="image"   name="image"></input>

@@ -17,7 +17,7 @@ class F1Footer extends React.Component {
   }
 
   render() {
-    console.log("DEBUG: L2 : F1-Footer: ", this.props.Menu.current);
+    console.log("DEBUG: L2 : F1-Footer ");
     return (
       <div id="footer" className={this.getStyle1()}>  
         <div id="footer_inner" className={this.getStyle2()}>

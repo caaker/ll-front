@@ -1,9 +1,7 @@
 .medd_delete {
   filter: grayscale(100%);
-  margin-top:3px;
   margin-right: 3px;
   opacity: .3;
   float: right;
-  height: 20px;
-  width: 20px;
+  height: 100%;
 }

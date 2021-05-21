@@ -1,0 +1,21 @@
+/* 
+**
+**
+*/
+
+#article_bar{
+  height: 17px;
+  margin-top: 8px;
+}
+
+/* 
+**
+**
+*/
+
+.medd_favicon {
+  filter: grayscale(100%);
+  opacity: .5;
+  height: 100%;
+  float: left;
+}
