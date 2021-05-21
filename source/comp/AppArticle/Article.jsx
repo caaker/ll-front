@@ -5,14 +5,14 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import './ComponentArticle.css';
-// import ComponentArticleBookmark from './ComponentArticleBookmark.jsx';
-import ComponentArticleMutate from './ComponentArticleMutate.jsx';
-import ComponentArticleLink from './ComponentArticleLink.jsx';
+import './Article.css';
+import ArticleBookmark from './ArticleBookmark.jsx';
+import ArticleMutate from './ArticleMutate.jsx';
+import ArticleCopy from './ArticleCopy.jsx';
 import Common from '../Common/Common.js';
 
 
-class ComponentArticle extends React.Component {
+class Article extends React.Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class ComponentArticle extends React.Component {
     const admin = (this.props.User.current.email === 'caaker.0@gmail.com');
     let pending = false;
 
-    console.log("DEBUG: L4 : F1-Page-Article-ComponentArticle ", admin);
+    console.log("DEBUG: L4 : F1-Page-Article-Article ", admin);
 
     return ( 
 
@@ -59,9 +59,9 @@ class ComponentArticle extends React.Component {
 
         <img className ='medd_favicon' src={'https://www.google.com/s2/favicons?domain=' + this.props.data.domain} />
 
-        <ComponentArticleLink title={this.props.data.title} />
 
-        {admin && <ComponentArticleMutate data={this.props.data}/>}
+        <ArticleCopy title={this.props.data.title} />
+        <ArticleMutate data={this.props.data}/>
 
       </article>
     )
@@ -74,4 +74,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ComponentArticle);
+export default connect(mapStateToProps)(Article);
+
+
+        // {true && <ArticleBookmark/>}

@@ -1,14 +1,15 @@
-
 .medd_link {
   filter: grayscale(100%);
   margin-top:3px;
   opacity: .3;
   float: right;
   height: 20px;
+  width: 20px;
 }
 
 .medd_link_modal {
   filter: grayscale(100%);
   opacity: .5;
   height: 20px;
+  width: 20px;
 }

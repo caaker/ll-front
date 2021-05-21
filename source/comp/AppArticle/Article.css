@@ -84,10 +84,18 @@
   color: rgba(128, 128, 128, 1);
 }
 
+/* 
+**
+**
+*/
+
 .medd_favicon {
   filter: grayscale(100%);
   margin-top: 6px;
   opacity: .5;
+  width: 20px;
+  height: 20px;
+  float: left;
 }
 
 /* MQ-WIDTH

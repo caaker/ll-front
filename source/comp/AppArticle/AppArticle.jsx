@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ComponentArticle from './ComponentArticle.jsx';
+import Article from './Article.jsx';
 import './AppArticle.css';
 
 class AppArticle extends React.Component {
@@ -34,7 +34,7 @@ class AppArticle extends React.Component {
         return this.implementSearch(val);
       }).map((val, index) => {
         val.index = index;
-        return <ComponentArticle key={index} data={val}/>;
+        return <Article key={index} data={val}/>;
       });
     }
   }

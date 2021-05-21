@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './ComponentArticleBookmark.css';
+import './ArticleBookmark.css';
 // import io from 'socket.io-client';
 
-class ComponentArticleBookmark extends React.Component {
+class ArticleBookmark extends React.Component {
 
   constructor(props) {
     super(props);
@@ -70,7 +70,7 @@ class ComponentArticleBookmark extends React.Component {
   }
 }
 
-export default connect()(ComponentArticleBookmark);
+export default connect()(ArticleBookmark);
 
 /*
 on_bookmark.svg

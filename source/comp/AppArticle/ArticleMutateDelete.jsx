@@ -1,18 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './ComponentArticleMutateDelete.css';
+import './ArticleMutateDelete.css';
 
-class ComponentArticleMutateDelete extends React.Component {
+class ArticleMutateDelete extends React.Component {
 
   constructor(props){
     super(props);
   }
-  
-  sendToServer = (data) => {
-  }
 
   verifyDelete = (data) => {
-    // console.log('verifyDelete() called', data);
     let _id = encodeURIComponent(data._id);  
     let index = encodeURIComponent(data.index);
 
@@ -26,7 +22,6 @@ class ComponentArticleMutateDelete extends React.Component {
     };
     fetch("/articles/delete/" + _id, options )
       .then((response) => {
-        // console.log('response', response);
       })
       .catch((error) => {
         console.log('delete clicked error', error);
@@ -50,7 +45,7 @@ class ComponentArticleMutateDelete extends React.Component {
   }
 }
 
-export default connect()(ComponentArticleMutateDelete);
+export default connect()(ArticleMutateDelete);
 
 
 
