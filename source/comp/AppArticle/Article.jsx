@@ -19,7 +19,7 @@ class Article extends React.Component {
     this.state = {pending: false}
   }
 
-  getID(){
+  getID() {
     return Common.makeHash(this.props.data.title); 
   }
 

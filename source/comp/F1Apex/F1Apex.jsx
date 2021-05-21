@@ -21,7 +21,7 @@ class F1Apex extends React.Component {
     }
 
     // return the style based on the user clicking the icon
-    return apex_style ? 'apex_style_99' : 'apex_style_45'
+    return apex_style ? 'apex_style_1' : 'apex_style_45'
   }
 
   render () {

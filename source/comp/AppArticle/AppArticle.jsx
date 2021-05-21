@@ -5,12 +5,12 @@ import './AppArticle.css';
 
 class AppArticle extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  // subtract 80px so the article is not under the top bar
-  useScrollTo(element) {
+  // this is one method of scrolling, there are others
+  useScrollTo (element) {
     window.scrollTo({
       top: element.getBoundingClientRect().top - 80,
       behavior: "smooth"
@@ -18,43 +18,53 @@ class AppArticle extends React.Component {
   }
 
   // if there is a hash and the hash is valid scroll to it after .5s
-  componentDidMount() {
+  componentDidMount () {
     const hash = document.location.hash.slice(1);
-    if(!hash) return;    
-    window.setTimeout(()=>{
-      const element = document.getElementById(hash);
-      if(!element) return;
+    if(!hash) {
+      return;
+    }
+    const element = document.getElementById(hash);
+    if(!element) {
+      return;
+    }
+    window.setTimeout(()=>{  
       this.useScrollTo(element);
     }, 500);
   }
 
   makeList () {
     if(this.props.Articles.articles){
-      return this.props.Articles.articles.filter((val)=>{
-        return this.implementSearch(val);
-      }).map((val, index) => {
+      let articles = this.props.Articles.articles;
+
+      // filter the articles if their is a search criteria
+      if(this.props.Search.current){
+        articles = articles.filter((val)=>{
+          return this.arrticleSearch(val);
+        });        
+      }
+
+      // map data to React components and returne them
+      articles = articles.map((val, index) => {
         val.index = index;
         return <Article key={index} data={val}/>;
       });
+      return articles;
     }
+
   }
 
-  // https://stackoverflow.com/questions/177719/case-insensitive-search
-  implementSearch(val) {
-    const search = this.props.Search.current; 
-    if(!search){
-      return true;
-    }
-    if( val.domain.toLowerCase().search(search.toLowerCase()) !== -1 ){
+  arrticleSearch (val) {
+    const search_string = this.props.Search.current; 
+    if( val.title.toLowerCase().search(search_string.toLowerCase()) !== -1 ){
       return true
     }
-    if( val.tag.toLowerCase().search(search.toLowerCase()) !== -1 ){
+    if( val.summary.toLowerCase().search(search_string.toLowerCase()) !== -1 ){
       return true
     }
-    if( val.title.toLowerCase().search(search.toLowerCase()) !== -1 ){
+    if( val.tag.toLowerCase().search(search_string.toLowerCase()) !== -1 ){
       return true
     }
-    if( val.summary.toLowerCase().search(search.toLowerCase()) !== -1 ){
+    if( val.domain.toLowerCase().search(search_string.toLowerCase()) !== -1 ){
       return true
     }
     return false;

@@ -8,7 +8,7 @@ class ArticleMutateEdit extends React.Component {
     super(props);
   }
   
-  editClicked = (event) => {
+  editClicked(event) {
     event.preventDefault();
     this.props.dispatch({type: 'toggleOn', data: this.props.data});
   }

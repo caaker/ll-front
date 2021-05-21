@@ -12,7 +12,7 @@ class ArticleCopy extends React.Component {
     super(props);
   }
 
-  linkClicked = (event, text) => {
+  linkClicked (event, text) {
     event.preventDefault();
     let input = document.createElement("input");
     input.style="position:absolute;opacity:0";
