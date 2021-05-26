@@ -1,29 +1,16 @@
-/* CommonSearch
-*/
-
-/* good example of how height 'cascades' or 'travels' down
-*/
-
-#search_bar_show{
-  display: block;
+.search_bar_div{
   position: relative;
   top: 4px;
-  width: 140px;
   margin: 0 auto;
+  width: 140px;
   height: 30px;
 }
-#search_bar_hide{
+#search_bar_div_show{
+  display: flex;  
+}
+#search_bar_div_hide{
   display:none;
-  position: relative;
-  top: 2px;
-  width:140px;
-  margin: 0 auto;
 }
-
-#search_bar_form{
-  height: 100%;
-}
-
 #search_bar_input{
   border-radius: 4px;
   border-style: solid;
@@ -36,7 +23,8 @@
 #search_bar_input:hover {
  background-color: rgba(0, 0, 0, .1);
 }
-
 #search_icon{
   position:relative;
 }
+
+

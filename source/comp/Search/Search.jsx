@@ -12,23 +12,17 @@ class Search extends React.Component {
     this.props.dispatch({type: 'updateSearch', current: event.target.value });
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-  }
-
   render() {
     return (
-      <div id={this.props.Apex1.current ? 'search_bar_show' : 'search_bar_hide'}>
-        <form onSubmit={this.handleSubmit} id="search_bar_form">
-          <input
-            id="search_bar_input"
-            name="search"
-            type="text"
-            placeholder=" Search"
-            value={this.props.Search.current}
-            onChange={this.handleChange}
-          />
-        </form>
+      <div className="search_bar_div" id={this.props.Apex1.current ? 'search_bar_div_show' : 'search_bar_div_hide'}>
+        <input
+          id="search_bar_input"
+          name="search"
+          type="text"
+          placeholder=" Search"
+          value={this.props.Search.current}
+          onChange={this.handleChange}
+        />
       </div>
     )
   }

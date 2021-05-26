@@ -17,7 +17,7 @@ class AppArticle extends React.Component {
     });
   }
 
-  // if there is a hash and the hash is valid scroll to it after .5s
+  // if there is a hash and the hash is valid scroll to it after 1s
   componentDidMount () {
     const hash = document.location.hash.slice(1);
     if(!hash) {
@@ -29,7 +29,7 @@ class AppArticle extends React.Component {
     }
     window.setTimeout(()=>{  
       this.useScrollTo(element);
-    }, 500);
+    }, 1000);
   }
 
   makeList () {
@@ -43,11 +43,12 @@ class AppArticle extends React.Component {
         });        
       }
 
-      // map data to React components and returne them
+      // map data to React components
       articles = articles.map((val, index) => {
         val.index = index;
         return <Article key={index} data={val}/>;
       });
+
       return articles;
     }
 
@@ -73,7 +74,7 @@ class AppArticle extends React.Component {
   render () {
     console.log("DEBUG: L3 : F1-Page-Article ");
     return (
-      <div id = "article_page_hold">
+      <div id = "app_article">
         {this.makeList()}
       </div>
     )

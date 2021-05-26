@@ -15,10 +15,12 @@ class MenuBoxItem extends React.Component {
   }
 
   render() {
+    console.log(this.props.menu_name)
+
     return (
       <span className="holder" onClick = {this.clickHandler.bind(this, this.props.name)}>
         {this.props.children}
-        <p className='p11'>{this.props.name}</p>
+        <p className='p11'>{this.props.menu_name || this.props.name}</p>
       </span>
     )
   }

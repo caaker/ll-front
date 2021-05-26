@@ -97,18 +97,18 @@ class ModalForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="modal-box-form">
         {this.props.Modal.data ? <p id='title'>Update Article</p> : <p id='title'>Create Article</p>}
-        <div className="solid-line"> </div>
+        <div id="solid-line"> </div>
         <ArticleCopy className = 'medd_copy_modal' title={this.state.title} />
         <form onSubmit = {this.props.Modal.data ? this.submitFormPUT : this.submitForm} >
-          <input value = {this.state.link}    onChange={this.updateForm} className = 'mi' type="text" placeholder="link"    name="link"></input>
-          <input value = {this.state.image}   onChange={this.updateForm} className = 'mi' type="text" placeholder="image"   name="image"></input>
-          <input value = {this.state.title}   onChange={this.updateForm} className = 'mi' type="text" placeholder="title"   name="title"></input>          
-          <input value = {this.state.summary} onChange={this.updateForm} className = 'mi' type="text" placeholder="summary" name="summary"></input>
-          <input value = {this.state.tag}     onChange={this.updateForm} className = 'mi' type="text" placeholder="tag"     name="tag"></input>
-          <input value = {this.state.domain}  onChange={this.updateForm} className = 'mi' type="text" placeholder="domain"  name="domain"></input>
-          {this.props.Modal.data ? <button className="butn">Update</button> : <button className="butn">Add</button>}
+          <input value = {this.state.link}    onChange={this.updateForm} className = 'input_item' type="text" placeholder="link"    name="link"></input>
+          <input value = {this.state.image}   onChange={this.updateForm} className = 'input_item' type="text" placeholder="image"   name="image"></input>
+          <input value = {this.state.title}   onChange={this.updateForm} className = 'input_item' type="text" placeholder="title"   name="title"></input>          
+          <input value = {this.state.summary} onChange={this.updateForm} className = 'input_item' type="text" placeholder="summary" name="summary"></input>
+          <input value = {this.state.tag}     onChange={this.updateForm} className = 'input_item' type="text" placeholder="tag"     name="tag"></input>
+          <input value = {this.state.domain}  onChange={this.updateForm} className = 'input_item' type="text" placeholder="domain"  name="domain"></input>
+          {this.props.Modal.data ? <button className="form_button">Update</button> : <button className="form_button">Add</button>}
         </form>
         <div onClick={this.closeModal} id="modal-cross">+</div>
       </div>

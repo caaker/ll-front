@@ -30,7 +30,7 @@ class F1Apex1 extends React.Component {
     return (
 		  <div className='apex1-1' id={show_apex_1 ? 'apex1-1_show' : 'apex1-1_hide'}>
 		    <div className='apex_inner' id='apex1-2'>
-          {show_apex_1 && <Search/>}
+          <Search/>
 		    </div>
 		  </div>
     )
