@@ -14,17 +14,15 @@ class MenuFave extends React.Component {
   }
 
   render () {
-    const item = this.props.MenuFave.current;
-
     return (
-
       <div id='tag1_hold'>
-
-        <img className={item==='health' ? 'tag1_active' : 'tag1'} 
-          id="arc_health" src="dist/images/svg/health.svg" onClick={this.clickHandler.bind(this, 'health')} ></img>
-
+        <img 
+             className={this.props.MenuFave.current ==='health' ? 'tag1_active' : 'tag1'} 
+             id="arc_health" 
+             src="dist/images/svg/health.svg" 
+             onClick={this.clickHandler.bind(this, 'health')} >
+        </img>
       </div>
-
     )
   }
 }
@@ -37,5 +35,10 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(MenuFave);
 
-        // <img className={item==='all' ? 'tag1_active' : 'tag1'} 
-        //   id="arc_arc" src="dist/images/svg/heart.svg" onClick={this.clickHandler.bind(this, 'all')} ></img>
+
+        // <img 
+        //      className={item==='all' ? 'tag1_active' : 'tag1'} 
+        //      id="arc_arc" 
+        //      src="dist/images/svg/heart.svg" 
+        //      onClick={this.clickHandler.bind(this, 'all')} >
+        // </img>

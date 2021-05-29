@@ -18,21 +18,13 @@ class Article extends React.Component {
     this.state = {pending: false}
   }
 
-  getID() {
-    return Common.makeHash(this.props.data.title); 
-  }
-
   render() {
     
-    const id = this.getID();
-    const admin = (this.props.User.current.email === 'caaker.0@gmail.com');
-    let pending = false;
-
-    // console.log("DEBUG: L4 : F1-Page-Article-Article ", admin);
+    const hash = Common.makeHash(this.props.data.title);
 
     return ( 
 
-      <article id={id} className={pending ? 'medd_article_pending' : 'medd_article'}>
+      <article id={hash} className={this.state.pending ? 'medd_article_pending' : 'medd_article'}>
 
         <a className="medd_link" href={this.props.data.link} target="_blank">
           <img className="medd_link_image" src={this.props.data.image}></img>

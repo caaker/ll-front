@@ -12,36 +12,26 @@ class ArticleCopy extends React.Component {
     super(props);
   }
 
-  linkClicked (event, text) {
+  copyToClipboard (event, text) {
     event.preventDefault();
-    let input = document.createElement("input");
-    input.style="position:absolute;opacity:0";
-    input.value = text;
-    document.body.append(input);
-    input.select();
-    document.execCommand("copy");
-    input.remove();
+    Common.copyToClipboard(text);
     alert("Copied the text: " + text);
-  }
-
-  getID(){
-    return Common.makeHash(this.props.title); 
   }
 
   render() {
     
-    const id = this.getID();
-    const hash_link = 'http://www.livelong.ai#' + id ;
+    const hash = Common.makeHash(this.props.title);
+    const hash_link = 'http://www.livelong.ai#' + hash;
     const medd_link_className = this.props.className || 'medd_copy';
 
     return ( 
-      <span id={id}>
+      <span id={hash}>
 
         <svg
           className={medd_link_className}
           ref={ref => this.link = ref} 
           id={hash_link} 
-          onClick={event => this.linkClicked(event, this.link.id)}
+          onClick={event => this.copyToClipboard(event, this.link.id)}
           xmlns="http://www.w3.org/2000/svg" 
           height="24px" 
           viewBox="0 0 24 24" 

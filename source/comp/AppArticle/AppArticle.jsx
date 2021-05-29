@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Article from './Article.jsx';
 import './AppArticle.css';
+import Common from '../Common/Common.js';
 
 class AppArticle extends React.Component {
 
@@ -9,34 +10,16 @@ class AppArticle extends React.Component {
     super(props);
   }
 
-  // this is one method of scrolling, there are others
-  useScrollTo (element) {
-    window.scrollTo({
-      top: element.getBoundingClientRect().top - 80,
-      behavior: "smooth"
-    });
-  }
-
-  // if there is a hash and the hash is valid scroll to it after 1s
+  // scroll to hash in URL if it exists after 1000msec and offset 80 px
   componentDidMount () {
-    const hash = document.location.hash.slice(1);
-    if(!hash) {
-      return;
-    }
-    const element = document.getElementById(hash);
-    if(!element) {
-      return;
-    }
-    window.setTimeout(()=>{  
-      this.useScrollTo(element);
-    }, 1000);
+    Common.scrollToHash(1000, 80);
   }
 
   makeList () {
     if(this.props.Articles.articles){
       let articles = this.props.Articles.articles;
 
-      // filter the articles if their is a search criteria
+      // filter the articles if their is a search criteria based upon raw json data
       if(this.props.Search.current){
         articles = articles.filter((val)=>{
           return this.arrticleSearch(val);

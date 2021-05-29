@@ -15,8 +15,6 @@ class MenuBoxItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.menu_name)
-
     return (
       <span className="holder" onClick = {this.clickHandler.bind(this, this.props.name)}>
         {this.props.children}

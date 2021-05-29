@@ -1,5 +1,5 @@
 .T1_page{
-  position: absolute;
+  position: relative;
   top:40px;
 
   display: flex;
